@@ -1,0 +1,15 @@
+{
+  imports = [
+    ./common/core
+
+    ./common/optional/ffmpeg-nonfree.nix
+    ./common/optional/flatpak.nix
+    ./common/optional/fonts.nix
+    ./common/optional/gh.nix
+    ./common/optional/gnome-extensions.nix
+    ./common/optional/proton-vpn.nix
+  ];
+
+  # First version of Home Manager installed in this system
+  home.stateVersion = "25.05";
+}

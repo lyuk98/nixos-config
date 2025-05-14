@@ -1,0 +1,32 @@
+keys:
+  # Users
+  - &users:
+    - &lyuk98 270CB11B1189E79A17DCB7831BDAFDC5D60E735C
+  # Hosts
+  - &hosts:
+    - &framework age14edzmqc4r07gp9lkj8z4gchccs373s8lcdrw69d6964tallpuuzqausgmk
+
+creation_rules:
+  # Secrets specific to host "framework"
+  - path_regex: hosts/framework/secrets.ya?ml$
+    key_groups:
+    - age:
+      - *framework
+      pgp:
+      - *lyuk98
+
+  # Secrets for user "lyuk98" to be used across hosts
+  - path_regex: hosts/common/users/lyuk98/secrets.ya?ml$
+    key_groups:
+    - age:
+      - *framework
+      pgp:
+      - *lyuk98
+
+  # NetworkManager connections
+  - path_regex: hosts/common/optional/system-connections/.+\.nmconnection$
+    key_groups:
+    - age:
+      - *framework
+      pgp:
+      - *lyuk98
