@@ -44,7 +44,6 @@
       "org.kde.kid3" # Kid3
       "org.kde.optiimage" # OptiImage
       "org.libreoffice.LibreOffice" # LibreOffice
-      "org.mozilla.firefox" # Firefox
       "org.mozilla.Thunderbird" # Thunderbird
       "org.musicbrainz.Picard" # MusicBrainz Picard
       "org.raspberrypi.rpi-imager" # Raspberry Pi Imager
