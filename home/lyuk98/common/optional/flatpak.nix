@@ -29,7 +29,6 @@
       "net.mediaarea.MediaInfo" # MediaInfo
       "net.supertuxkart.SuperTuxKart" # SuperTuxKart
       "no.mifi.losslesscut" # LosslessCut
-      "org.ardour.Ardour" # Ardour
       "org.audacityteam.Audacity" # Audacity
       "org.fedoraproject.MediaWriter" # Fedora Media Writer
       "org.gnome.Boxes" # Boxes
