@@ -5,6 +5,7 @@
     ./git.nix
     ./gnupg.nix
     ./home-manager.nix
+    ./nix-index.nix
     ./nixpkgs.nix
     ./pay-respects.nix
     ./xdg-system-dirs.nix
