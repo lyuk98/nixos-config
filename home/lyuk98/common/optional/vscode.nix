@@ -29,6 +29,8 @@
             lib.mkIf (builtins.elem pkgs.cascadia-code config.home.packages) "'Cascadia Code', 'monospace', monospace";
           "editor.insertSpaces" = false;
           "files.autoSave" = "afterDelay";
+
+          "git.autofetch" = true;
           "git.enableCommitSigning" = lib.mkDefault true;
           "git.inputValidation" = true;
 
