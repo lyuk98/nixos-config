@@ -9,6 +9,7 @@
     ./common/optional/gh.nix
     ./common/optional/gnome-extensions.nix
     ./common/optional/proton-vpn.nix
+    ./common/optional/vscode.nix
   ];
 
   # First version of Home Manager installed in this system

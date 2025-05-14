@@ -22,7 +22,6 @@
       "com.obsproject.Studio" # OBS Studio
       "com.usebottles.bottles" # Bottles
       "com.valvesoftware.Steam" # Steam
-      "com.visualstudio.code-oss" # Code - OSS
       "de.haeckerfelix.Shortwave" # Shortwave
       "dev.vencord.Vesktop" # Vesktop
       "im.bernard.Nostalgia" # Nostalgia
