@@ -8,6 +8,7 @@
     ./nix-index.nix
     ./nixpkgs.nix
     ./pay-respects.nix
+    ./xdg-autostart.nix
     ./xdg-system-dirs.nix
   ];
 
