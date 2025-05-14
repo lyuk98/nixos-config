@@ -7,6 +7,7 @@
     ./home-manager.nix
     ./nixpkgs.nix
     ./pay-respects.nix
+    ./xdg-system-dirs.nix
   ];
 
   # Set default user details
