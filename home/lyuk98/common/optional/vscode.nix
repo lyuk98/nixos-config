@@ -31,6 +31,15 @@
           "files.autoSave" = "afterDelay";
           "git.enableCommitSigning" = lib.mkDefault true;
           "git.inputValidation" = true;
+
+          "nix.enableLanguageServer" = true;
+          "nix.formatterPath" = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
+          "nix.serverPath" = "${pkgs.nil}/bin/nil";
+          "nix.serverSettings" = {
+            "nil" = {
+              "formatting"."command" = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
+            };
+          };
         };
       };
     };
