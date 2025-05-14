@@ -10,4 +10,19 @@ in
 {
   # Add personal selection of GNOME Shell extensions
   programs.gnome-shell.extensions = builtins.map (extension: { package = extension; }) packages;
+
+  # Modify dconf settings
+  dconf.settings = {
+    "org/gnome/shell" = {
+      # Enable user extensions
+      disable-user-extensions = false;
+
+      # Enable added extensions
+      enabled-extensions = [
+        "AlphabeticalAppGrid@stuarthayhurst"
+        "gsconnect@andyholmes.github.io"
+        "nightthemeswitcher@romainvigier.fr"
+      ];
+    };
+  };
 }
