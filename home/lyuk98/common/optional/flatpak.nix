@@ -23,7 +23,6 @@
       "com.usebottles.bottles" # Bottles
       "com.valvesoftware.Steam" # Steam
       "de.haeckerfelix.Shortwave" # Shortwave
-      "dev.vencord.Vesktop" # Vesktop
       "im.bernard.Nostalgia" # Nostalgia
       "io.gitlab.azymohliad.WatchMate" # Watchmate
       "net.mediaarea.MediaInfo" # MediaInfo

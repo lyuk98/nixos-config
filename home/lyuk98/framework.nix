@@ -3,6 +3,7 @@
     ./common/core
 
     ./common/optional/ardour.nix
+    ./common/optional/discord.nix
     ./common/optional/ffmpeg-nonfree.nix
     ./common/optional/firefox.nix
     ./common/optional/flatpak.nix
