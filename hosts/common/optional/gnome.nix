@@ -2,7 +2,6 @@
 {
   imports = [
     ./flatpak.nix
-    ./gsconnect.nix
     ./ibus.nix
   ];
 
