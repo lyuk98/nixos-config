@@ -10,6 +10,7 @@
     ./common/optional/gh.nix
     ./common/optional/gnome-extensions.nix
     ./common/optional/proton-vpn.nix
+    ./common/optional/signal-desktop.nix
     ./common/optional/vscode.nix
   ];
 

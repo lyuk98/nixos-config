@@ -45,7 +45,6 @@
       "org.mozilla.Thunderbird" # Thunderbird
       "org.musicbrainz.Picard" # MusicBrainz Picard
       "org.raspberrypi.rpi-imager" # Raspberry Pi Imager
-      "org.signal.Signal" # Signal Desktop
       "org.standardnotes.standardnotes" # Standard Notes
       "org.telegram.desktop" # Telegram
       "org.videolan.VLC" # VLC
