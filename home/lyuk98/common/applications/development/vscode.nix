@@ -43,12 +43,15 @@
             "nix.serverPath" = "${pkgs.nil}/bin/nil";
             "nix.serverSettings" = {
               "nil" = {
-                "formatting"."command" = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
+                "formatting"."command" = "nixfmt";
               };
             };
           };
         };
       };
     };
+
+    # Nix IDE can only invoke nixfmt if it is available in the environment
+    home.packages = [ pkgs.nixfmt-rfc-style ];
   };
 }
