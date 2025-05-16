@@ -9,6 +9,7 @@
     ./nixpkgs.nix
     ./pay-respects.nix
     ./xdg-autostart.nix
+    ./xdg-user-dirs.nix
   ];
 
   # Set default user details
