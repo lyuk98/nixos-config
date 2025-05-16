@@ -3,8 +3,8 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     # Home Manager
     home-manager = {
@@ -25,7 +25,7 @@
     };
 
     # NixOS profiles for different hardware
-    hardware.url = "github:nixos/nixos-hardware";
+    hardware.url = "github:NixOS/nixos-hardware";
 
     # nix-flatpak to declaratively manage Flatpak installations
     nix-flatpak.url = "github:gmodena/nix-flatpak";
