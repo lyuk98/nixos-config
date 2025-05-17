@@ -45,7 +45,6 @@
       "org.musicbrainz.Picard" # MusicBrainz Picard
       "org.raspberrypi.rpi-imager" # Raspberry Pi Imager
       "org.standardnotes.standardnotes" # Standard Notes
-      "org.telegram.desktop" # Telegram
       "org.videolan.VLC" # VLC
       "re.sonny.Eloquent" # Eloquent
     ];
