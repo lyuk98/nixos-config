@@ -18,5 +18,10 @@
     # Default committer email and name
     userEmail = lib.mkDefault "pr@lyuk98.com";
     userName = lib.mkDefault "이영욱";
+
+    lfs = {
+      # Enable Git Large File Storage
+      enable = true;
+    };
   };
 }
