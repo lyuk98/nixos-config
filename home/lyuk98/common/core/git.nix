@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 {
   programs.git = {
     # Enable Git
@@ -18,6 +18,15 @@
     # Default committer email and name
     userEmail = lib.mkDefault "pr@lyuk98.com";
     userName = lib.mkDefault "이영욱";
+
+    # Extra configurations
+    extraConfig = {
+      core.autocrlf = "input";
+      credential.helper = lib.mkDefault "${
+        pkgs.git.override { withLibsecret = true; }
+      }/bin/git-credential-libsecret";
+      init.defaultBranch = "main";
+    };
 
     lfs = {
       # Enable Git Large File Storage
