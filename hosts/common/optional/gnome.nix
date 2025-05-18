@@ -17,7 +17,7 @@
   # Enable core services for GNOME
   services.gnome = {
     # Enable core utilities
-    core-utilities.enable = true;
+    core-apps.enable = true;
 
     # Enable GNOME Shell services
     core-shell.enable = true;
