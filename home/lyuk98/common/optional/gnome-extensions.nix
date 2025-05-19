@@ -3,6 +3,7 @@ let
   # List of extensions
   packages = with pkgs.gnomeExtensions; [
     alphabetical-app-grid # Alphabetical App Grid
+    gsconnect # GSConnect
     night-theme-switcher # Night Theme Switcher
   ];
 in
@@ -19,6 +20,7 @@ in
       # Enable added extensions
       enabled-extensions = [
         "AlphabeticalAppGrid@stuarthayhurst"
+        "gsconnect@andyholmes.github.io"
         "nightthemeswitcher@romainvigier.fr"
       ];
     };

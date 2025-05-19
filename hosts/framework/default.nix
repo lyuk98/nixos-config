@@ -10,8 +10,8 @@
     ../common/optional/fractional-scaling.nix
     ../common/optional/fwupd.nix
     ../common/optional/gnome.nix
+    ../common/optional/gsconnect.nix
     ../common/optional/iwd.nix
-    ../common/optional/kdeconnect.nix
     ../common/optional/lanzaboote.nix
     ../common/optional/linux-latest.nix
     ../common/optional/pipewire.nix
