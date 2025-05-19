@@ -20,7 +20,9 @@
           # Add extensions
           extensions = with pkgs.vscode-extensions; [
             llvm-vs-code-extensions.vscode-clangd # clangd
+            arrterian.nix-env-selector # Nix Environment Selector
             jnoortheen.nix-ide # Nix IDE
+            rust-lang.rust-analyzer # rust-analyzer
             ban.spellright # Spell Right
           ];
 
