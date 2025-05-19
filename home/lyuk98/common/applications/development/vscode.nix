@@ -13,6 +13,9 @@
       # Enable Visual Studio Code
       enable = true;
 
+      # Prevent manual installation of extensions
+      mutableExtensionsDir = false;
+
       # Define declarative profiles
       profiles = {
         # Define default profile
@@ -28,6 +31,7 @@
 
           # Disable update notifications
           enableUpdateCheck = false;
+          enableExtensionUpdateCheck = false;
 
           # Set user settings
           userSettings = {
@@ -36,6 +40,9 @@
               lib.mkIf (builtins.elem pkgs.cascadia-code config.home.packages) "'Cascadia Code', 'monospace', monospace";
             "editor.insertSpaces" = false;
             "files.autoSave" = "afterDelay";
+
+            # Features
+            "extensions.autoUpdate" = false;
 
             # Application
             "telemetry.feedback.enabled" = false;
