@@ -59,7 +59,7 @@
             "nix.serverPath" = "${pkgs.nil}/bin/nil";
             "nix.serverSettings" = {
               "nil" = {
-                "formatting"."command" = "nixfmt";
+                "formatting"."command" = [ "nixfmt" ];
               };
             };
 
