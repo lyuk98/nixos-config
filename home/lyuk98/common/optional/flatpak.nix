@@ -22,7 +22,6 @@
       "com.obsproject.Studio" # OBS Studio
       "com.usebottles.bottles" # Bottles
       "com.valvesoftware.Steam" # Steam
-      "de.haeckerfelix.Shortwave" # Shortwave
       "im.bernard.Nostalgia" # Nostalgia
       "io.gitlab.azymohliad.WatchMate" # Watchmate
       "net.mediaarea.MediaInfo" # MediaInfo
