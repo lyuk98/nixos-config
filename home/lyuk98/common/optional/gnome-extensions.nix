@@ -12,11 +12,6 @@ lib.mkIf config.programs.gnome-shell.enable {
       id = "AlphabeticalAppGrid@stuarthayhurst";
       package = alphabetical-app-grid;
     }
-    # GSConnect
-    {
-      id = "gsconnect@andyholmes.github.io";
-      package = gsconnect;
-    }
     # Night Theme Switcher
     {
       id = "nightthemeswitcher@romainvigier.fr";
