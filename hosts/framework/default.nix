@@ -18,6 +18,7 @@
     ../common/optional/plymouth.nix
     ../common/optional/printing.nix
     ../common/optional/random-mac-address.nix
+    ../common/optional/speech-dispatcher.nix
     ../common/optional/system-connections.nix
     ../common/optional/tpm2.nix
     ../common/optional/vnstat.nix
