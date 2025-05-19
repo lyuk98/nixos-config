@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   # List of extensions
   packages = with pkgs.gnomeExtensions; [
@@ -7,7 +12,7 @@ let
     night-theme-switcher # Night Theme Switcher
   ];
 in
-{
+lib.mkIf config.programs.gnome-shell.enable {
   # Add personal selection of GNOME Shell extensions
   programs.gnome-shell.extensions = builtins.map (extension: { package = extension; }) packages;
 
