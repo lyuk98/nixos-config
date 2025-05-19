@@ -4,30 +4,23 @@
   config,
   ...
 }:
-let
-  # List of extensions
-  packages = with pkgs.gnomeExtensions; [
-    alphabetical-app-grid # Alphabetical App Grid
-    gsconnect # GSConnect
-    night-theme-switcher # Night Theme Switcher
-  ];
-in
 lib.mkIf config.programs.gnome-shell.enable {
   # Add personal selection of GNOME Shell extensions
-  programs.gnome-shell.extensions = builtins.map (extension: { package = extension; }) packages;
-
-  # Modify dconf settings
-  dconf.settings = {
-    "org/gnome/shell" = {
-      # Enable user extensions
-      disable-user-extensions = false;
-
-      # Enable added extensions
-      enabled-extensions = [
-        "AlphabeticalAppGrid@stuarthayhurst"
-        "gsconnect@andyholmes.github.io"
-        "nightthemeswitcher@romainvigier.fr"
-      ];
-    };
-  };
+  programs.gnome-shell.extensions = with pkgs.gnomeExtensions; [
+    # Alphabetical App Grid
+    {
+      id = "AlphabeticalAppGrid@stuarthayhurst";
+      package = alphabetical-app-grid;
+    }
+    # GSConnect
+    {
+      id = "gsconnect@andyholmes.github.io";
+      package = gsconnect;
+    }
+    # Night Theme Switcher
+    {
+      id = "nightthemeswitcher@romainvigier.fr";
+      package = night-theme-switcher;
+    }
+  ];
 }
