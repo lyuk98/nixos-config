@@ -5,6 +5,7 @@
     ./audio
     ./development
     ./network
+    ./office
   ];
 
   # Create option to enable all applications
@@ -15,5 +16,6 @@
     audio.enable = lib.mkDefault true;
     development.enable = lib.mkDefault true;
     network.enable = lib.mkDefault true;
+    office.enable = lib.mkDefault true;
   };
 }

@@ -15,6 +15,7 @@
     audio.enable = true;
     development.enable = true;
     network.enable = true;
+    office.enable = true;
   };
 
   # First version of Home Manager installed in this system

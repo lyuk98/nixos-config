@@ -30,7 +30,6 @@
       "org.audacityteam.Audacity" # Audacity
       "org.fedoraproject.MediaWriter" # Fedora Media Writer
       "org.gnome.Boxes" # Boxes
-      "org.gnucash.GnuCash" # GnuCash
       "org.gtk.Gtk3theme.adw-gtk3-dark" # adw-gtk3 GTK Theme
       "org.gtk.Gtk3theme.adw-gtk3" # adw-gtk3 GTK Theme
       "org.gtk.Gtk3theme.Adwaita-dark" # Adwaita dark GTK theme
