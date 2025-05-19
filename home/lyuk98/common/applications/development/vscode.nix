@@ -31,15 +31,18 @@
 
           # Set user settings
           userSettings = {
+            # Text Editor
             "editor.fontFamily" =
               lib.mkIf (builtins.elem pkgs.cascadia-code config.home.packages) "'Cascadia Code', 'monospace', monospace";
             "editor.insertSpaces" = false;
             "files.autoSave" = "afterDelay";
 
+            # Extensions / Git
             "git.autofetch" = true;
             "git.enableCommitSigning" = lib.mkDefault true;
             "git.inputValidation" = true;
 
+            # Extensions / NixIDE
             "nix.enableLanguageServer" = true;
             "nix.formatterPath" = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
             "nix.serverPath" = "${pkgs.nil}/bin/nil";
@@ -47,6 +50,20 @@
               "nil" = {
                 "formatting"."command" = "nixfmt";
               };
+            };
+
+            # Settings for Nix
+            "[nix]" = {
+              # Text Editor
+              "editor.insertSpaces" = true;
+              "editor.tabSize" = 2;
+            };
+
+            # Settings for Rust
+            "[rust]" = {
+              # Text Editor
+              "editor.insertSpaces" = true;
+              "editor.tabSize" = 4;
             };
           };
         };
