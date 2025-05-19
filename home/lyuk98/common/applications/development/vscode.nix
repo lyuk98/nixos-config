@@ -37,6 +37,10 @@
             "editor.insertSpaces" = false;
             "files.autoSave" = "afterDelay";
 
+            # Application
+            "telemetry.feedback.enabled" = false;
+            "telemetry.telemetryLevel" = "off";
+
             # Extensions / Git
             "git.autofetch" = true;
             "git.enableCommitSigning" = lib.mkDefault true;
