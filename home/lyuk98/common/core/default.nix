@@ -2,6 +2,7 @@
 {
   imports = [
     ./bash.nix
+    ./editorconfig.nix
     ./git.nix
     ./gnupg.nix
     ./home-manager.nix
