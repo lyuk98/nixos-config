@@ -19,6 +19,17 @@
     userEmail = lib.mkDefault "pr@lyuk98.com";
     userName = lib.mkDefault "이영욱";
 
+    # Add globally ignored paths
+    ignores = [
+      # Linux
+      "*~"
+      ".fuse_hidden*"
+      ".directory"
+      ".Trash-*"
+      ".nfs*"
+      "nohup.out"
+    ];
+
     # Extra configurations
     extraConfig = {
       core.autocrlf = "input";
