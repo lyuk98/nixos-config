@@ -13,6 +13,7 @@
     ../common/optional/gsconnect.nix
     ../common/optional/iwd.nix
     ../common/optional/lanzaboote.nix
+    ../common/optional/libimobiledevice.nix
     ../common/optional/linux-latest.nix
     ../common/optional/pipewire.nix
     ../common/optional/plymouth.nix
