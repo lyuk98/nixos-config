@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }:
 {
@@ -9,6 +10,11 @@
   options.applications.development.vscode.enable = lib.mkEnableOption "Visual Studio Code";
 
   config = lib.mkIf config.applications.development.vscode.enable {
+    # Add overlay to Nixpkgs
+    nixpkgs.overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
+
     programs.vscode = {
       # Enable Visual Studio Code
       enable = true;
@@ -21,7 +27,7 @@
         # Define default profile
         default = {
           # Add extensions
-          extensions = with pkgs.vscode-extensions; [
+          extensions = with pkgs.vscode-marketplace; [
             llvm-vs-code-extensions.vscode-clangd # clangd
             arrterian.nix-env-selector # Nix Environment Selector
             jnoortheen.nix-ide # Nix IDE
