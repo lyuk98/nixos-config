@@ -7,6 +7,7 @@
   imports = [
     ./ardour.nix
     ./guitarix.nix
+    ./hydrogen.nix
     ./shortwave.nix
   ];
 
@@ -17,6 +18,7 @@
   config.applications.audio = lib.mkIf config.applications.audio.enable {
     ardour.enable = lib.mkDefault true;
     guitarix.enable = lib.mkDefault true;
+    hydrogen.enable = lib.mkDefault true;
     shortwave.enable = lib.mkDefault true;
   };
 }
