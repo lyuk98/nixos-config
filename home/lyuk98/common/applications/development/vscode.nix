@@ -28,7 +28,7 @@
         default = {
           # Add extensions
           extensions = with pkgs.vscode-marketplace; [
-            llvm-vs-code-extensions.vscode-clangd # clangd
+            ccls-project.ccls # ccls
             arrterian.nix-env-selector # Nix Environment Selector
             jnoortheen.nix-ide # Nix IDE
             rust-lang.rust-analyzer # rust-analyzer
@@ -54,6 +54,9 @@
             # Application
             "telemetry.feedback.enabled" = false;
             "telemetry.telemetryLevel" = "off";
+
+            # Extensions / ccls
+            "ccls.launch.command" = "${pkgs.ccls}/bin/ccls";
 
             # Extensions / Git
             "git.autofetch" = true;
