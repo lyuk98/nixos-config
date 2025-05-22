@@ -6,7 +6,10 @@
 
     # Import public keys
     publicKeys = [
-      { source = ../../270CB11B1189E79A17DCB7831BDAFDC5D60E735C.asc; }
+      {
+        source = ../../270CB11B1189E79A17DCB7831BDAFDC5D60E735C.asc;
+        trust = "ultimate";
+      }
     ];
   };
 
