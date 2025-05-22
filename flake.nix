@@ -12,6 +12,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Flake systems
+    systems.url = "github:nix-systems/default-linux";
+
     # SOPS to store secrets
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -45,12 +48,26 @@
       self,
       nixpkgs,
       home-manager,
+      systems,
       ...
     }:
     let
       inherit (self) outputs;
+
+      forSystem =
+        system: f:
+        f rec {
+          inherit system;
+          pkgs = import nixpkgs { inherit system; };
+          lib = pkgs.lib;
+        };
+      forAllSystems = f: nixpkgs.lib.genAttrs (import systems) (system: (forSystem system f));
     in
     {
+      # Development environment
+      # Used with `nix develop` or `nix-shell`
+      devShells = forAllSystems ({ pkgs, ... }: import ./shell.nix { inherit pkgs; });
+
       # NixOS configuration entrypoint
       # Used with `nixos-rebuild switch --flake .#<hostname>`
       nixosConfigurations = {
