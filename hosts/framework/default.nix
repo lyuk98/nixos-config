@@ -6,6 +6,7 @@
 
     ../common/core
     ../common/optional/adb.nix
+    ../common/optional/appimage.nix
     ../common/optional/fonts.nix
     ../common/optional/fractional-scaling.nix
     ../common/optional/fwupd.nix
