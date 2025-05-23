@@ -25,7 +25,6 @@
       "im.bernard.Nostalgia" # Nostalgia
       "io.gitlab.azymohliad.WatchMate" # Watchmate
       "net.mediaarea.MediaInfo" # MediaInfo
-      "net.supertuxkart.SuperTuxKart" # SuperTuxKart
       "no.mifi.losslesscut" # LosslessCut
       "org.audacityteam.Audacity" # Audacity
       "org.fedoraproject.MediaWriter" # Fedora Media Writer
