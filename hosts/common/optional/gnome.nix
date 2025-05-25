@@ -33,6 +33,13 @@
     games.enable = true;
   };
 
-  # Add themes for GTK3 applications
-  environment.systemPackages = [ pkgs.gnome-themes-extra ];
+  environment.systemPackages = [
+    # Add themes for GTK3 applications
+    pkgs.gnome-themes-extra
+
+    # Enable HEIC image preview in Nautilus
+    pkgs.libheif
+    pkgs.libheif.out
+  ];
+  environment.pathsToLink = [ "share/thumbnailers" ];
 }
