@@ -21,6 +21,7 @@
     ../common/optional/printing.nix
     ../common/optional/random-mac-address.nix
     ../common/optional/speech-dispatcher.nix
+    ../common/optional/steam.nix
     ../common/optional/system-connections.nix
     ../common/optional/tpm2.nix
     ../common/optional/vnstat.nix

@@ -21,7 +21,6 @@
       "com.mojang.Minecraft" # Minecraft
       "com.obsproject.Studio" # OBS Studio
       "com.usebottles.bottles" # Bottles
-      "com.valvesoftware.Steam" # Steam
       "im.bernard.Nostalgia" # Nostalgia
       "io.gitlab.azymohliad.WatchMate" # Watchmate
       "net.mediaarea.MediaInfo" # MediaInfo
