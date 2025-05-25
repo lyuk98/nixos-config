@@ -10,6 +10,7 @@
     ./nixpkgs.nix
     ./pay-respects.nix
     ./xdg-autostart.nix
+    ./xdg-base-dirs.nix
     ./xdg-user-dirs.nix
   ];
 
