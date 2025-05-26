@@ -8,6 +8,7 @@
     ./graphics
     ./network
     ./office
+    ./video
   ];
 
   # Create option to enable all applications
@@ -21,5 +22,6 @@
     graphics.enable = lib.mkDefault true;
     network.enable = lib.mkDefault true;
     office.enable = lib.mkDefault true;
+    video.enable = lib.mkDefault true;
   };
 }

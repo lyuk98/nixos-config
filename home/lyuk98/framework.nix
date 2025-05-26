@@ -19,6 +19,7 @@
     graphics.enable = true;
     network.enable = true;
     office.enable = true;
+    video.enable = true;
   };
 
   # First version of Home Manager installed in this system
