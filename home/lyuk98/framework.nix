@@ -3,6 +3,7 @@
     ./common/core
     ./common/applications
 
+    ./common/optional/custom-packages.nix
     ./common/optional/ffmpeg-nonfree.nix
     ./common/optional/flatpak.nix
     ./common/optional/fonts.nix

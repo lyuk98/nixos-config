@@ -64,8 +64,14 @@
       forAllSystems = f: nixpkgs.lib.genAttrs (import systems) (system: (forSystem system f));
     in
     {
+      # Custom packages
+      packages = forAllSystems ({ pkgs, ... }: import ./packages { inherit pkgs; });
+
       # Use nixfmt as formatter
       formatter = forAllSystems ({ pkgs, ... }: pkgs.nixfmt-rfc-style);
+
+      # Overlays
+      overlays = import ./overlays;
 
       # Development environment
       # Used with `nix develop` or `nix-shell`
@@ -87,7 +93,7 @@
         # lyuk98 @ Framework Laptop 13
         "lyuk98@framework" = home-manager.lib.homeManagerConfiguration {
           modules = [ ./home/lyuk98/framework.nix ];
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          pkgs = forSystem "x86_64-linux" ({ pkgs, ... }: pkgs);
           extraSpecialArgs = { inherit inputs outputs; };
         };
       };
