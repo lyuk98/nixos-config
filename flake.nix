@@ -64,6 +64,9 @@
       forAllSystems = f: nixpkgs.lib.genAttrs (import systems) (system: (forSystem system f));
     in
     {
+      # Use nixfmt as formatter
+      formatter = forAllSystems ({ pkgs, ... }: pkgs.nixfmt-rfc-style);
+
       # Development environment
       # Used with `nix develop` or `nix-shell`
       devShells = forAllSystems ({ pkgs, ... }: import ./shell.nix { inherit pkgs; });
