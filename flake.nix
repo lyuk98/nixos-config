@@ -36,6 +36,9 @@
     # NixOS profiles for different hardware
     hardware.url = "github:NixOS/nixos-hardware";
 
+    # Used for declaration of impermanent systems
+    impermanence.url = "github:nix-community/impermanence";
+
     # nix-flatpak to declaratively manage Flatpak installations
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
