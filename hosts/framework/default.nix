@@ -12,6 +12,7 @@
     ../common/optional/fwupd.nix
     ../common/optional/gnome.nix
     ../common/optional/gsconnect.nix
+    ../common/optional/impermanence.nix
     ../common/optional/iwd.nix
     ../common/optional/lanzaboote.nix
     ../common/optional/libimobiledevice.nix
