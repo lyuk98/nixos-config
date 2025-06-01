@@ -16,13 +16,11 @@
 
     # Add Flatpak packages
     packages = [
-      "com.github.tchx84.Flatseal" # Flatseal
       "com.makemkv.MakeMKV" # MakeMKV
       "com.mojang.Minecraft" # Minecraft
       "com.obsproject.Studio" # OBS Studio
       "com.usebottles.bottles" # Bottles
       "im.bernard.Nostalgia" # Nostalgia
-      "io.gitlab.azymohliad.WatchMate" # Watchmate
       "net.mediaarea.MediaInfo" # MediaInfo
       "no.mifi.losslesscut" # LosslessCut
       "org.audacityteam.Audacity" # Audacity
@@ -37,7 +35,6 @@
       "org.libreoffice.LibreOffice" # LibreOffice
       "org.mozilla.Thunderbird" # Thunderbird
       "org.musicbrainz.Picard" # MusicBrainz Picard
-      "org.raspberrypi.rpi-imager" # Raspberry Pi Imager
       "org.standardnotes.standardnotes" # Standard Notes
       "org.videolan.VLC" # VLC
       "re.sonny.Eloquent" # Eloquent
