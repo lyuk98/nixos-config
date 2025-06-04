@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./flatpak.nix
@@ -6,7 +6,8 @@
     ./ibus.nix
   ];
 
-  services.xserver = {
+  # For Nixpkgs prior to 25.11
+  services.xserver = lib.mkIf (lib.strings.versionOlder lib.trivial.release "25.11") {
     # Enable X11 windowing system
     enable = true;
 
@@ -14,6 +15,11 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
+
+  # For Nixpkgs 25.11 and later
+  # Enable GNOME desktop environment
+  services.displayManager.gdm.enable = lib.mkIf (lib.strings.versionAtLeast lib.trivial.release "25.11") true;
+  services.desktopManager.gnome.enable = lib.mkIf (lib.strings.versionAtLeast lib.trivial.release "25.11") true;
 
   # Enable core services for GNOME
   services.gnome = {
