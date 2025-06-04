@@ -105,7 +105,10 @@
       };
     };
 
-    # Nix IDE can only invoke nixfmt if it is available in the environment
-    home.packages = [ pkgs.nixfmt-rfc-style ];
+    # Some extensions can only invoke what is available in the environment
+    home.packages = with pkgs; [
+      nixfmt-rfc-style
+      terraform
+    ];
   };
 }
