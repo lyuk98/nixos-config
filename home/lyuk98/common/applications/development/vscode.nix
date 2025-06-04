@@ -87,6 +87,19 @@
               "editor.insertSpaces" = true;
               "editor.tabSize" = 4;
             };
+
+            # Settings for Terraform
+            "[terraform]" = {
+              # Text Editor
+              "editor.defaultFormatter" = "hashicorp.terraform";
+              "editor.insertSpaces" = true;
+              "editor.tabSize" = 2;
+            };
+            "[terraform-vars]" = {
+              # Text Editor
+              "editor.insertSpaces" = true;
+              "editor.tabSize" = 2;
+            };
           };
         };
       };

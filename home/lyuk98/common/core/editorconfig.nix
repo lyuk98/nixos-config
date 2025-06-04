@@ -20,6 +20,12 @@
         indent_style = "space";
         max_line_length = 100;
       };
+
+      # Match Terraform files
+      "*.{tf,tfvars}" = {
+        indent_size = 2;
+        indent_style = "space";
+      };
     };
   };
 }
