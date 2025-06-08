@@ -32,7 +32,6 @@
       "org.gtk.Gtk3theme.Breeze" # Breeze GTK theme
       "org.kde.kid3" # Kid3
       "org.kde.optiimage" # OptiImage
-      "org.libreoffice.LibreOffice" # LibreOffice
       "org.mozilla.Thunderbird" # Thunderbird
       "org.musicbrainz.Picard" # MusicBrainz Picard
       "org.standardnotes.standardnotes" # Standard Notes
