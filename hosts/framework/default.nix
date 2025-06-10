@@ -8,7 +8,6 @@
     ../common/optional/adb.nix
     ../common/optional/appimage.nix
     ../common/optional/fonts.nix
-    ../common/optional/fractional-scaling.nix
     ../common/optional/fwupd.nix
     ../common/optional/gnome.nix
     ../common/optional/gsconnect.nix
