@@ -23,6 +23,7 @@
     ../common/optional/steam.nix
     ../common/optional/system-connections.nix
     ../common/optional/tpm2.nix
+    ../common/optional/variable-refresh-rate.nix
     ../common/optional/vnstat.nix
 
     ../common/users/lyuk98
