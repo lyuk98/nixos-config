@@ -36,7 +36,6 @@
       "org.musicbrainz.Picard" # MusicBrainz Picard
       "org.standardnotes.standardnotes" # Standard Notes
       "org.videolan.VLC" # VLC
-      "re.sonny.Eloquent" # Eloquent
     ];
   };
 }
