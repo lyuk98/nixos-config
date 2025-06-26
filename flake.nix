@@ -47,12 +47,6 @@
 
     # Provide extensions from Visual Studio Code Marketplace
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-
-    # Temporary input to use Microsoft Edit
-    nur-packages-dtomvan = {
-      url = "github:dtomvan/nur-packages";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
