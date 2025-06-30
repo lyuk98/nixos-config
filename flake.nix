@@ -36,6 +36,12 @@
     # NixOS profiles for different hardware
     hardware.url = "github:NixOS/nixos-hardware";
 
+    # Declarative disk partitioning
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Used for declaration of impermanent systems
     impermanence.url = "github:nix-community/impermanence";
 
