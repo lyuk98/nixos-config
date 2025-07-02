@@ -16,4 +16,7 @@
       ];
     };
   };
+
+  # Require /persist for booting
+  fileSystems."/persist".neededForBoot = true;
 }
