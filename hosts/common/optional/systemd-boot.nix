@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   boot.loader = {
     systemd-boot = {
@@ -5,6 +6,9 @@
 
       # Disallow edits to kernel cmdline
       editor = false;
+
+      # Limit to 10 latest generations
+      configurationLimit = lib.mkDefault 10;
     };
 
     # Allow modification of EFI variables
