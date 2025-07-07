@@ -5,6 +5,9 @@
       # Automatically optimise storage
       auto-optimise-store = lib.mkDefault true;
 
+      # Set download buffer size to 128MiB by default
+      download-buffer-size = lib.mkDefault 134217728;
+
       # Enable experimental features
       experimental-features = [
         # Prevent rebuild when changes do not change the derivation's output
