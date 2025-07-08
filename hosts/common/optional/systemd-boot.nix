@@ -12,6 +12,6 @@
     };
 
     # Allow modification of EFI variables
-    efi.canTouchEfiVariables = true;
+    efi.canTouchEfiVariables = lib.mkDefault true;
   };
 }
