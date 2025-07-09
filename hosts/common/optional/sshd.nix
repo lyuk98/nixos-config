@@ -8,7 +8,7 @@
       # Prevent root users from logging in
       PermitRootLogin = "no";
       # Disallow password-based authentication
-      PasswordAuthentication = false;
+      PasswordAuthentication = lib.mkDefault false;
     };
   };
 }
