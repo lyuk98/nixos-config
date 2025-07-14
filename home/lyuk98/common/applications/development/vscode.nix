@@ -29,6 +29,7 @@
           # Add extensions
           extensions = with pkgs.vscode-marketplace; [
             ccls-project.ccls # ccls
+            jkillian.custom-local-formatters # Custom Local Formatters
             hashicorp.hcl # HashiCorp HCL
             hashicorp.terraform # HashiCorp Terraform
             arrterian.nix-env-selector # Nix Environment Selector
@@ -60,6 +61,16 @@
             # Extensions / ccls
             "ccls.launch.command" = "${pkgs.ccls}/bin/ccls";
 
+            # Extensions / Custom Local Formatters
+            "customLocalFormatters.formatters" = [
+              {
+                "command" = "${pkgs.hclfmt}/bin/hclfmt";
+                "languages" = [
+                  "hcl"
+                ];
+              }
+            ];
+
             # Extensions / Git
             "git.autofetch" = true;
             "git.enableCommitSigning" = lib.mkDefault true;
@@ -73,6 +84,14 @@
               "nil" = {
                 "formatting"."command" = [ "nixfmt" ];
               };
+            };
+
+            # Settings for HashiCorp configuration language
+            "[hcl]" = {
+              # Text Editor
+              "editor.defaultFormatter" = "jkillian.custom-local-formatters";
+              "editor.insertSpaces" = true;
+              "editor.tabSize" = 2;
             };
 
             # Settings for Nix
