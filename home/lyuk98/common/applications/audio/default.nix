@@ -10,6 +10,7 @@
     ./guitarix.nix
     ./hydrogen.nix
     ./shortwave.nix
+    ./zrythm.nix
   ];
 
   # Create option to enable all Audio applications
@@ -22,5 +23,6 @@
     guitarix.enable = lib.mkDefault true;
     hydrogen.enable = lib.mkDefault true;
     shortwave.enable = lib.mkDefault true;
+    zrythm.enable = lib.mkDefault true;
   };
 }
