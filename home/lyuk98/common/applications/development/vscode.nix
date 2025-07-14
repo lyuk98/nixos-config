@@ -29,6 +29,7 @@
           # Add extensions
           extensions = with pkgs.vscode-marketplace; [
             ccls-project.ccls # ccls
+            hashicorp.hcl # HashiCorp HCL
             hashicorp.terraform # HashiCorp Terraform
             arrterian.nix-env-selector # Nix Environment Selector
             jnoortheen.nix-ide # Nix IDE
