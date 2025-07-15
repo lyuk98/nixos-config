@@ -10,6 +10,7 @@
     ./common/optional/gh.nix
     ./common/optional/gnome-extensions.nix
     ./common/optional/gnome-shell.nix
+    ./common/optional/msedit.nix
   ];
 
   # Enable applications
