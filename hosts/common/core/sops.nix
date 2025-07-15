@@ -15,7 +15,7 @@ in
   sops.age.keyFile = lib.mkDefault "${
     # Specify persisted directory if Impermanence is used
     # since the key will be used during early boot
-    if (config.environment ? persistence) then "/persist" else ""
+    lib.optionalString (config.environment ? persistence) "/persist"
   }${ageKeyFile}";
 
   # Use persistence if enabled
