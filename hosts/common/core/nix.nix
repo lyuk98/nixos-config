@@ -34,8 +34,8 @@
       # Run garbage collection every week
       dates = "weekly";
 
-      # Keep last 3 generations
-      options = "--delete-older-than +3";
+      # Keep last 10 generations
+      options = "--delete-older-than +10";
     };
   };
 }
