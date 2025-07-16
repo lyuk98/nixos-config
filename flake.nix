@@ -62,6 +62,7 @@
     inputs@{
       self,
       nixpkgs,
+      nixpkgs-stable,
       home-manager,
       systems,
       ...
@@ -98,6 +99,11 @@
         # Framework Laptop 13
         framework = nixpkgs.lib.nixosSystem {
           modules = [ ./hosts/framework ];
+          specialArgs = { inherit inputs outputs; };
+        };
+        # Vault instance
+        vault = nixpkgs-stable.lib.nixosSystem {
+          modules = [ ./hosts/vault ];
           specialArgs = { inherit inputs outputs; };
         };
       };

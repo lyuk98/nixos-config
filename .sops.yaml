@@ -5,6 +5,7 @@ keys:
   # Hosts
   - &hosts:
     - &framework age14edzmqc4r07gp9lkj8z4gchccs373s8lcdrw69d6964tallpuuzqausgmk
+    - &vault age1p0rc7s7r9krcqr8uy6dr8wlutyk9668a429y9k27xhfwtgwudgpq9e9ehq
 
 creation_rules:
   # Secrets specific to host "framework"
@@ -14,6 +15,16 @@ creation_rules:
       - *framework
       pgp:
       - *lyuk98
+
+  # Secrets specific to host "vault"
+  - path_regex: hosts/vault/secrets.ya?ml$
+    key_groups:
+    - age:
+      - *vault
+  - path_regex: hosts/vault/vault.hcl
+    key_groups:
+    - age:
+      - *vault
 
   # Secrets for user "lyuk98" to be used across hosts
   - path_regex: hosts/common/users/lyuk98/secrets.ya?ml$
