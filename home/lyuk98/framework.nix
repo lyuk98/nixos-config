@@ -11,6 +11,7 @@
     ./common/optional/gnome-extensions.nix
     ./common/optional/gnome-shell.nix
     ./common/optional/msedit.nix
+    ./common/optional/vault.nix
   ];
 
   # Enable applications
