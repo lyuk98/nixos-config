@@ -12,6 +12,7 @@
     ./common/optional/gnome-shell.nix
     ./common/optional/msedit.nix
     ./common/optional/vault.nix
+    ./common/optional/wl-clipboard.nix
   ];
 
   # Enable applications
