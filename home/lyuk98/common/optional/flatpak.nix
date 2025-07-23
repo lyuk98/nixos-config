@@ -16,7 +16,6 @@
 
     # Add Flatpak packages
     packages = [
-      "com.makemkv.MakeMKV" # MakeMKV
       "com.mojang.Minecraft" # Minecraft
       "com.obsproject.Studio" # OBS Studio
       "com.usebottles.bottles" # Bottles
