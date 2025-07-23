@@ -4,6 +4,7 @@
     ./bash.nix
     ./editorconfig.nix
     ./git.nix
+    ./gnome-backgrounds.nix
     ./gnupg.nix
     ./home-manager.nix
     ./nix-index.nix
