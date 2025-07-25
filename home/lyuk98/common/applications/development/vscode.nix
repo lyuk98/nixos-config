@@ -30,6 +30,7 @@
           extensions = with pkgs.vscode-marketplace; [
             ccls-project.ccls # ccls
             jkillian.custom-local-formatters # Custom Local Formatters
+            github.vscode-github-actions # GitHub Actions
             hashicorp.hcl # HashiCorp HCL
             hashicorp.terraform # HashiCorp Terraform
             arrterian.nix-env-selector # Nix Environment Selector
