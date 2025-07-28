@@ -11,6 +11,7 @@
     ./common/optional/gnome-extensions.nix
     ./common/optional/gnome-shell.nix
     ./common/optional/msedit.nix
+    ./common/optional/poppler-utils.nix
     ./common/optional/vault.nix
     ./common/optional/wl-clipboard.nix
   ];
