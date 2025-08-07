@@ -45,6 +45,12 @@
     # Used for declaration of impermanent systems
     impermanence.url = "github:nix-community/impermanence";
 
+    # Generation of NixOS images
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # nix-flatpak to declaratively manage Flatpak installations
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
@@ -65,6 +71,7 @@
       nixpkgs-stable,
       home-manager,
       systems,
+      nixos-generators,
       ...
     }:
     let
@@ -80,8 +87,24 @@
       forAllSystems = f: nixpkgs.lib.genAttrs (import systems) (system: (forSystem system f));
     in
     {
-      # Custom packages
-      packages = forAllSystems ({ pkgs, ... }: import ./packages { inherit pkgs; });
+      # Custom packages and image generators
+      packages = forAllSystems (
+        {
+          pkgs,
+          lib,
+          system,
+          ...
+        }:
+        (import ./packages { inherit pkgs; })
+        // (import ./generators {
+          inherit
+            inputs
+            pkgs
+            lib
+            system
+            ;
+        })
+      );
 
       # Use nixfmt as formatter
       formatter = forAllSystems ({ pkgs, ... }: pkgs.nixfmt-rfc-style);
