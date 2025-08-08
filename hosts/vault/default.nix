@@ -43,6 +43,9 @@
   # since Tailscale SSH can be used to access the system
   users.allowNoPasswordLogin = true;
 
+  # Enable hardened profile
+  profiles.hardened = true;
+
   # First version of NixOS installed in this system
   system.stateVersion = "25.05";
 }
