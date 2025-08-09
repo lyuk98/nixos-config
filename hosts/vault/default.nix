@@ -1,13 +1,15 @@
 {
   config,
   inputs,
+  modulesPath,
   ...
 }:
 {
   imports = [
+    "${modulesPath}/virtualisation/amazon-image.nix"
     inputs.disko.nixosModules.disko
+
     ./disko-config.nix
-    ./grub.nix
     ./hardware-configuration.nix
     ./systemd-networkd.nix
     ./tailscale.nix
@@ -17,6 +19,7 @@
 
     ../common/optional/grub.nix
     ../common/optional/persistence.nix
+    ../common/optional/sshd.nix
     ../common/optional/systemd-networkd.nix
   ];
 
@@ -38,10 +41,6 @@
       source = config.sops.secrets.machine-id.path;
     };
   };
-
-  # Do not check for administrators' passwords or SSH keys
-  # since Tailscale SSH can be used to access the system
-  users.allowNoPasswordLogin = true;
 
   # Enable hardened profile
   profiles.hardened = true;
