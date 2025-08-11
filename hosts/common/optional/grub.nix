@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 {
   boot.loader = {
     grub = {
@@ -12,7 +12,7 @@
       configurationLimit = lib.mkDefault 10;
     };
 
-    # Allow modification of EFI variables
-    efi.canTouchEfiVariables = lib.mkDefault true;
+    # Allow modification of EFI variables if `efiInstallAsRemovable` is not enabled
+    efi.canTouchEfiVariables = lib.mkDefault (!config.boot.loader.grub.efiInstallAsRemovable);
   };
 }
