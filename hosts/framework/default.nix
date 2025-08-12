@@ -15,6 +15,7 @@
     ../common/optional/lanzaboote.nix
     ../common/optional/libimobiledevice.nix
     ../common/optional/linux-latest.nix
+    ../common/optional/nixos-cli.nix
     ../common/optional/pipewire.nix
     ../common/optional/plymouth.nix
     ../common/optional/printing.nix
