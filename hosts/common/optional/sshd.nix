@@ -16,4 +16,11 @@
   users.users.root.openssh.authorizedKeys.keyFiles = lib.mkDefault [
     ../../../home/lyuk98/id_ed25519.pub
   ];
+
+  # Preserve host keys if Impermanence is enabled
+  environment = lib.optionalAttrs (config.environment ? persistence) {
+    persistence."/persist".files = builtins.map (
+      hostKey: hostKey.path
+    ) config.services.openssh.hostKeys;
+  };
 }
