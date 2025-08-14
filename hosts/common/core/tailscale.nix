@@ -11,6 +11,12 @@
     useRoutingFeatures = lib.mkDefault "client";
   };
 
+  # Start tailscaled after a network connection is established
+  # Nixpkgs already implements this for NetworkManager, but systemd-networkd is out of luck
+  systemd.services.tailscaled.after = lib.mkIf (config.systemd.network.enable) [
+    "systemd-networkd-wait-online.service"
+  ];
+
   # Make state directory persistent if Impermanence is enabled
   environment = lib.optionalAttrs (config.environment ? persistence) {
     persistence."/persist".directories = [ "/var/lib/tailscale" ];
