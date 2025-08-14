@@ -1,17 +1,10 @@
-{
-  config,
-  inputs,
-  modulesPath,
-  ...
-}:
+{ config, inputs, ... }:
 {
   imports = [
-    "${modulesPath}/virtualisation/amazon-image.nix"
     inputs.disko.nixosModules.disko
 
+    ./digitalocean.nix
     ./disko-config.nix
-    ./hardware-configuration.nix
-    ./systemd-networkd.nix
     ./tailscale.nix
     ./vault.nix
 
@@ -44,6 +37,9 @@
 
   # Enable hardened profile
   profiles.hardened = true;
+
+  # The platform where the NixOS configuration runs
+  nixpkgs.hostPlatform = "x86_64-linux";
 
   # First version of NixOS installed in this system
   system.stateVersion = "25.05";

@@ -7,7 +7,7 @@ This repository contains a flake managing my personal devices' configurations.
 The system configuration is currently available for the following devices:
 
 - [Personal laptop (Framework Laptop 13)](./hosts/framework/default.nix)
-- [Vault instance (Amazon Lightsail)](./hosts/vault/default.nix)
+- [Vault instance (DigitalOcean Droplet)](./hosts/vault/default.nix)
 
 The [user configuration](./home/lyuk98/) is available with host-specific modules.
 

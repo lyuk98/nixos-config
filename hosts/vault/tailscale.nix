@@ -13,6 +13,7 @@
     # Enable Tailscale SSH and advertise tags
     extraUpFlags = [
       "--advertise-tags=tag:webserver,tag:vault"
+      "--hostname=vault"
       "--ssh"
     ];
 

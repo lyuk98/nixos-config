@@ -5,7 +5,8 @@
       # Primary disk
       main = {
         type = "disk";
-        device = "/dev/nvme0n1";
+        device = "/dev/vda";
+        imageSize = "4G";
 
         # GPT (partition table) as the disk's content
         content = {
@@ -57,6 +58,7 @@
                     mountOptions = [
                       "defaults"
                       "compress=zstd"
+                      "x-systemd.growfs"
                     ];
                     mountpoint = "/nix";
                   };
