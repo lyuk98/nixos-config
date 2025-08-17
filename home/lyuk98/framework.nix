@@ -8,6 +8,7 @@
     ./common/optional/ffmpeg-nonfree.nix
     ./common/optional/flatpak.nix
     ./common/optional/fonts.nix
+    ./common/optional/fzf.nix
     ./common/optional/gh.nix
     ./common/optional/gnome-extensions.nix
     ./common/optional/gnome-shell.nix
