@@ -1,4 +1,9 @@
-{ inputs, ... }:
+{
+  lib,
+  config,
+  inputs,
+  ...
+}:
 {
   # Import nix-index-database
   imports = [
@@ -9,8 +14,10 @@
     # Enable nix-index
     enable = true;
 
-    # Enable Bash integration for nix-index
-    enableBashIntegration = true;
+    # Enable integration for enabled shells
+    enableBashIntegration = lib.mkDefault config.programs.bash.enable;
+    enableFishIntegration = lib.mkDefault config.programs.fish.enable;
+    enableZshIntegration = lib.mkDefault config.programs.zsh.enable;
   };
 
   # Use prebuilt index for comma
