@@ -12,6 +12,9 @@
     # Enable Lanzaboote
     enable = true;
 
+    # Limit to 10 latest generations
+    configurationLimit = lib.mkDefault 10;
+
     # Specify location of PKI bundle
     pkiBundle = "/var/lib/sbctl";
   };
