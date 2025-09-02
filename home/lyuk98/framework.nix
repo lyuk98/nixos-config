@@ -30,6 +30,9 @@
     video.enable = true;
   };
 
+  # Disable Zrythm at the moment to avoid build failure
+  applications.audio.zrythm.enable = false;
+
   # First version of Home Manager installed in this system
   home.stateVersion = "25.05";
 }
