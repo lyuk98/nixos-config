@@ -68,6 +68,12 @@
 
     # Provide extensions from Visual Studio Code Marketplace
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    # NixOS Vault service
+    nixos-vault-service = {
+      url = "github:DeterminateSystems/nixos-vault-service";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
