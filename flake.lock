@@ -411,6 +411,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-ente-patch": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-bz3vzu0MkaBkca6/g8mh8C6JF1uvf5eeQ7KxUMsoFBU=",
+        "type": "file",
+        "url": "https://patch-diff.githubusercontent.com/raw/NixOS/nixpkgs/pull/406847.patch"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://patch-diff.githubusercontent.com/raw/NixOS/nixpkgs/pull/406847.patch"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1756886854,
@@ -520,6 +532,7 @@
         "nixos-generators": "nixos-generators",
         "nixos-vault-service": "nixos-vault-service",
         "nixpkgs": "nixpkgs_3",
+        "nixpkgs-ente-patch": "nixpkgs-ente-patch",
         "nixpkgs-stable": "nixpkgs-stable",
         "nur": "nur",
         "sops-nix": "sops-nix",

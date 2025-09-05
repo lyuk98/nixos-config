@@ -74,6 +74,12 @@
       url = "github:DeterminateSystems/nixos-vault-service";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Patch containing PR under review (Ente)
+    nixpkgs-ente-patch = {
+      url = "https://patch-diff.githubusercontent.com/raw/NixOS/nixpkgs/pull/406847.patch";
+      flake = false;
+    };
   };
 
   outputs =
@@ -97,6 +103,14 @@
           lib = pkgs.lib;
         };
       forAllSystems = f: nixpkgs.lib.genAttrs (import systems) (system: (forSystem system f));
+
+      # Patch Nixpkgs to include unmerged PR
+      nixpkgs-ente = (import nixpkgs { system = "x86_64-linux"; }).applyPatches {
+        name = "nixos-unstable-ente";
+        src = nixpkgs;
+        patches = [ inputs.nixpkgs-ente-patch ];
+      };
+      nixos-system-ente = import ("${nixpkgs-ente}/nixos/lib/eval-config.nix");
     in
     {
       # Custom packages and image generators
@@ -134,6 +148,12 @@
         # Framework Laptop 13
         framework = nixpkgs.lib.nixosSystem {
           modules = [ ./hosts/framework ];
+          specialArgs = { inherit inputs outputs; };
+        };
+        # Museum instance
+        museum = nixos-system-ente {
+          system = "x86_64-linux";
+          modules = [ ./hosts/museum ];
           specialArgs = { inherit inputs outputs; };
         };
         # Vault instance
