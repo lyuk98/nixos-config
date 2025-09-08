@@ -92,7 +92,9 @@
       "/" = {
         fsType = "tmpfs";
         mountOptions = [
-          "size=5%"
+          "defaults"
+          "size=25%"
+          "mode=0755"
         ];
       };
     };
