@@ -1,0 +1,20 @@
+{{ with secret "kv/ente/scaleway/ente-scaleway-postgres" }}
+ENTE_DB_HOST={{ .Data.host }}
+ENTE_DB_PORT={{ .Data.port }}
+ENTE_DB_NAME={{ .Data.name }}
+ENTE_DB_SSLMODE={{ .Data.sslmode }}
+ENTE_DB_USER={{ .Data.user }}
+ENTE_DB_PASSWORD={{ .Data.password }}
+{{ end }}
+{{ with secret "kv/ente/b2/ente-b2" }}
+ENTE_S3_B2_EU_CEN_KEY={{ .Data.key }}
+ENTE_S3_B2_EU_CEN_SECRET={{ .Data.secret }}
+ENTE_S3_B2_EU_CEN_ENDPOINT={{ .Data.endpoint }}
+ENTE_S3_B2_EU_CEN_REGION={{ .Data.region }}
+ENTE_S3_B2_EU_CEN_BUCKET={{ .Data.bucket }}
+{{ end }}
+{{ with secret "kv/ente/aws/museum" }}
+ENTE_KEY_ENCRYPTION={{ .Data.key.encryption }}
+ENTE_KEY_HASH={{ .Data.key.hash }}
+ENTE_JWT_SECRET={{ .Data.jwt.secret }}
+{{ end }}
