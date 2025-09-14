@@ -55,8 +55,6 @@
     };
   };
 
-  time.timeZone = "America/Toronto";
-
   # First version of NixOS installed in this system
   system.stateVersion = "25.05";
 }
