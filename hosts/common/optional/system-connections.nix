@@ -96,6 +96,7 @@ let
     "ae294b39-a4ec-437d-a8b1-5f446c569519"
     "ae86f7fd-65f7-448a-979e-d4b1feb8b909"
     "b03a795a-a18e-4ee7-a5d2-83b2ac2c4bb3"
+    "b06b6a92-babb-421c-b18f-4dc1f6245b9c"
     "b4959e98-9622-46f4-85d6-8d9238715f2c"
     "b4b2f8cc-91e9-44d9-b3c7-067c10f62fab"
     "b70882fb-333f-458e-b116-a4dd70e780b5"
