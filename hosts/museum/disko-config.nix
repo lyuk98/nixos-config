@@ -85,6 +85,35 @@
           };
         };
       };
+
+      # Secondary storage for persistent data
+      storage = {
+        type = "disk";
+        device = "/dev/nvme1n1";
+
+        # GPT (partition table) as the disk's content
+        content = {
+          type = "gpt";
+
+          # List of partitions
+          partitions = {
+            # PostgreSQL storage
+            postgresql = {
+              size = "100%";
+
+              content = {
+                type = "btrfs";
+
+                mountpoint = "/var/lib/postgresql";
+                mountOptions = [
+                  "defaults"
+                  "compress=zstd"
+                ];
+              };
+            };
+          };
+        };
+      };
     };
 
     nodev = {

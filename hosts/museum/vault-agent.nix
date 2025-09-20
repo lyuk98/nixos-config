@@ -42,19 +42,38 @@
         # Enable Vault integration with Museum
         enable = true;
 
-        environment = {
-          # Restart the service in case secrets change
-          changeAction = "restart";
-
-          # Get secrets from Vault
-          templateFiles.env.file = ./environment.ctmpl;
-        };
-
         secretFiles = {
           # Restart the service in case secrets change
           defaultChangeAction = "restart";
 
+          # Get secrets from Vault
           files = {
+            s3_key.template = ''
+              {{ with secret "kv/ente/b2/ente-b2" }}{{ .Data.key }}{{ end }}
+            '';
+            s3_secret.template = ''
+              {{ with secret "kv/ente/b2/ente-b2" }}{{ .Data.secret }}{{ end }}
+            '';
+            s3_endpoint.template = ''
+              {{ with secret "kv/ente/b2/ente-b2" }}{{ .Data.endpoint }}{{ end }}
+            '';
+            s3_region.template = ''
+              {{ with secret "kv/ente/b2/ente-b2" }}{{ .Data.region }}{{ end }}
+            '';
+            s3_bucket.template = ''
+              {{ with secret "kv/ente/b2/ente-b2" }}{{ .Data.bucket }}{{ end }}
+            '';
+
+            key_encryption.template = ''
+              {{ with secret "kv/ente/aws/museum" }}{{ .Data.key.encryption }}{{ end }}
+            '';
+            key_hash.template = ''
+              {{ with secret "kv/ente/aws/museum" }}{{ .Data.key.hash }}{{ end }}
+            '';
+            jwt_secret.template = ''
+              {{ with secret "kv/ente/aws/museum" }}{{ .Data.jwt.secret }}{{ end }}
+            '';
+
             "tls.cert".template = ''
               {{ with secret "kv/ente/cloudflare/certificate" }}{{ .Data.certificate }}{{ end }}
             '';

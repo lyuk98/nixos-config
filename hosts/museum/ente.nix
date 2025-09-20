@@ -25,39 +25,48 @@
         # Enable Nginx proxy for Museum
         nginx.enable = true;
 
+        # Enable local PostgreSQL database
+        enableLocalDB = true;
+
         # Set API endpoint
         domain = "ente-api.${domain}";
 
-        settings = {
-          # Get credentials from where the certificate is
-          credentials-dir =
-            let
-              files = config.detsys.vaultAgent.systemd.services.ente.secretFiles.files;
-            in
-            builtins.dirOf files."tls.cert".path;
+        settings =
+          let
+            files = config.detsys.vaultAgent.systemd.services.ente.secretFiles.files;
+          in
+          {
+            # Get credentials from where the certificate is
+            credentials-dir = builtins.dirOf files."tls.cert".path;
 
-          # Set meaningless values for database credentials
-          # Secrets are provided via environment variables but not providing the values below
-          # will fail due to not passing the type check
-          db = {
-            host = "";
-            port = 5432;
-            name = "";
-            user = "";
-          };
+            # Manage object storage settings
+            s3 = {
+              b2-eu-cen = {
+                # Indicate that this is not a local MinIO bucket
+                are_local_buckets = false;
 
-          # Manage object storage settings
-          s3 = {
-            # Local MinIO buckets are not used
-            are_local_buckets = false;
-          };
+                # Set sensitive values
+                key._secret = files.s3_key.path;
+                secret._secret = files.s3_secret.path;
+                endpoint._secret = files.s3_endpoint.path;
+                region._secret = files.s3_region.path;
+                bucket._secret = files.s3_bucket.path;
+              };
+            };
 
-          # Set internal settings
-          internal = {
-            admin = 1580559962386438;
-            disable-registration = true;
+            # Manage key-related settings
+            key = {
+              encryption._secret = files.key_encryption.path;
+              hash._secret = files.key_hash.path;
+            };
+            jwt.secret._secret = files.jwt_secret.path;
+
+            # Set internal settings
+            internal = {
+              admin = 1580559962386438;
+              disable-registration = true;
+            };
           };
-        };
       };
     };
 
