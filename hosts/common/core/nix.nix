@@ -20,6 +20,16 @@
         "nix-command"
       ];
 
+      # Add binary caches
+      substituters = [
+        "https://nix-community.cachix.org"
+      ];
+
+      # Add trusted public keys for the binary caches
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+
       # Add members of group "wheel" as trusted users
       trusted-users = [
         "root"
