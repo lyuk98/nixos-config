@@ -114,7 +114,6 @@
         "nginx"
       ]
       (name: {
-        after = [ config.systemd.services.tailscaled.name ];
-        requires = [ config.systemd.services.tailscaled.name ];
+        after = [ config.systemd.services.tailscaled-autoconnect.name ];
       });
 }
