@@ -30,9 +30,6 @@
     ];
   };
 
-  # Install GRUB as removable
-  boot.loader.grub.efiInstallAsRemovable = true;
-
   # Set the hostname
   networking.hostName = "museum";
 
