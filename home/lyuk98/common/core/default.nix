@@ -13,6 +13,7 @@
     ./pay-respects.nix
     ./xdg-autostart.nix
     ./xdg-base-dirs.nix
+    ./xdg-desktop-portal.nix
     ./xdg-user-dirs.nix
   ];
 
