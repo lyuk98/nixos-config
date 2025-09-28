@@ -1,7 +1,5 @@
-{ inputs, ... }:
 {
   imports = [
-    inputs.home-manager.nixosModules.home-manager
     ./disable-root.nix
     ./firmware.nix
     ./hardened.nix

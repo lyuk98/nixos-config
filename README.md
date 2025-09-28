@@ -32,7 +32,7 @@ Build system configurations using `nixos-rebuild`:
 nixos-rebuild build --flake .
 ```
 
-Build user configurations using `home-manager`:
+Home Manager configurations are built together with the NixOS system. However, if it is desirable to separately do so, `home-manager` can be used:
 
 ```sh
 home-manager build --flake .
