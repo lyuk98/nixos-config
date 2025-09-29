@@ -5,6 +5,7 @@
     ./hardened.nix
     ./immutable-users.nix
     ./locale.nix
+    ./msedit.nix
     ./nix.nix
     ./sops.nix
     ./sudo.nix

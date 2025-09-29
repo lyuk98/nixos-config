@@ -8,6 +8,7 @@
     ./gnome-shell.nix
     ./gnupg.nix
     ./home-manager.nix
+    ./msedit.nix
     ./nix-index.nix
     ./nixpkgs.nix
     ./nur.nix
