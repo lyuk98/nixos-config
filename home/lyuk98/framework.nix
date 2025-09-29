@@ -11,7 +11,6 @@
     ./common/optional/fzf.nix
     ./common/optional/gh.nix
     ./common/optional/gnome-extensions.nix
-    ./common/optional/gnome-shell.nix
     ./common/optional/msedit.nix
     ./common/optional/nix-output-monitor.nix
     ./common/optional/poppler-utils.nix
