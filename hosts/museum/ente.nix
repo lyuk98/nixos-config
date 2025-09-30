@@ -36,9 +36,6 @@
             files = config.detsys.vaultAgent.systemd.services.ente.secretFiles.files;
           in
           {
-            # Get credentials from where the certificate is
-            credentials-dir = builtins.dirOf files."tls.cert".path;
-
             # Manage object storage settings
             s3 = {
               b2-eu-cen = {
@@ -89,8 +86,8 @@
         ]
         (name: {
           # Add certificates to supported endpoints
-          sslCertificate = secrets.certificate.path;
-          sslCertificateKey = secrets.certificate-key.path;
+          sslCertificate = secrets."tls.cert".path;
+          sslCertificateKey = secrets."tls.key".path;
         });
   };
 

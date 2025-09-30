@@ -73,13 +73,6 @@
             jwt_secret.template = ''
               {{ with secret "kv/ente/aws/museum" }}{{ .Data.jwt.secret }}{{ end }}
             '';
-
-            "tls.cert".template = ''
-              {{ with secret "kv/ente/cloudflare/certificate" }}{{ .Data.certificate }}{{ end }}
-            '';
-            "tls.key".template = ''
-              {{ with secret "kv/ente/cloudflare/certificate" }}{{ .Data.certificate_key }}{{ end }}
-            '';
           };
         };
       };
@@ -94,10 +87,10 @@
 
           # Get secrets from Vault
           files = {
-            certificate.template = ''
+            "tls.cert".template = ''
               {{ with secret "kv/ente/cloudflare/certificate" }}{{ .Data.certificate }}{{ end }}
             '';
-            certificate-key.template = ''
+            "tls.key".template = ''
               {{ with secret "kv/ente/cloudflare/certificate" }}{{ .Data.certificate_key }}{{ end }}
             '';
           };
