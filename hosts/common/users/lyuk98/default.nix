@@ -1,10 +1,4 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  ...
-}:
+{ lib, config, ... }:
 let
   # Retain only valid group names
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
@@ -12,7 +6,7 @@ in
 {
   # Import Home Manager NixOS module
   imports = [
-    inputs.home-manager.nixosModules.home-manager
+    ../../optional/home-manager.nix
   ];
 
   # Retrieve secrets
@@ -44,12 +38,6 @@ in
     in
     # Proceed only if the configuration exists
     lib.mkIf (builtins.pathExists configuration) {
-      # Install profiles to /etc/profiles instead of ~/.nix-profile
-      useUserPackages = true;
-
-      # Pass flake inputs and outputs
-      extraSpecialArgs = { inherit inputs outputs; };
-
       # Import Home Manager configuration
       users.lyuk98 = import configuration;
     };
