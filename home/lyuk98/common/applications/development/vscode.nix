@@ -79,7 +79,6 @@
 
             # Extensions / NixIDE
             "nix.enableLanguageServer" = true;
-            "nix.formatterPath" = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
             "nix.serverPath" = "${pkgs.nil}/bin/nil";
             "nix.serverSettings" = {
               "nil" = {
