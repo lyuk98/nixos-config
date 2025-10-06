@@ -87,6 +87,9 @@
               };
             };
 
+            # Extensions / rust-analyzer
+            "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
+
             # Settings for HashiCorp configuration language
             "[hcl]" = {
               # Text Editor
