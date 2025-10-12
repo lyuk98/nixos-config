@@ -54,6 +54,7 @@
 
             # Features
             "extensions.autoUpdate" = false;
+            "chat.disableAIFeatures" = true;
 
             # Application
             "telemetry.feedback.enabled" = false;
