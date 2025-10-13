@@ -28,6 +28,9 @@
     video.enable = true;
   };
 
+  # Disable applications
+  applications.network.firefox.enable = false;
+
   # First version of Home Manager installed in this system
   home.stateVersion = "25.05";
 }

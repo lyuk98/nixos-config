@@ -10,6 +10,7 @@
     ./proton-vpn.nix
     ./signal-desktop.nix
     ./telegram-desktop.nix
+    ./zen-browser.nix
   ];
 
   # Create option to enable all Network applications
@@ -22,5 +23,6 @@
     proton-vpn.enable = lib.mkDefault true;
     signal-desktop.enable = lib.mkDefault true;
     telegram-desktop.enable = lib.mkDefault true;
+    zen-browser.enable = lib.mkDefault true;
   };
 }
