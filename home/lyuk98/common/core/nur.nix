@@ -1,5 +1,5 @@
 { inputs, ... }:
 {
-  # Add overlay for Nix User Repository
-  nixpkgs.overlays = [ inputs.nur.overlays.default ];
+  # Import Home Manager module for Nix User Repository
+  imports = [ inputs.nur.modules.homeManager.default ];
 }
