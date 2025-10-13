@@ -18,7 +18,6 @@
     packages = [
       "com.mojang.Minecraft" # Minecraft
       "com.obsproject.Studio" # OBS Studio
-      "com.usebottles.bottles" # Bottles
       "im.bernard.Nostalgia" # Nostalgia
       "net.mediaarea.MediaInfo" # MediaInfo
       "no.mifi.losslesscut" # LosslessCut
