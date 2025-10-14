@@ -36,9 +36,6 @@
   # Enable hardened profile
   profiles.hardened = true;
 
-  # Set memory allocator to libc to avoid current build problems with scudo
-  environment.memoryAllocator.provider = "libc";
-
   # The platform where the NixOS configuration runs
   nixpkgs.hostPlatform = "x86_64-linux";
 
