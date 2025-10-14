@@ -8,6 +8,7 @@
     ./kdenlive.nix
     ./makemkv.nix
     ./subtitlecomposer.nix
+    ./vlc.nix
   ];
 
   # Create option to enable all Video applications
@@ -18,5 +19,6 @@
     kdenlive.enable = lib.mkDefault true;
     makemkv.enable = lib.mkDefault true;
     subtitlecomposer.enable = lib.mkDefault true;
+    vlc.enable = lib.mkDefault true;
   };
 }

@@ -32,7 +32,6 @@
       "org.mozilla.Thunderbird" # Thunderbird
       "org.musicbrainz.Picard" # MusicBrainz Picard
       "org.standardnotes.standardnotes" # Standard Notes
-      "org.videolan.VLC" # VLC
     ];
   };
 }
