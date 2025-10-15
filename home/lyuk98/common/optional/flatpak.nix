@@ -18,7 +18,6 @@
     packages = [
       "com.mojang.Minecraft" # Minecraft
       "im.bernard.Nostalgia" # Nostalgia
-      "net.mediaarea.MediaInfo" # MediaInfo
       "no.mifi.losslesscut" # LosslessCut
       "org.fedoraproject.MediaWriter" # Fedora Media Writer
       "org.gnome.Boxes" # Boxes
