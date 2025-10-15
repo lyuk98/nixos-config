@@ -17,7 +17,6 @@
     # Add Flatpak packages
     packages = [
       "com.mojang.Minecraft" # Minecraft
-      "com.obsproject.Studio" # OBS Studio
       "im.bernard.Nostalgia" # Nostalgia
       "net.mediaarea.MediaInfo" # MediaInfo
       "no.mifi.losslesscut" # LosslessCut
