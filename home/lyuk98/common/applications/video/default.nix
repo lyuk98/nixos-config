@@ -6,6 +6,7 @@
 {
   imports = [
     ./kdenlive.nix
+    ./losslesscut.nix
     ./makemkv.nix
     ./mediainfo.nix
     ./obs-studio.nix
@@ -19,6 +20,7 @@
   # Enable all Video applications if enabled
   config.applications.video = lib.mkIf config.applications.video.enable {
     kdenlive.enable = lib.mkDefault true;
+    losslesscut.enable = lib.mkDefault true;
     makemkv.enable = lib.mkDefault true;
     mediainfo.enable = lib.mkDefault true;
     obs-studio.enable = lib.mkDefault true;

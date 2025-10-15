@@ -18,7 +18,6 @@
     packages = [
       "com.mojang.Minecraft" # Minecraft
       "im.bernard.Nostalgia" # Nostalgia
-      "no.mifi.losslesscut" # LosslessCut
       "org.fedoraproject.MediaWriter" # Fedora Media Writer
       "org.gnome.Boxes" # Boxes
       "org.gtk.Gtk3theme.adw-gtk3-dark" # adw-gtk3 GTK Theme
