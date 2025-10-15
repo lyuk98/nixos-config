@@ -2,6 +2,7 @@
   imports = [
     ./disable-root.nix
     ./firmware.nix
+    ./fonts.nix
     ./hardened.nix
     ./immutable-users.nix
     ./locale.nix
