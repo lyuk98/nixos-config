@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ./gnome-boxes.nix
     ./mediawriter.nix
   ];
 
@@ -13,6 +14,7 @@
 
   # Enable all System applications if enabled
   config.applications.system = lib.mkIf config.applications.system.enable {
+    gnome-boxes.enable = lib.mkDefault true;
     mediawriter.enable = lib.mkDefault true;
   };
 }

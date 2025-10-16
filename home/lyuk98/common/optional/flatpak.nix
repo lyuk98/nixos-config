@@ -18,7 +18,6 @@
     packages = [
       "com.mojang.Minecraft" # Minecraft
       "im.bernard.Nostalgia" # Nostalgia
-      "org.gnome.Boxes" # Boxes
       "org.gtk.Gtk3theme.adw-gtk3-dark" # adw-gtk3 GTK Theme
       "org.gtk.Gtk3theme.adw-gtk3" # adw-gtk3 GTK Theme
       "org.gtk.Gtk3theme.Adwaita-dark" # Adwaita dark GTK theme
