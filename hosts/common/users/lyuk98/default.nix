@@ -21,6 +21,7 @@ in
       description = "이영욱";
       extraGroups = ifTheyExist [
         "adbusers"
+        "libvirtd"
         "networkmanager"
         "tss"
         "wheel"

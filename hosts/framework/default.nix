@@ -13,6 +13,7 @@
     ../common/optional/iwd.nix
     ../common/optional/lanzaboote.nix
     ../common/optional/libimobiledevice.nix
+    ../common/optional/libvirt.nix
     ../common/optional/linux-latest.nix
     ../common/optional/nixos-cli.nix
     ../common/optional/pipewire.nix
