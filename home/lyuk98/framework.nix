@@ -25,6 +25,7 @@
     graphics.enable = true;
     network.enable = true;
     office.enable = true;
+    system.enable = true;
     utility.enable = true;
     video.enable = true;
   };

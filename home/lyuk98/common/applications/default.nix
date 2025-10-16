@@ -8,6 +8,7 @@
     ./graphics
     ./network
     ./office
+    ./system
     ./utility
     ./video
   ];
@@ -23,6 +24,7 @@
     graphics.enable = lib.mkDefault true;
     network.enable = lib.mkDefault true;
     office.enable = lib.mkDefault true;
+    system.enable = lib.mkDefault true;
     utility.enable = lib.mkDefault true;
     video.enable = lib.mkDefault true;
   };
