@@ -9,6 +9,7 @@
     ./audacity.nix
     ./guitarix.nix
     ./hydrogen.nix
+    ./picard.nix
     ./shortwave.nix
     ./zrythm.nix
   ];
@@ -22,6 +23,7 @@
     audacity.enable = lib.mkDefault true;
     guitarix.enable = lib.mkDefault true;
     hydrogen.enable = lib.mkDefault true;
+    picard.enable = lib.mkDefault true;
     shortwave.enable = lib.mkDefault true;
     zrythm.enable = lib.mkDefault true;
   };
