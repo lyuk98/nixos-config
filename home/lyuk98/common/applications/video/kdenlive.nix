@@ -10,11 +10,9 @@
 
   config = lib.mkIf config.applications.video.kdenlive.enable {
     # Add packages
-    home.packages = [
-      pkgs.kdePackages.kdenlive
+    home.packages = [ pkgs.kdePackages.kdenlive ];
 
-      # Explicitly add MediaInfo
-      pkgs.mediainfo
-    ];
+    # Also enable MediaInfo
+    applications.video.mediainfo.enable = lib.mkDefault true;
   };
 }
