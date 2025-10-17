@@ -25,7 +25,6 @@
       "org.kde.kid3" # Kid3
       "org.kde.optiimage" # OptiImage
       "org.mozilla.Thunderbird" # Thunderbird
-      "org.standardnotes.standardnotes" # Standard Notes
     ];
   };
 }

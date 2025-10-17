@@ -9,6 +9,7 @@
     ./ente-desktop.nix
     ./gnucash.nix
     ./libreoffice.nix
+    ./standardnotes.nix
   ];
 
   # Create option to enable all Office applications
@@ -20,5 +21,6 @@
     ente-desktop.enable = lib.mkDefault true;
     gnucash.enable = lib.mkDefault true;
     libreoffice.enable = lib.mkDefault true;
+    standardnotes.enable = lib.mkDefault true;
   };
 }
