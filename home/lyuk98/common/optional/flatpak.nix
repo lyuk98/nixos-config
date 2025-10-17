@@ -22,7 +22,6 @@
       "org.gtk.Gtk3theme.adw-gtk3" # adw-gtk3 GTK Theme
       "org.gtk.Gtk3theme.Adwaita-dark" # Adwaita dark GTK theme
       "org.gtk.Gtk3theme.Breeze" # Breeze GTK theme
-      "org.kde.kid3" # Kid3
       "org.kde.optiimage" # OptiImage
       "org.mozilla.Thunderbird" # Thunderbird
     ];
