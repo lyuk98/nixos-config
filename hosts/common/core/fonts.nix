@@ -4,8 +4,17 @@
   config,
   ...
 }:
+let
+  gnome =
+    if (lib.strings.versionOlder lib.trivial.release "25.11") then
+      # For Nixpkgs prior to 25.11
+      config.services.xserver.desktopManager.gnome
+    else
+      # For Nixpkgs 25.11 and later
+      config.services.desktopManager.gnome;
+in
 # Enable only if a desktop manager is enabled
-lib.mkIf config.services.desktopManager.gnome.enable {
+lib.mkIf gnome.enable {
   # Provide fonts
   fonts.packages = with pkgs; [
     noto-fonts # Noto
