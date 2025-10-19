@@ -1,4 +1,9 @@
-{ inputs, lib, ... }:
+{
+  config,
+  inputs,
+  lib,
+  ...
+}:
 {
   imports = [ inputs.lanzaboote.nixosModules.lanzaboote ];
 
@@ -17,5 +22,10 @@
 
     # Specify location of PKI bundle
     pkiBundle = "/var/lib/sbctl";
+  };
+
+  # Make bundle directory persistent if Impermanence is enabled
+  environment = lib.optionalAttrs (config.environment ? persistence) {
+    persistence."/persist".directories = [ config.boot.lanzaboote.pkiBundle ];
   };
 }
