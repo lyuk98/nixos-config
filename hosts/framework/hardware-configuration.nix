@@ -63,7 +63,7 @@
   # Use swap file
   swapDevices = [
     {
-      device = "/var/swap/swapfile";
+      device = "/persist/var/swap/swapfile";
 
       # Set swap file size in megabytes
       size = 65536;
