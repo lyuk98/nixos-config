@@ -1,8 +1,11 @@
 {
   imports = [
+    ./accountsservice.nix
+    ./bluetooth.nix
     ./disable-root.nix
     ./firmware.nix
     ./fonts.nix
+    ./fprintd.nix
     ./hardened.nix
     ./immutable-users.nix
     ./locale.nix
