@@ -49,12 +49,12 @@
       ];
     };
 
-    "/var" = {
+    "/persist" = {
       device = "/dev/mapper/luks-95582132-bd92-4355-8afc-f17636c73869";
       fsType = "btrfs";
       options = [
         "defaults"
-        "subvol=var"
+        "subvol=persist"
         "compress=zstd"
       ];
     };

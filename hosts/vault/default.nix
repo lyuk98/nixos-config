@@ -11,7 +11,6 @@
     ../common/core
 
     ../common/optional/grub.nix
-    ../common/optional/persistence.nix
     ../common/optional/sshd.nix
     ../common/optional/systemd-networkd.nix
   ];
