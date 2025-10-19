@@ -34,8 +34,7 @@
     "systemd-networkd-wait-online.service"
   ];
 
-  # Make state directory persistent if Impermanence is enabled
-  environment = lib.optionalAttrs (config.environment ? persistence) {
-    persistence."/persist".directories = [ "/var/lib/tailscale" ];
-  };
+  # Make state directory persistent
+  environment.persistence."/persist".directories =
+    lib.optional config.services.tailscale.enable "/var/lib/tailscale";
 }

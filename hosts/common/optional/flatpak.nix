@@ -1,9 +1,9 @@
-{lib, config, ...}: {
+{ lib, config, ... }:
+{
   # Enable Flatpak
   services.flatpak.enable = true;
 
-  # Make data directory persistent if Impermanence is enabled
-  environment = lib.optionalAttrs (config.environment ? persistence) {
-    persistence."/persist".directories = [ "/var/lib/flatpak" ];
-  };
+  # Make data directory persistent
+  environment.persistence."/persist".directories =
+    lib.optional config.services.flatpak.enable "/var/lib/flatpak";
 }

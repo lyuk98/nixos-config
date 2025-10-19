@@ -18,9 +18,7 @@
   ];
 
   # Preserve host keys if Impermanence is enabled
-  environment = lib.optionalAttrs (config.environment ? persistence) {
-    persistence."/persist".files = builtins.map (
-      hostKey: hostKey.path
-    ) config.services.openssh.hostKeys;
+  environment.persistence."/persist" = lib.optionalAttrs config.services.openssh.enable {
+    files = builtins.map (hostKey: hostKey.path) config.services.openssh.hostKeys;
   };
 }

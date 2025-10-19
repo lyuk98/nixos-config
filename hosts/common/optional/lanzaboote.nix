@@ -24,8 +24,7 @@
     pkiBundle = "/var/lib/sbctl";
   };
 
-  # Make bundle directory persistent if Impermanence is enabled
-  environment = lib.optionalAttrs (config.environment ? persistence) {
-    persistence."/persist".directories = [ config.boot.lanzaboote.pkiBundle ];
-  };
+  # Make bundle directory persistent
+  environment.persistence."/persist".directories =
+    lib.optional config.boot.lanzaboote.enable config.boot.lanzaboote.pkiBundle;
 }
