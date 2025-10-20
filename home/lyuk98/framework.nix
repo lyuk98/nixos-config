@@ -3,6 +3,7 @@
     ./common/core
     ./common/applications
 
+    ./common/optional/android-translation-layer.nix
     ./common/optional/custom-packages.nix
     ./common/optional/direnv.nix
     ./common/optional/ffmpeg-nonfree.nix
