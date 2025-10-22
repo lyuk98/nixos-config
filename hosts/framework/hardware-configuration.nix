@@ -9,6 +9,11 @@
 
       # Bypass internal read and write workqueues
       bypassWorkqueues = true;
+
+      # Use TPM to automatically decrypt the encrypted block
+      crypttabExtraOpts = [
+        "tpm2-device=auto"
+      ];
     };
   };
 
