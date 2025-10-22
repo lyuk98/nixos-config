@@ -21,6 +21,9 @@
         || (lib.versionAtLeast version "6.16.1" && lib.versionOlder version "6.16.6")
       ) (pkgs.tailscale.overrideAttrs { doCheck = false; });
 
+    # Encrypt state files with TPM for hosts that have one
+    extraDaemonFlags = lib.optional config.security.tpm2.enable "--encrypt-state";
+
     # Open firewall for the port to listen on
     openFirewall = true;
 
