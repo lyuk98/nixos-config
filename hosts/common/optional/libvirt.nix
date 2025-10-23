@@ -1,3 +1,4 @@
+{ lib, config, ... }:
 {
   virtualisation = {
     libvirtd = {
@@ -28,4 +29,8 @@
     # Enable WebDAV proxy daemon
     spice-webdavd.enable = true;
   };
+
+  # Preserve persistent data
+  environment.persistence."/persist".directories =
+    lib.optional config.virtualisation.libvirtd.enable "/var/lib/libvirt";
 }
