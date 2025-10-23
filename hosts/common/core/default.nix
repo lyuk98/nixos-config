@@ -11,7 +11,7 @@
     ./locale.nix
     ./msedit.nix
     ./nix.nix
-    ./persistence.nix
+    ./preservation.nix
     ./sops.nix
     ./sudo.nix
     ./systemd-initrd.nix

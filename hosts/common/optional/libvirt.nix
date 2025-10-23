@@ -31,6 +31,6 @@
   };
 
   # Preserve persistent data
-  environment.persistence."/persist".directories =
+  preservation.preserveAt."/persist".directories =
     lib.optional config.virtualisation.libvirtd.enable "/var/lib/libvirt";
 }

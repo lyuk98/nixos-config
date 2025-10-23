@@ -45,6 +45,9 @@
     # Used for declaration of impermanent systems
     impermanence.url = "github:nix-community/impermanence";
 
+    # Declarative management of non-volatile system state
+    preservation.url = "github:nix-community/preservation";
+
     # Generation of NixOS images
     nixos-generators = {
       url = "github:nix-community/nixos-generators";

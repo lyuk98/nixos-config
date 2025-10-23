@@ -98,5 +98,5 @@
   ];
 
   # Add persistent data directory for Ente
-  environment.persistence."/persist".directories = [ "/var/lib/ente" ];
+  preservation.preserveAt."/persist".directories = [ "/var/lib/ente" ];
 }

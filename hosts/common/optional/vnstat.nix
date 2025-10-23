@@ -4,6 +4,6 @@
   services.vnstat.enable = true;
 
   # Make data directory persistent
-  environment.persistence."/persist".directories =
+  preservation.preserveAt."/persist".directories =
     lib.optional config.services.vnstat.enable "/var/lib/vnstat";
 }

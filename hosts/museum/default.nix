@@ -17,17 +17,13 @@
     ../common/optional/systemd-networkd.nix
   ];
 
-  environment.persistence."/persist" = {
-    # Preserve machine ID
-    files = [
-      "/etc/machine-id"
-    ];
-
-    # Preserve secrets
-    directories = [
-      "/var/lib/secrets"
-    ];
-  };
+  # Preserve secrets
+  preservation.preserveAt."/persist".directories = [
+    {
+      directory = "/var/lib/secrets";
+      mode = "0751";
+    }
+  ];
 
   # Set the hostname
   networking.hostName = "museum";

@@ -1,26 +1,28 @@
-{ inputs, lib, ... }:
-let
-  ageKeyFile = "/var/lib/sops-nix/keys.txt";
-in
+{
+  config,
+  inputs,
+  lib,
+  ...
+}:
 {
   imports = [ inputs.sops-nix.nixosModules.sops ];
 
   # Specify path of the age key to decrypt secrets with
   # This file needs to be present to decrypt secrets during activation
-  sops.age.keyFile = lib.mkDefault "/persist${ageKeyFile}";
+  sops.age.keyFile = lib.mkDefault "/var/lib/sops-nix/keys.txt";
 
-  # Use persistence for the age key
-  environment = {
-    persistence."/persist" = {
-      files = [
-        # Keep age key
-        {
-          file = ageKeyFile;
-          parentDirectory = {
-            mode = "0600";
-          };
-        }
-      ];
-    };
-  };
+  # Preserve the age key
+  preservation.preserveAt."/persist".files = [
+    # Keep age key
+    {
+      file = config.sops.age.keyFile;
+      inInitrd = true;
+      mode = "0600";
+
+      configureParent = true;
+      parent = {
+        mode = "0600";
+      };
+    }
+  ];
 }

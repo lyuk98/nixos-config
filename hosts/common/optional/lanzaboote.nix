@@ -25,6 +25,6 @@
   };
 
   # Make bundle directory persistent
-  environment.persistence."/persist".directories =
+  preservation.preserveAt."/persist".directories =
     lib.optional config.boot.lanzaboote.enable config.boot.lanzaboote.pkiBundle;
 }

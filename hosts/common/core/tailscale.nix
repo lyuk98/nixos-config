@@ -38,6 +38,8 @@
   ];
 
   # Make state directory persistent
-  environment.persistence."/persist".directories =
-    lib.optional config.services.tailscale.enable "/var/lib/tailscale";
+  preservation.preserveAt."/persist".directories = lib.optional config.services.tailscale.enable {
+    directory = "/var/lib/tailscale";
+    mode = "0700";
+  };
 }
