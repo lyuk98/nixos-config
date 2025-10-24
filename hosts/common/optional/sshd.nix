@@ -9,6 +9,13 @@
       PermitRootLogin = lib.mkDefault "prohibit-password";
       # Disallow password-based authentication
       PasswordAuthentication = lib.mkDefault false;
+
+      # Allow post-quantum key agreement algorithms
+      KexAlgorithms = [
+        "sntrup761x25519-sha512"
+        "sntrup761x25519-sha512@openssh.com"
+        "mlkem768x25519-sha256"
+      ];
     };
   };
 
