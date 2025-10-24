@@ -1,8 +1,15 @@
 { pkgs, lib, ... }:
+let
+  # Git with libsecret support
+  git = pkgs.git.override { withLibsecret = true; };
+in
 {
   programs.git = {
     # Enable Git
     enable = true;
+
+    # Use the custom Git package
+    package = git;
 
     signing = lib.mkDefault {
       # Use OpenPGP for signing commits and tags
@@ -34,10 +41,13 @@
         name = lib.mkDefault "이영욱";
       };
 
+      # Convert CRLF to LF on commit, but not the other way around
       core.autocrlf = "input";
-      credential.helper = lib.mkDefault "${
-        pkgs.git.override { withLibsecret = true; }
-      }/bin/git-credential-libsecret";
+
+      # Use libsecret as a credential helper
+      credential.helper = lib.mkDefault "${git}/bin/git-credential-libsecret";
+
+      # The default branch name upon repository initialisation
       init.defaultBranch = "main";
     };
 
