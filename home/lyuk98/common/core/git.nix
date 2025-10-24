@@ -15,10 +15,6 @@
       signByDefault = true;
     };
 
-    # Default committer email and name
-    userEmail = lib.mkDefault "pr@lyuk98.com";
-    userName = lib.mkDefault "이영욱";
-
     # Add globally ignored paths
     ignores = [
       # Linux
@@ -31,7 +27,13 @@
     ];
 
     # Extra configurations
-    extraConfig = {
+    settings = {
+      # Default committer information
+      user = {
+        email = lib.mkDefault "pr@lyuk98.com";
+        name = lib.mkDefault "이영욱";
+      };
+
       core.autocrlf = "input";
       credential.helper = lib.mkDefault "${
         pkgs.git.override { withLibsecret = true; }
