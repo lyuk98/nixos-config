@@ -1,0 +1,11 @@
+--- a/src/engine/CMakeLists.txt
++++ b/src/engine/CMakeLists.txt
+@@ -59,7 +59,7 @@ if(WIN32)
+     set(SKIA_ARGS "${SKIA_ARGS} clang_win=\"C:\\Program Files\\LLVM\" cc=\"clang-cl\" cxx=\"clang-cl\"")
+     set(SKIA_ARGS "${SKIA_ARGS} extra_cflags=[\"-Wno-error\",\"/MD\",\"/O2\"]")
+ else()
+-    set(GN_PATH ${SKIA_SRC}/bin/gn)
++    set(GN_PATH gn)
+     set(SKIA_BUILD_CMD ninja -j${N})
+     if(${USE_SKIA_SYSTEM_LIBS})
+         set(SKIA_UPDATE_CMD true)
