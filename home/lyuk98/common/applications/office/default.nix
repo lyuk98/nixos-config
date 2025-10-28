@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ./anytype.nix
     ./eloquent.nix
     ./ente-desktop.nix
     ./gnucash.nix
@@ -17,6 +18,7 @@
 
   # Enable all Office applications if enabled
   config.applications.office = lib.mkIf config.applications.office.enable {
+    anytype.enable = lib.mkDefault true;
     eloquent.enable = lib.mkDefault true;
     ente-desktop.enable = lib.mkDefault true;
     gnucash.enable = lib.mkDefault true;
