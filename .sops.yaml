@@ -6,6 +6,7 @@ keys:
   - &hosts:
     - &framework age14edzmqc4r07gp9lkj8z4gchccs373s8lcdrw69d6964tallpuuzqausgmk
     - &vault age1p0rc7s7r9krcqr8uy6dr8wlutyk9668a429y9k27xhfwtgwudgpq9e9ehq
+    - &xps13 age1eqaqhyzdznd22j43j43e8qpra6z849hqljg9h3xruz0g0pmypassetfhdw
 
 creation_rules:
   # Secrets specific to host "framework"
@@ -26,11 +27,20 @@ creation_rules:
     - age:
       - *vault
 
+  # Secrets specific to host "xps13"
+  - path_regex: hosts/xps13/secrets.ya?ml$
+    key_groups:
+    - age:
+      - *xps13
+      pgp:
+      - *lyuk98
+
   # Secrets for user "lyuk98" to be used across hosts
   - path_regex: hosts/common/users/lyuk98/secrets.ya?ml$
     key_groups:
     - age:
       - *framework
+      - *xps13
       pgp:
       - *lyuk98
 
@@ -39,5 +49,6 @@ creation_rules:
     key_groups:
     - age:
       - *framework
+      - *xps13
       pgp:
       - *lyuk98
