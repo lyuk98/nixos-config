@@ -1,12 +1,11 @@
-{ config, ... }:
-let
-  device = config.disko.devices.disk.main.content.partitions.zfs.device;
-in
 {
   boot.initrd.clevis = {
     # Enable Clevis in initrd
     enable = true;
 
-    # TODO: specify secret file here
+    # Unlock the device at boot using secret
+    devices."zroot/root" = {
+      secretFile = ./root.jwe;
+    };
   };
 }
