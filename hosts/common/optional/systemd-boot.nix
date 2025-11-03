@@ -1,6 +1,9 @@
 { lib, ... }:
 {
   boot.loader = {
+    # Do not display entries by default
+    timeout = lib.mkDefault 0;
+
     systemd-boot = {
       enable = true;
 
