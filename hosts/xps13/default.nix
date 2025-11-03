@@ -8,13 +8,12 @@
     ../common/optional/gnome.nix
     ../common/optional/gsconnect.nix
     ../common/optional/iwd.nix
-    # ../common/optional/lanzaboote.nix
+    ../common/optional/lanzaboote.nix
     ../common/optional/libvirt.nix
     ../common/optional/pipewire.nix
     ../common/optional/plymouth.nix
     ../common/optional/random-mac-address.nix
     ../common/optional/system-connections.nix
-    ../common/optional/systemd-boot.nix
     ../common/optional/tpm2.nix
     ../common/optional/uutils.nix
     ../common/optional/vnstat.nix
