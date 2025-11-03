@@ -21,8 +21,13 @@
         || (lib.versionAtLeast version "6.16.1" && lib.versionOlder version "6.16.6")
       ) (pkgs.tailscale.overrideAttrs { doCheck = false; });
 
-    # Encrypt state files with TPM for hosts that have one
-    extraDaemonFlags = lib.optional config.security.tpm2.enable "--encrypt-state";
+    extraDaemonFlags =
+      # Encrypt state files with TPM for non-ephemeral hosts that have one
+      (
+        lib.optional (
+          config.security.tpm2.enable && (config.services.tailscale.authKeyParameters.ephemeral != true)
+        ) "--encrypt-state"
+      );
 
     # Open firewall for the port to listen on
     openFirewall = true;

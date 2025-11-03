@@ -4,6 +4,11 @@
     # Provide auth key to issue `tailscale up` with
     authKeyFile = "/var/lib/secrets/tailscale-oauth-client-secret";
 
+    authKeyParameters = {
+      # Register as an ephemeral node
+      ephemeral = true;
+    };
+
     # Enable Tailscale SSH and advertise tags
     extraUpFlags = [
       "--advertise-tags=tag:museum,tag:webserver"
