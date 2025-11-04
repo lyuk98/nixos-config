@@ -53,6 +53,14 @@
     };
   };
 
+  # Disable power-saving mechanisms
+  networking.networkmanager.wifi.powersave = false;
+  powerManagement.enable = false;
+  services.displayManager.gdm.autoSuspend = false;
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+  };
+
   # The platform where the NixOS configuration runs
   nixpkgs.hostPlatform = "x86_64-linux";
 
