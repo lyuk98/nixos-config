@@ -5,7 +5,7 @@
 
     # Unlock the device at boot using secret
     devices."zroot/root" = {
-      secretFile = ./root.jwe;
+      secretFile = "${./root.jwe}";
     };
   };
 }
