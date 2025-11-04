@@ -24,17 +24,20 @@ lib.mkIf config.networking.networkmanager.enable {
         }) connections
       );
 
-  # Copy secrets into /etc
-  environment.etc =
-    builtins.listToAttrs
-      # Map each connection to an attribute set representing a NetworkManager connection
-      (
-        builtins.map (connection: {
-          name = "NetworkManager/system-connections/${connection}";
-          value = {
+  # Create symlinks to NetworkManager connections
+  systemd.tmpfiles.settings = builtins.listToAttrs (
+    builtins.map (connection: {
+      name = "system-connection-${lib.removeSuffix ".nmconnection" connection}";
+      value = {
+        "/run/NetworkManager/system-connections/${connection}" = {
+          "L+" = {
             mode = "0600";
-            source = config.sops.secrets.${connection}.path;
+            user = "root";
+            group = "root";
+            argument = config.sops.secrets.${connection}.path;
           };
-        }) connections
-      );
+        };
+      };
+    }) connections
+  );
 }
