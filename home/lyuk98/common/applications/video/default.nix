@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ./davinci-resolve.nix
     ./kdenlive.nix
     ./losslesscut.nix
     ./makemkv.nix
@@ -19,6 +20,8 @@
 
   # Enable all Video applications if enabled
   config.applications.video = lib.mkIf config.applications.video.enable {
+    davinci-resolve.enable = lib.mkDefault (!config.applications.video.davinci-resolve.studio.enable);
+    davinci-resolve.studio.enable = lib.mkDefault false;
     kdenlive.enable = lib.mkDefault true;
     losslesscut.enable = lib.mkDefault true;
     makemkv.enable = lib.mkDefault true;
