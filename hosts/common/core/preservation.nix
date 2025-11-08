@@ -33,12 +33,10 @@
       ];
 
       # Preserve system files
-      files = [
-        {
-          file = "/etc/machine-id";
-          inInitrd = true;
-        }
-      ];
+      files = lib.optional (!config.environment.etc ? machine-id) {
+        file = "/etc/machine-id";
+        inInitrd = true;
+      };
     };
   };
 
