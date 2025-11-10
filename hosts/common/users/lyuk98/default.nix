@@ -7,6 +7,8 @@ in
   # Import Home Manager NixOS module
   imports = [
     ../../optional/home-manager.nix
+
+    ./accountsservice.nix
   ];
 
   # Retrieve secrets

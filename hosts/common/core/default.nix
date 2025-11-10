@@ -1,6 +1,5 @@
 {
   imports = [
-    ./accountsservice.nix
     ./bluetooth.nix
     ./disable-root.nix
     ./firmware.nix
