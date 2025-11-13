@@ -54,9 +54,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nix-flatpak to declaratively manage Flatpak installations
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
-
     # Weekly updated database for nix-index
     nix-index-database = {
       url = "github:nix-community/nix-index-database";

@@ -7,7 +7,6 @@
     ./common/optional/custom-packages.nix
     ./common/optional/direnv.nix
     ./common/optional/ffmpeg-nonfree.nix
-    ./common/optional/flatpak.nix
     ./common/optional/fontconfig.nix
     ./common/optional/fzf.nix
     ./common/optional/gh.nix

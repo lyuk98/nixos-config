@@ -1,7 +1,6 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    ./flatpak.nix
     ./gstreamer.nix
     ./ibus.nix
   ];
