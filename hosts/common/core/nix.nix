@@ -48,4 +48,10 @@
       options = "--delete-older-than +10";
     };
   };
+
+  # For Nixpkgs 25.05
+  system.rebuild = lib.mkIf (lib.trivial.release == "25.05") {
+    # Enable nixos-rebuild-ng
+    enableNg = true;
+  };
 }
