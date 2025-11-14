@@ -6,7 +6,7 @@
     ./common/optional/android-translation-layer.nix
     ./common/optional/custom-packages.nix
     ./common/optional/direnv.nix
-    ./common/optional/ffmpeg-nonfree.nix
+    ./common/optional/ffmpeg.nix
     ./common/optional/fontconfig.nix
     ./common/optional/fzf.nix
     ./common/optional/gh.nix
