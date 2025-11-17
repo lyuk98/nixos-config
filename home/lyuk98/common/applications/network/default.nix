@@ -7,6 +7,7 @@
   imports = [
     ./discord.nix
     ./firefox.nix
+    ./ladybird.nix
     ./proton-vpn.nix
     ./signal-desktop.nix
     ./telegram-desktop.nix
@@ -20,6 +21,7 @@
   config.applications.network = lib.mkIf config.applications.network.enable {
     discord.enable = lib.mkDefault true;
     firefox.enable = lib.mkDefault true;
+    ladybird.enable = lib.mkDefault true;
     proton-vpn.enable = lib.mkDefault true;
     signal-desktop.enable = lib.mkDefault true;
     telegram-desktop.enable = lib.mkDefault true;
