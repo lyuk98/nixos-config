@@ -21,6 +21,7 @@
 
     ./clevis.nix
     ./disko-config.nix
+    ./k3s.nix
     ./tailscale.nix
   ];
 
