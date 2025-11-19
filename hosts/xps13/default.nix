@@ -6,7 +6,6 @@
 
     ../common/core
     ../common/optional/gnome.nix
-    ../common/optional/gsconnect.nix
     ../common/optional/iwd.nix
     ../common/optional/lanzaboote.nix
     ../common/optional/libvirt.nix
