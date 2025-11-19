@@ -17,64 +17,53 @@ let
   # Import nix-kube-generators
   kubelib = inputs.nix-kube-generators.lib { inherit pkgs; };
 
-  # OpenStack Helm charts
-  charts =
-    let
-      rev = builtins.substring 0 9 inputs.openstack-helm.rev;
-      chart =
-        component:
-        builtins.elemAt (kubelib.fromYAML (builtins.readFile "${inputs.openstack-helm}/${component}/Chart.yaml")) 0;
-      version = component: (chart component).version;
-      baseurl = "https://tarballs.opendev.org/openstack/openstack-helm";
+  # Create a chart archive
+  packageHelmChart =
+    { repo, name }:
+    pkgs.stdenv.mkDerivation (finalAttrs: {
+      name = "${name}.tgz";
 
-      tarball =
-        {
-          component,
-          chartVersion ? (version component),
-          hash,
-        }:
-        pkgs.fetchurl {
-          url = "${baseurl}/${component}-${chartVersion}+${rev}.tgz";
-          inherit hash;
-        };
-    in
-    builtins.mapAttrs (name: value: tarball (value // { component = name; })) {
-      # Identity and authentication service
-      keystone = {
-        chartVersion = "2025.2.1";
-        hash = "sha256-Yi6CVnoYhuzLSRmyKHfq4ntqYC/FNZiGSVM3RIzn42g=";
-      };
+      phases = [
+        "unpackPhase"
+        "patchPhase"
+        "buildPhase"
+      ];
 
-      # Orchestration service
-      heat.hash = "sha256-n5nYTWXXbwMafqL2y5KMUsq+WnLo24fJBgyvHJEGq1Y=";
+      src = repo;
 
-      # Image service
-      glance.hash = "sha256-smwqiUE72uuARKIBIQS69pykICs0TQfXUYWAHAeW57w=";
+      postPatch = ''
+        mkdir --parents --verbose ${name}/charts
+        ${lib.pipe "${repo}/${name}/Chart.yaml" [
+          # Read Chart.yaml
+          builtins.readFile
 
-      # Block storage service
-      cinder = {
-        chartVersion = "2025.2.1";
-        hash = "sha256-E8SLZcQmTViY1Q/PUxjgay1pdb61+glGosxUcfsFRhs=";
-      };
+          # Convert YAML to an attribute set
+          kubelib.fromYAML
+          (docs: builtins.elemAt docs 0)
 
-      # Compute kit backend
-      openvswitch = {
-        chartVersion = "2025.2.1";
-        hash = "sha256-Mk7AYhPkvbrb54fYxR606Gg9JHMnFCOCZngWC+HtLik=";
-      };
-      libvirt.hash = "sha256-yQVqSXem3aGCfNRAM+qONAyFOlucG6Wfjr5/3ldqZcs=";
+          # Get dependencies
+          (yaml: if (builtins.hasAttr "dependencies" yaml) then yaml.dependencies else [ ])
 
-      # Compute kit
-      placement.hash = "sha256-+Ykc8yLPCSPwNeLzWCous3OdDjIBIQM3HsbujGnko4w=";
-      nova.hash = "sha256-sQF8ozH9nVA9jXUxUjnWbzB/PSjCKVLqtnL3DiNXFK8=";
-      neutron.hash = "sha256-Czm2OdCJefuTtzDgsU4z8Uv5NqgN/YYIRIwEsfaw82g=";
+          # Create chart archives of dependencies
+          (builtins.map (
+            dependency:
+            packageHelmChart {
+              inherit repo;
+              name = dependency.name;
+            }
+          ))
 
-      # Graphic user interface to Openstack services
-      horizon = {
-        chartVersion = "2025.2.1";
-        hash = "sha256-XRCP6VFE3Ymw5lYkxymw8cGnUUAEwLTPd34zaVFzndY=";
-      };
-    };
+          # Command to copy each chart archive to where Helm expects
+          (builtins.map (chart: "cp --verbose ${chart} ${name}/charts/"))
+          (builtins.concatStringsSep "\n")
+        ]}
+      '';
+
+      buildPhase = ''
+        ${pkgs.kubernetes-helm}/bin/helm package ${name}
+        cp --verbose ${name}-*.tgz $out
+      '';
+    });
 in
 {
   options.services.k3s = {
@@ -148,7 +137,10 @@ in
             (
               value
               // {
-                package = charts.${name};
+                package = packageHelmChart {
+                  repo = "${inputs.openstack-helm}";
+                  name = name;
+                };
                 createNamespace = true;
                 targetNamespace = "openstack";
               }
