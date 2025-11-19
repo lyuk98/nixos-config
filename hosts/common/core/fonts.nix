@@ -12,9 +12,10 @@ let
     else
       # For Nixpkgs 25.11 and later
       config.services.desktopManager.gnome;
+  cosmic = config.services.desktopManager.cosmic;
 in
 # Enable only if a desktop manager is enabled
-lib.mkIf gnome.enable {
+lib.mkIf (gnome.enable || cosmic.enable) {
   # Provide fonts
   fonts.packages = with pkgs; [
     noto-fonts # Noto
