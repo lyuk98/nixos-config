@@ -239,6 +239,21 @@
         "type": "github"
       }
     },
+    "nix-kube-generators": {
+      "locked": {
+        "lastModified": 1762437901,
+        "narHash": "sha256-5yuJODagAq+aMXQAT2c0gfXKLqapmA6eUHR33jKNHuU=",
+        "owner": "farcaller",
+        "repo": "nix-kube-generators",
+        "rev": "810dcf792081790648ba9ae705b9a2286115ace8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "farcaller",
+        "repo": "nix-kube-generators",
+        "type": "github"
+      }
+    },
     "nix-options-doc": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -471,6 +486,22 @@
         "type": "github"
       }
     },
+    "openstack-helm": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1763160915,
+        "narHash": "sha256-vIiq42Vv0XbkpvhTf1YpZBAvWibCx4Ka1qZ6Fg1vQe4=",
+        "ref": "refs/heads/master",
+        "rev": "a1599e717561ef6ecf7399346e396219289e7f6d",
+        "revCount": 8883,
+        "type": "git",
+        "url": "https://opendev.org/openstack/openstack-helm"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://opendev.org/openstack/openstack-helm"
+      }
+    },
     "pre-commit": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -517,6 +548,7 @@
         "impermanence": "impermanence",
         "lanzaboote": "lanzaboote",
         "nix-index-database": "nix-index-database",
+        "nix-kube-generators": "nix-kube-generators",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixos-cli": "nixos-cli",
         "nixos-generators": "nixos-generators",
@@ -524,6 +556,7 @@
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-stable": "nixpkgs-stable",
         "nur": "nur",
+        "openstack-helm": "openstack-helm",
         "preservation": "preservation",
         "sops-nix": "sops-nix",
         "systems": "systems_2",
