@@ -1,4 +1,10 @@
-{ lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}:
 let
   cfg = config.services.k3s;
 
@@ -7,6 +13,68 @@ let
     address = config.networking.hostName;
     port = 6443;
   };
+
+  # Import nix-kube-generators
+  kubelib = inputs.nix-kube-generators.lib { inherit pkgs; };
+
+  # OpenStack Helm charts
+  charts =
+    let
+      rev = builtins.substring 0 9 inputs.openstack-helm.rev;
+      chart =
+        component:
+        builtins.elemAt (kubelib.fromYAML (builtins.readFile "${inputs.openstack-helm}/${component}/Chart.yaml")) 0;
+      version = component: (chart component).version;
+      baseurl = "https://tarballs.opendev.org/openstack/openstack-helm";
+
+      tarball =
+        {
+          component,
+          chartVersion ? (version component),
+          hash,
+        }:
+        pkgs.fetchurl {
+          url = "${baseurl}/${component}-${chartVersion}+${rev}.tgz";
+          inherit hash;
+        };
+    in
+    builtins.mapAttrs (name: value: tarball (value // { component = name; })) {
+      # Identity and authentication service
+      keystone = {
+        chartVersion = "2025.2.1";
+        hash = "sha256-Yi6CVnoYhuzLSRmyKHfq4ntqYC/FNZiGSVM3RIzn42g=";
+      };
+
+      # Orchestration service
+      heat.hash = "sha256-n5nYTWXXbwMafqL2y5KMUsq+WnLo24fJBgyvHJEGq1Y=";
+
+      # Image service
+      glance.hash = "sha256-smwqiUE72uuARKIBIQS69pykICs0TQfXUYWAHAeW57w=";
+
+      # Block storage service
+      cinder = {
+        chartVersion = "2025.2.1";
+        hash = "sha256-E8SLZcQmTViY1Q/PUxjgay1pdb61+glGosxUcfsFRhs=";
+      };
+
+      # Compute kit backend
+      openvswitch = {
+        chartVersion = "2025.2.1";
+        hash = "sha256-Mk7AYhPkvbrb54fYxR606Gg9JHMnFCOCZngWC+HtLik=";
+      };
+      libvirt.hash = "sha256-yQVqSXem3aGCfNRAM+qONAyFOlucG6Wfjr5/3ldqZcs=";
+
+      # Compute kit
+      placement.hash = "sha256-+Ykc8yLPCSPwNeLzWCous3OdDjIBIQM3HsbujGnko4w=";
+      nova.hash = "sha256-sQF8ozH9nVA9jXUxUjnWbzB/PSjCKVLqtnL3DiNXFK8=";
+      neutron.hash = "sha256-Czm2OdCJefuTtzDgsU4z8Uv5NqgN/YYIRIwEsfaw82g=";
+
+      # Graphic user interface to Openstack services
+      horizon = {
+        chartVersion = "2025.2.1";
+        hash = "sha256-XRCP6VFE3Ymw5lYkxymw8cGnUUAEwLTPd34zaVFzndY=";
+      };
+    };
 in
 {
   options.services.k3s = {
@@ -72,6 +140,45 @@ in
       images = [
         cfg.package.airgap-images
       ];
+
+      autoDeployCharts =
+        builtins.mapAttrs
+          (
+            name: value:
+            (
+              value
+              // {
+                package = charts.${name};
+                createNamespace = true;
+                targetNamespace = "openstack";
+              }
+            )
+          )
+          {
+            # Identity and authentication service
+            keystone = { };
+
+            # Orchestration service
+            heat = { };
+
+            # Image service
+            glance = { };
+
+            # Block storage service
+            cinder = { };
+
+            # Compute kit backend
+            openvswitch = { };
+            libvirt = { };
+
+            # Compute kit
+            placement = { };
+            nova = { };
+            neutron = { };
+
+            # Graphic user interface to Openstack services
+            horizon = { };
+          };
     };
 
     systemd.services.k3s = {
