@@ -22,6 +22,7 @@
     ./clevis.nix
     ./disko-config.nix
     ./k3s.nix
+    ./openstack.nix
     ./tailscale.nix
   ];
 
