@@ -7,9 +7,6 @@
 
   # Apply host-specific Tailscale configurations
   services.tailscale = {
-    # Provide auth key to issue `tailscale up` with
-    # authKeyFile = config.sops.secrets.tailscale-auth-key.path;
-
     authKeyParameters = {
       # Register as an ephemeral node
       ephemeral = true;
