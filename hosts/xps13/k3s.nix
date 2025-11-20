@@ -147,29 +147,45 @@ in
             )
           )
           {
-            # Identity and authentication service
-            keystone = { };
+            # OpenStack backend
+            rabbitmq = {
+              values = {
+                pod.replicas.server = 1;
+              };
+            }; # Message broker
+            mariadb = {
+              values = {
+                pod.replicas.server = 1;
+              };
+            }; # Backend database
+            memcached = { }; # Distributed memory object caching system
 
-            # Orchestration service
-            heat = { };
-
-            # Image service
-            glance = { };
-
-            # Block storage service
-            cinder = { };
+            # OpenStack
+            keystone = { }; # Identity and authentication service
+            heat = { }; # Orchestration service
+            glance = { }; # Image service
+            cinder = { }; # Block storage service
 
             # Compute kit backend
-            openvswitch = { };
-            libvirt = { };
+            openvswitch = { }; # Networking backend
+            libvirt = {
+              values = {
+                conf.ceph.enabled = true;
+              };
+            }; # Libvirt service
 
             # Compute kit
-            placement = { };
-            nova = { };
-            neutron = { };
+            placement = { }; # Placement service
+            nova = {
+              values = {
+                bootstrap.wait_for_computes.enabled = true;
+                conf.ceph.enabled = true;
+              };
+            }; # Compute service
+            neutron = { }; # Networking service
 
-            # Graphic user interface to Openstack services
-            horizon = { };
+            # Horizon
+            horizon = { }; # Dashboard
           };
     };
 
