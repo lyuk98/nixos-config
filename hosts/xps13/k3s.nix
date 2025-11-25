@@ -1,4 +1,10 @@
-{ lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}:
 let
   cfg = config.services.k3s;
 
@@ -7,6 +13,29 @@ let
     address = config.networking.hostName;
     port = 6443;
   };
+
+  # Helm charts from nixhelm
+  charts = inputs.nixhelm.charts { inherit pkgs; };
+
+  # Create a chart archive from nixhelm derivation
+  packageHelmChart =
+    chart:
+    pkgs.stdenv.mkDerivation {
+      name = "${chart.name}.tgz";
+
+      phases = [
+        "unpackPhase"
+        "buildPhase"
+      ];
+
+      src = "${chart}";
+
+      buildPhase = ''
+        cd ../
+        ${pkgs.kubernetes-helm}/bin/helm package ${chart.name}
+        cp --verbose *.tgz $out
+      '';
+    };
 in
 {
   options.services.k3s = {
@@ -23,15 +52,49 @@ in
       description = "IPv4/IPv6 network CIDRs to use for service";
       type = lib.types.listOf lib.types.str;
     };
+
+    lib = lib.mkOption {
+      default = {
+        inherit packageHelmChart;
+      };
+      description = "Common functions for K3s modules";
+      type = lib.types.attrs;
+    };
   };
 
   config = {
-    # Template for file to pass as --vpn-auth-file
-    sops.templates."k3s/vpn-auth".content = builtins.concatStringsSep "," [
-      "name=tailscale"
-      "joinKey=${config.sops.placeholder.tailscale-auth-key}"
-      "extraArgs=${builtins.concatStringsSep " " config.services.tailscale.extraUpFlags}"
-    ];
+    sops = {
+      secrets = {
+        # Tailscale Kubernetes Operator's credential
+        "operator-oauth/client-id".sopsFile = ./secrets.yaml;
+        "operator-oauth/client-secret".sopsFile = ./secrets.yaml;
+      };
+
+      templates = {
+        # Template for file to pass as --vpn-auth-file
+        "k3s/vpn-auth".content = builtins.concatStringsSep "," [
+          "name=tailscale"
+          "joinKey=${config.sops.placeholder.tailscale-auth-key}"
+          "extraArgs=${builtins.concatStringsSep " " config.services.tailscale.extraUpFlags}"
+        ];
+
+        # Template for secret operator-oauth
+        # YAML is a superset of JSON, so this can be used to write a manifest file
+        "operator-oauth.yaml".content = builtins.toJSON {
+          apiVersion = "v1";
+          kind = "Secret";
+          metadata = {
+            name = "operator-oauth";
+            namespace = "tailscale";
+          };
+          stringData = {
+            client_id = config.sops.placeholder."operator-oauth/client-id";
+            client_secret = config.sops.placeholder."operator-oauth/client-secret";
+          };
+          immutable = true;
+        };
+      };
+    };
 
     services.k3s = {
       # Enable K3s
@@ -72,6 +135,55 @@ in
       images = [
         cfg.package.airgap-images
       ];
+
+      manifests = {
+        # Namespace for Tailscale
+        # Setting autoDeployCharts.tailscale-operator.createNamespace to true does not create one
+        # early enough for manifests
+        namespace-tailscale.content = {
+          apiVersion = "v1";
+          kind = "Namespace";
+          metadata = {
+            name = "tailscale";
+          };
+        };
+
+        # Secret for Tailscale Kubernetes Operator
+        operator-oauth = {
+          source = config.sops.templates."operator-oauth.yaml".path;
+        };
+
+        # Pre-creation of multi-replica ProxyGroup
+        ts-proxies.content = {
+          apiVersion = "tailscale.com/v1alpha1";
+          kind = "ProxyGroup";
+          metadata = {
+            name = "ts-proxies";
+          };
+          spec = {
+            type = "egress";
+            tags = [ "tag:k3s" ];
+            replicas = 3;
+          };
+        };
+      };
+
+      autoDeployCharts = {
+        # Tailscale Kubernetes Operator
+        tailscale-operator = {
+          name = "tailscale-operator";
+          package = cfg.lib.packageHelmChart charts.tailscale.tailscale-operator;
+          targetNamespace = "tailscale";
+
+          values = {
+            # Use custom tag and hostname for the operator
+            operatorConfig = {
+              defaultTags = [ "tag:k3s-operator" ];
+              hostname = "k3s-operator";
+            };
+          };
+        };
+      };
     };
 
     systemd.services.k3s = {

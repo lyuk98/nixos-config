@@ -136,6 +136,12 @@
               "com.sun:auto-snapshot" = "false";
             };
           };
+
+          # Block device for Ceph
+          "root/ceph" = {
+            type = "zfs_volume";
+            size = "32G";
+          };
         };
       };
     };
@@ -146,7 +152,7 @@
         fsType = "tmpfs";
         mountOptions = [
           "defaults"
-          "size=50%"
+          "size=75%"
           "mode=0755"
         ];
       };
