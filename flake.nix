@@ -84,6 +84,9 @@
     # Functions for generating Kubernetes YAMLs
     nix-kube-generators.url = "github:farcaller/nix-kube-generators";
 
+    # Helm charts collection
+    nixhelm.url = "github:nix-community/nixhelm";
+
     # Helm charts for OpenStack
     openstack-helm = {
       url = "git+https://opendev.org/openstack/openstack-helm";
