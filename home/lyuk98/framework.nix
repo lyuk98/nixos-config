@@ -21,6 +21,7 @@
   applications = {
     audio.enable = true;
     development.enable = true;
+    education.enable = true;
     games.enable = true;
     graphics.enable = true;
     network.enable = true;

@@ -4,6 +4,7 @@
   imports = [
     ./audio
     ./development
+    ./education
     ./games
     ./graphics
     ./network
@@ -20,6 +21,7 @@
   config.applications = lib.mkIf config.applications.enable {
     audio.enable = lib.mkDefault true;
     development.enable = lib.mkDefault true;
+    education.enable = lib.mkDefault true;
     games.enable = lib.mkDefault true;
     graphics.enable = lib.mkDefault true;
     network.enable = lib.mkDefault true;
