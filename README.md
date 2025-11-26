@@ -1,3 +1,5 @@
+[![Built with Nix](https://img.shields.io/badge/Built_with_Nix-41439a?logo=nixos&logoColor=white)](https://builtwithnix.org/ "Built with Nix - build software only once")
+
 # NixOS configurations
 
 This repository contains a flake managing my personal devices' configurations.
