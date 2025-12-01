@@ -136,12 +136,6 @@
               "com.sun:auto-snapshot" = "false";
             };
           };
-
-          # Block device for Ceph
-          "root/ceph" = {
-            type = "zfs_volume";
-            size = "32G";
-          };
         };
       };
     };
