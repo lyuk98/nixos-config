@@ -125,7 +125,7 @@
       );
 
       # Use nixfmt as formatter
-      formatter = forAllSystems ({ pkgs, ... }: pkgs.nixfmt-rfc-style);
+      formatter = forAllSystems ({ pkgs, ... }: pkgs.nixfmt);
 
       # Overlays
       overlays = import ./overlays;

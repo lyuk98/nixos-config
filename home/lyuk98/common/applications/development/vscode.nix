@@ -131,7 +131,7 @@
 
     # Some extensions can only invoke what is available in the environment
     home.packages = with pkgs; [
-      nixfmt-rfc-style
+      nixfmt
       terraform
     ];
   };
