@@ -10,11 +10,11 @@
   ];
 
   virtualisation.digitalOcean = {
-    # Allow setting root password from DigitalOcean metadata
-    setRootPassword = true;
+    # Prevent setting root password from DigitalOcean metadata
+    setRootPassword = false;
 
-    # Allow setting SSH keys from DigitalOcean metadata
-    setSshKeys = true;
+    # Prevent setting SSH keys from DigitalOcean metadata
+    setSshKeys = false;
 
     # Run kernel RNG seeding script from DigitalOcean vendor data
     seedEntropy = true;
