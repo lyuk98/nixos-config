@@ -33,6 +33,7 @@
             github.vscode-github-actions # GitHub Actions
             hashicorp.hcl # HashiCorp HCL
             hashicorp.terraform # HashiCorp Terraform
+            james-yu.latex-workshop # LaTeX Workshop
             arrterian.nix-env-selector # Nix Environment Selector
             jnoortheen.nix-ide # Nix IDE
             rust-lang.rust-analyzer # rust-analyzer
@@ -77,6 +78,9 @@
             "git.autofetch" = true;
             "git.enableCommitSigning" = lib.mkDefault true;
             "git.inputValidation" = true;
+
+            # Extensions / LaTeX
+            "latex-workshop.formatting.latex" = "latexindent";
 
             # Extensions / NixIDE
             "nix.enableLanguageServer" = true;
@@ -133,6 +137,7 @@
     home.packages = with pkgs; [
       nixfmt
       terraform
+      texliveFull
     ];
   };
 }
