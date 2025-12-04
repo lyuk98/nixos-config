@@ -6,6 +6,7 @@
 {
   imports = [
     ./friction.nix
+    ./inkscape.nix
     ./kolourpaint.nix
   ];
 
@@ -15,6 +16,7 @@
   # Enable all Graphical applications if enabled
   config.applications.graphics = lib.mkIf config.applications.graphics.enable {
     friction.enable = lib.mkDefault true;
+    inkscape.enable = lib.mkDefault true;
     kolourpaint.enable = lib.mkDefault true;
   };
 }
