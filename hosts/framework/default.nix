@@ -8,6 +8,7 @@
     ../common/optional/adb.nix
     ../common/optional/appimage.nix
     ../common/optional/fwupd.nix
+    ../common/optional/ghidra.nix
     ../common/optional/gnome.nix
     ../common/optional/gsconnect.nix
     ../common/optional/iwd.nix
