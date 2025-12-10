@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   # Add environment variables for audio plugins
   home.sessionVariables =
@@ -6,11 +11,11 @@
       makePluginPath =
         format:
         (lib.makeSearchPath format [
-          "$HOME/.nix-profile/lib"
+          "${config.home.homeDirectory}/.nix-profile/lib"
           "/run/current-system/sw/lib"
           "/etc/profiles/per-user/$USER/lib"
         ])
-        + ":$HOME/.${format}";
+        + ":${config.home.homeDirectory}/.${format}";
     in
     {
       DSSI_PATH = makePluginPath "dssi";
