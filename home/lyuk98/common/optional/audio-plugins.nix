@@ -1,5 +1,6 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 {
+  # Add environment variables for audio plugins
   home.sessionVariables =
     let
       makePluginPath =
@@ -19,4 +20,9 @@
       VST_PATH = makePluginPath "vst";
       VST3_PATH = makePluginPath "vst3";
     };
+
+  # Add audio plugins
+  home.packages = with pkgs; [
+    drumgizmo # DrumGizmo LV2 plugin
+  ];
 }

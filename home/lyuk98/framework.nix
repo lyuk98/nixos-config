@@ -4,6 +4,7 @@
     ./common/applications
 
     ./common/optional/android-translation-layer.nix
+    ./common/optional/audio-plugins.nix
     ./common/optional/custom-packages.nix
     ./common/optional/direnv.nix
     ./common/optional/ffmpeg.nix
