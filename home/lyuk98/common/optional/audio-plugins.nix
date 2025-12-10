@@ -11,9 +11,8 @@
       makePluginPath =
         format:
         (lib.makeSearchPath format [
-          "${config.home.homeDirectory}/.nix-profile/lib"
+          "${config.home.profileDirectory}/lib"
           "/run/current-system/sw/lib"
-          "/etc/profiles/per-user/$USER/lib"
         ])
         + ":${config.home.homeDirectory}/.${format}";
     in
