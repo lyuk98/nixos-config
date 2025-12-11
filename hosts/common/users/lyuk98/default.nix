@@ -25,6 +25,7 @@ in
         "adbusers"
         "libvirtd"
         "networkmanager"
+        "pipewire"
         "tss"
         "wheel"
       ];
