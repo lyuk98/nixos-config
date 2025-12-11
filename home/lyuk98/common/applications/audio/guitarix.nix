@@ -12,7 +12,7 @@
     # Add packages
     home.packages = [
       pkgs.guitarix
-      pkgs.gxplugins-lv2 # Extra LV2 plugins to compliment guitarix
+      pkgs.gxplugins-lv2 # Extra LV2 plugins to complement guitarix
     ];
   };
 }
