@@ -11,6 +11,7 @@
     ./hydrogen.nix
     ./kid3.nix
     ./picard.nix
+    ./qpwgraph.nix
     ./shortwave.nix
     ./zrythm.nix
   ];
@@ -26,6 +27,7 @@
     hydrogen.enable = lib.mkDefault true;
     kid3.enable = lib.mkDefault true;
     picard.enable = lib.mkDefault true;
+    qpwgraph.enable = lib.mkDefault true;
     shortwave.enable = lib.mkDefault true;
     zrythm.enable = lib.mkDefault true;
   };
