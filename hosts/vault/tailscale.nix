@@ -15,11 +15,13 @@
       ephemeral = true;
     };
 
-    # Enable Tailscale SSH and advertise tags
-    extraUpFlags = [
-      "--advertise-tags=tag:webserver,tag:vault"
-      "--hostname=vault"
-      "--ssh"
+    # Enable Tailscale SSH
+    ssh = true;
+
+    # Advertise tags
+    advertiseTags = [
+      "tag:vault"
+      "tag:webserver"
     ];
 
     # Use routing features for servers

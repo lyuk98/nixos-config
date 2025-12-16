@@ -9,11 +9,13 @@
       ephemeral = true;
     };
 
-    # Enable Tailscale SSH and advertise tags
-    extraUpFlags = [
-      "--advertise-tags=tag:museum,tag:webserver"
-      "--hostname=museum"
-      "--ssh"
+    # Enable Tailscale SSH
+    ssh = true;
+
+    # Advertise tags
+    advertiseTags = [
+      "tag:museum"
+      "tag:webserver"
     ];
 
     # Use routing features for servers
