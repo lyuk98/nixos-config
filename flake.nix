@@ -60,6 +60,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Generation of infrastructure and network diagrams
+    nix-topology = {
+      url = "github:oddlama/nix-topology";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Command-line interface for NixOS
     nixos-cli.url = "github:nix-community/nixos-cli";
 
@@ -90,6 +96,7 @@
       home-manager,
       systems,
       nixos-generators,
+      nix-topology,
       ...
     }:
     let
@@ -105,7 +112,6 @@
       forAllSystems = f: nixpkgs.lib.genAttrs (import systems) (system: (forSystem system f));
     in
     {
-      # Custom packages and image generators
       packages = forAllSystems (
         {
           pkgs,
@@ -113,7 +119,9 @@
           system,
           ...
         }:
+        # Custom packages
         (import ./packages { inherit pkgs; })
+        # Image generators
         // (import ./generators {
           inherit
             inputs
@@ -122,6 +130,18 @@
             system
             ;
         })
+        # System topology
+        // {
+          topology = import nix-topology {
+            pkgs = import nixpkgs {
+              inherit system;
+              overlays = [ nix-topology.overlays.default ];
+            };
+            modules = [
+              { nixosConfigurations = self.nixosConfigurations; }
+            ];
+          };
+        }
       );
 
       # Use nixfmt as formatter

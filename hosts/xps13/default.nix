@@ -9,6 +9,7 @@
     ../common/optional/iwd.nix
     ../common/optional/lanzaboote.nix
     ../common/optional/libvirt.nix
+    ../common/optional/nix-topology/tailscale/webserver.nix
     ../common/optional/pipewire.nix
     ../common/optional/plymouth.nix
     ../common/optional/random-mac-address.nix
@@ -22,6 +23,7 @@
     ./clevis.nix
     ./disko-config.nix
     ./tailscale.nix
+    ./topology.nix
   ];
 
   # Retrieve secrets

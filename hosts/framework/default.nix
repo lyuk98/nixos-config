@@ -3,6 +3,7 @@
   imports = [
     inputs.hardware.nixosModules.framework-12th-gen-intel
     ./hardware-configuration.nix
+    ./topology.nix
 
     ../common/core
     ../common/optional/adb.nix
@@ -16,6 +17,7 @@
     ../common/optional/libimobiledevice.nix
     ../common/optional/libvirt.nix
     ../common/optional/linux-latest.nix
+    ../common/optional/nix-topology/tailscale/admin.nix
     ../common/optional/nixos-cli.nix
     ../common/optional/pipewire.nix
     ../common/optional/plymouth.nix

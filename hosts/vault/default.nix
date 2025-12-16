@@ -6,11 +6,13 @@
     ./digitalocean.nix
     ./disko-config.nix
     ./tailscale.nix
+    ./topology.nix
     ./vault.nix
 
     ../common/core
 
     ../common/optional/grub.nix
+    ../common/optional/nix-topology/tailscale/webserver.nix
     ../common/optional/sshd.nix
     ../common/optional/systemd-networkd.nix
   ];

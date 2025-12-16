@@ -8,11 +8,13 @@
     ./lightsail.nix
     ./systemd-networkd.nix
     ./tailscale.nix
+    ./topology.nix
     ./vault-agent.nix
 
     ../common/core
 
     ../common/optional/grub.nix
+    ../common/optional/nix-topology/tailscale/webserver.nix
     ../common/optional/sshd.nix
     ../common/optional/systemd-networkd.nix
   ];

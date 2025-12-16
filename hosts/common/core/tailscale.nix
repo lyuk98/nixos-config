@@ -88,5 +88,31 @@
         directory = "/var/lib/tailscale";
         mode = "0700";
       };
+
+      # Define Tailscale-related topology configurations
+      topology = {
+        # Define logical network
+        networks.${config.services.tailscale.interfaceName} = {
+          cidrv4 = "100.64.0.0/10";
+          cidrv6 = "fd7a:115c:a1e0::/48";
+
+          icon = "services.headscale";
+          name = "Tailscale Network (Tailnet)";
+
+          style = {
+            primaryColor = "#797878";
+            pattern = "solid";
+          };
+        };
+
+        # Define information about the Tailscale network interface
+        self.interfaces.${config.services.tailscale.interfaceName} = {
+          type = "wireguard";
+          icon = "services.headscale";
+
+          # Indicate that this is a virtual interface
+          virtual = true;
+        };
+      };
     };
 }

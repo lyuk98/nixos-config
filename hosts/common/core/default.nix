@@ -9,6 +9,7 @@
     ./immutable-users.nix
     ./locale.nix
     ./msedit.nix
+    ./nix-topology.nix
     ./nix.nix
     ./preservation.nix
     ./sops.nix
