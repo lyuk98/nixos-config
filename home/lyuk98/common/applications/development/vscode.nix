@@ -66,12 +66,12 @@
             "caddyfile.executable" = lib.getExe pkgs.caddy;
 
             # Extensions / ccls
-            "ccls.launch.command" = "${pkgs.ccls}/bin/ccls";
+            "ccls.launch.command" = lib.getExe pkgs.ccls;
 
             # Extensions / Custom Local Formatters
             "customLocalFormatters.formatters" = [
               {
-                "command" = "${pkgs.hclfmt}/bin/hclfmt";
+                "command" = lib.getExe pkgs.hclfmt;
                 "languages" = [
                   "hcl"
                 ];
@@ -88,7 +88,7 @@
 
             # Extensions / NixIDE
             "nix.enableLanguageServer" = true;
-            "nix.serverPath" = "${pkgs.nil}/bin/nil";
+            "nix.serverPath" = lib.getExe pkgs.nil;
             "nix.serverSettings" = {
               "nil" = {
                 "formatting"."command" = [ "nixfmt" ];
@@ -96,7 +96,7 @@
             };
 
             # Extensions / rust-analyzer
-            "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
+            "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
 
             # Settings for HashiCorp configuration language
             "[hcl]" = {

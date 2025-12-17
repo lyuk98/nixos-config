@@ -40,7 +40,7 @@
             Service = {
               Type = "simple";
               ExecStartPre = "${pkgs.networkmanager}/bin/nm-online";
-              ExecStart = "${pkg}/bin/protonvpn-app";
+              ExecStart = lib.getExe pkg;
             };
           };
     };
