@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  osConfig,
   ...
 }:
 {
@@ -21,6 +22,11 @@
   config =
     let
       pkg = pkgs.protonvpn-gui;
+      networkmanager =
+        if (!builtins.isNull osConfig) then
+          osConfig.networking.networkmanager.package
+        else
+          pkgs.networkmanager;
     in
     lib.mkIf config.applications.network.proton-vpn.enable {
       # Add packages
@@ -39,7 +45,7 @@
             };
             Service = {
               Type = "simple";
-              ExecStartPre = "${pkgs.networkmanager}/bin/nm-online";
+              ExecStartPre = "${networkmanager}/bin/nm-online";
               ExecStart = lib.getExe pkg;
             };
           };
