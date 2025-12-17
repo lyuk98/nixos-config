@@ -28,6 +28,7 @@
         default = {
           # Add extensions
           extensions = with pkgs.vscode-marketplace; [
+            matthewpi.caddyfile-support # Caddyfile Support
             ccls-project.ccls # ccls
             jkillian.custom-local-formatters # Custom Local Formatters
             github.vscode-github-actions # GitHub Actions
@@ -60,6 +61,9 @@
             # Application
             "telemetry.feedback.enabled" = false;
             "telemetry.telemetryLevel" = "off";
+
+            # Extensions / Caddyfile
+            "caddyfile.executable" = lib.getExe pkgs.caddy;
 
             # Extensions / ccls
             "ccls.launch.command" = "${pkgs.ccls}/bin/ccls";
