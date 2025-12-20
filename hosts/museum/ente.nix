@@ -99,4 +99,39 @@
 
   # Add persistent data directory for Ente
   preservation.preserveAt."/persist".directories = [ "/var/lib/ente" ];
+
+  # Declare Ente and related services in topology
+  topology.self.services =
+    let
+      inherit (config.lib.topology) getIcon;
+    in
+    {
+      # Ente
+      ente = {
+        icon = getIcon "ente-photos" "png";
+        name = "Ente";
+
+        # Generate details with endpoints as names
+        details = lib.mapAttrs' (_: value: {
+          name = value;
+          value = {
+            text = "";
+          };
+        }) config.services.ente.web.domains;
+      };
+
+      # PostgreSQL
+      postgres = {
+        icon = getIcon "postgresql" "svg";
+        name = "PostgreSQL";
+
+        details = {
+          # Define endpoint
+          "${config.services.ente.api.settings.db.host}".text = "";
+        };
+      };
+
+      # Hide Nginx
+      nginx.hidden = true;
+    };
 }

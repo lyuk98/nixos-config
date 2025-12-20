@@ -86,6 +86,12 @@
         home-manager.follows = "home-manager";
       };
     };
+
+    # Icons for services
+    dashboard-icons = {
+      url = "github:homarr-labs/dashboard-icons";
+      flake = false;
+    };
   };
 
   outputs =

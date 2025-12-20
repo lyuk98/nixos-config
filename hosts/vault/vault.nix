@@ -49,4 +49,19 @@
       ui = true
     '';
   };
+
+  # Declare Vault service in topology
+  topology.self.services.vault =
+    let
+      inherit (config.lib.topology) getIcon;
+    in
+    {
+      icon = getIcon "hashicorp-vault" "png";
+      name = "Vault";
+
+      # Service details
+      details = {
+        "vault.tailnet.lyuk98.com".text = config.services.vault.address;
+      };
+    };
 }
