@@ -28,5 +28,6 @@
   # Add audio plugins
   home.packages = with pkgs; [
     drumgizmo # DrumGizmo LV2 plugin
+    noise-repellent # LV2 plugins for noise reduction
   ];
 }
