@@ -7,7 +7,7 @@
     ./common/optional/audio-plugins.nix
     ./common/optional/custom-packages.nix
     ./common/optional/direnv.nix
-    ./common/optional/ffmpeg.nix
+    ./common/optional/ffmpeg-nonfree.nix
     ./common/optional/fontconfig.nix
     ./common/optional/fzf.nix
     ./common/optional/gh.nix
