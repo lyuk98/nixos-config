@@ -1,0 +1,25 @@
+{
+	"data": "ENC[AES256_GCM,data:F6sRroa6hv0bj+1FpDhhqhuBxU7V64LMVQNS3Wy3jwH/JvntVteqO3adpI22FLDXwd+9DW6hYh0fYHX6Z1sJN3a/fKIKHG797f2oKF0abfTkat0nLBXtjdwwFfTfRk/0nildfNn9WMrc1mwRhqZMjT+9BVsDZybGxKlm7g+7O0F52xjfpZld2HCgxRnfmlzVm9eLkVcgAM+pYtkZXpRw3zZXwwI5g74TDN5eMSr8PXFH7x9hh3MCSJqRRkzWroQDXK5HHqyNokW7eBe+W5Cy2kVgM9R/PKcre3QxKVqb7KhDr/D6bEGeRCieBkeoWBKylhaCR2LuvXl8Kv/ZpQ9dYGeH2meMfkJaScNPHPsOmXqdpks=,iv:gUnQxP8oeyO7Sw9QdehpigU//aCKSOcEOv7RUGgMIdc=,tag:RBJkDK9Lk9mKD14FM06drw==,type:str]",
+	"sops": {
+		"age": [
+			{
+				"recipient": "age14edzmqc4r07gp9lkj8z4gchccs373s8lcdrw69d6964tallpuuzqausgmk",
+				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBTcjU3TGFFVFZ6aTFmOFBM\nSEhWcWc0bUR4eU1KUFAxaWgrTkQ3K1l3NVU4CnBFbHJWZkw5NW5La2cwUi9LTTV0\nTWF0eWVwQVZXQnFDbGRhb2N0cnk1U1kKLS0tIEVENStSZEF0ZW55bTZrRTNYMkJy\neDF2a2pPVy9oSkxJaDE0M0ZQUFp2T2sKQAGULtPO0B61gCtJJiQp/xBxxhjgu3dV\ntyN+18/p80Da0DS7faraZCRH1jq0b8HddaiCMA6KQifCBTEOCUeB1Q==\n-----END AGE ENCRYPTED FILE-----\n"
+			},
+			{
+				"recipient": "age1eqaqhyzdznd22j43j43e8qpra6z849hqljg9h3xruz0g0pmypassetfhdw",
+				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBwU3NTVXovakwxUTVXcXpD\ncWV3RElUUnYxMUJIZm9xTWxDZkV1VEZIOTM4CnVsMXh5RmUzSkZBZDJHUDNpYjh4\ndXk1ZFFqbWwvbm04Q2dSc1p1T2pGY1EKLS0tIDRaNkxWaEh0L0xZVWFoT3ROMklO\nUmRaKzRnNkZaVWVOQ0NROXFDQjNkeVEKeQfVwzLgY3LhTgQLT6y5kqocjgZ88bIe\n0KV8SLwq02UsC+g2eDJsFMaahfC7mPBZz8FQDSvl63sw8GlNLwwGnA==\n-----END AGE ENCRYPTED FILE-----\n"
+			}
+		],
+		"lastmodified": "2025-12-26T05:01:38Z",
+		"mac": "ENC[AES256_GCM,data:Ef51Ah8Vo86mENG/EoopVZz7PS6+4csXT05efUYXfaQ+YRUBKmwm+7HkEUKaHnZ6wSww7ASD6/NyGZHlhO/DXNfxYfl/T6x+C80q0GW3K2gmHbLCxFzrfIUtkIgA6kHtrraKm42s/t+I84tm941qXwtmwZYMCWKb6+w5TMGSs7E=,iv:A+P4SL1c+vRRgV4ZFKlZGXlXDO6evW0Kn5et6r+pMtc=,tag:sBV7f9gPBvKYjVDykQSf0g==,type:str]",
+		"pgp": [
+			{
+				"created_at": "2025-12-26T05:01:38Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nhF4D4TeHAuIWmuESAQdAUQuj+MpoqGTaEDuq6N6viFQQlmuKKTp13qXb3LSIqmsw\nykal2kMhz6dSQzugh+t0VuPCQjPGu9fiJ4yhZBscs5bULe6zXzblHwxI0UxJGrBq\n0l4BvItEovT+NU7QcHDRL+qwcdedb2yTVmUjLU7ICQQ94/yUbfee/oiPvw0WopeR\njzCdrsR1MG71/DFLoMRIuTJ2MI9+3bLgGQ9m7HfEqqMi9Em4dXELk+uGzgJDxAGF\n=o7cM\n-----END PGP MESSAGE-----",
+				"fp": "270CB11B1189E79A17DCB7831BDAFDC5D60E735C"
+			}
+		],
+		"version": "3.11.0"
+	}
+}
