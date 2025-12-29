@@ -1,8 +1,7 @@
 { pkgs, ... }:
 let
   # Package to use for wl-clipboard
-  # Alternatives such as `wl-clipboard-rs` exist
-  pkg = pkgs.wl-clipboard;
+  pkg = pkgs.wl-clipboard-rs;
 in
 {
   # Add package to environment
