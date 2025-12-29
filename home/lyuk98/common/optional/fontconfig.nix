@@ -10,6 +10,7 @@
     with pkgs;
     [
       cascadia-code # Cascadia Code
+      d2coding # D2 Coding
       inter # Inter
       iosevka # Iosevka
       noto-fonts # Noto
