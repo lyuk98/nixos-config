@@ -14,6 +14,7 @@
     ./common/optional/gnome-extensions.nix
     ./common/optional/nix-output-monitor.nix
     ./common/optional/poppler-utils.nix
+    ./common/optional/proton-vpn.nix
     ./common/optional/vault.nix
     ./common/optional/wl-clipboard.nix
   ];
@@ -34,6 +35,7 @@
 
   # Disable applications
   applications.network.firefox.enable = false;
+  applications.network.proton-vpn.enable = false;
 
   # First version of Home Manager installed in this system
   home.stateVersion = "25.05";
