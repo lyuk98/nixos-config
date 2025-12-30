@@ -68,7 +68,7 @@ The following features can be used by some devices:
 - [GNU Privacy Guard](https://gnupg.org/) and gpg-agent ([`gnupg.nix`](./home/lyuk98/common/core/gnupg.nix))
 - [nix-index](https://github.com/nix-community/nix-index) for locating files in Nixpkgs and providing `command-not-found` functionality ([`nix-index.nix`](./home/lyuk98/common/core/nix-index.nix))
 - [Nix User Repository](https://github.com/nix-community/NUR) ([`nur.nix`](./home/lyuk98/common/core/nur.nix))
-- [Pay Respects](https://github.com/iffse/pay-respects) for ~~paying respects~~ correcting previous commands ([`pay-respects.nix`](./home/lyuk98/common/core/pay-respects.nix))
+- [Pay Respects](https://github.com/iffse/pay-respects) for ~~pressing F~~ correcting previous commands ([`pay-respects.nix`](./home/lyuk98/common/core/pay-respects.nix))
 
 #### Optional
 
@@ -77,7 +77,7 @@ The following features can be used by some devices:
 - Automatic loading and unloading of environment variables and, for Nix, development environment with [direnv](https://direnv.net/) ([`direnv.nix`](./home/lyuk98/common/optional/direnv.nix))
 - Both free and non-free variants of FFmpeg ([`ffmpeg.nix`](./home/lyuk98/common/optional/ffmpeg.nix), [`ffmpeg-nonfree.nix`](./home/lyuk98/common/optional/ffmpeg-nonfree.nix))
 - User-wide font configuration ([`fontconfig.nix`](./home/lyuk98/common/optional/fontconfig.nix))
-- fzf, a command-line fuzzy finder ([`fzf.nix`](./home/lyuk98/common/optional/fzf.nix))
+- [fzf](https://github.com/junegunn/fzf), a command-line fuzzy finder ([`fzf.nix`](./home/lyuk98/common/optional/fzf.nix))
 - User-specific GNOME extensions ([`gnome-extensions.nix`](./home/lyuk98/common/optional/gnome-extensions.nix))
 - Command-line clipboard management with [wl-clipboard-rs](https://github.com/YaLTeR/wl-clipboard-rs) ([`wl-clipboard.nix`](./home/lyuk98/common/optional/wl-clipboard.nix))
 
