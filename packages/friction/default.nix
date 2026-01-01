@@ -4,7 +4,7 @@
   cmake,
   expat,
   fetchFromGitHub,
-  ffmpeg,
+  ffmpeg_4-headless,
   fontconfig,
   freetype,
   harfbuzz,
@@ -26,51 +26,6 @@
   zlib,
 }:
 let
-  ffmpeg_4-headless =
-    (ffmpeg.override {
-      # Use latest version of FFmpeg 4.2
-      version = "4.2.11";
-      hash = "sha256-JQ1KWH09T7E2/TOGZG/okedOUQIO9bzJVwvnU7VL+b0=";
-
-      # Disable unneeded dependencies from a headless setup
-      ffmpegVariant = "headless";
-      withHeadlessDeps = false;
-
-      # Build only what is necessary
-      buildAvcodec = true;
-      buildAvdevice = true;
-      buildAvfilter = true;
-      buildAvformat = true;
-      buildAvutil = true;
-      buildSwresample = true;
-      buildSwscale = true;
-
-      withHardcodedTables = true;
-      withNetwork = true;
-      withPixelutils = true;
-      withSafeBitstreamReader = true;
-
-      buildFfmpeg = true;
-    }).overrideAttrs
-      (previousAttrs: {
-        # Remove incompatible patch
-        patches = builtins.filter (
-          patch: patch.name != "unbreak-svt-av1-3.0.0.patch"
-        ) previousAttrs.patches;
-
-        # Remove nonexistent flags
-        configureFlags =
-          let
-            nonexistentFlags = [
-              "--disable-librav1e"
-              "--disable-librist"
-              "--disable-libsvtav1"
-              "--disable-libuavs3d"
-              "--disable-vulkan"
-            ];
-          in
-          lib.lists.subtractLists nonexistentFlags previousAttrs.configureFlags;
-      });
   gn = stdenv.mkDerivation {
     pname = "gn";
     version = "0-unstable-2025-08-25";
