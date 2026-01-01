@@ -36,7 +36,7 @@ clangStdenv.mkDerivation (finalAttrs: {
     '';
     homepage = "https://friction.graphics/";
     changelog = "https://friction.graphics/releases/friction-100-rc3.html";
-    license = lib.licenses.gpl3;
+    license = lib.licenses.gpl3Plus;
     mainProgram = "friction";
   };
 
