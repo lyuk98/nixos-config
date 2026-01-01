@@ -7,7 +7,7 @@
   ffmpeg_4-headless,
   fontconfig,
   freetype,
-  harfbuzz,
+  harfbuzzFull,
   icu,
   lib,
   libjpeg,
@@ -60,7 +60,6 @@ let
       platforms = lib.platforms.unix;
     };
   };
-  harfbuzz-icu = harfbuzz.override { withIcu = true; };
 
   qtVersion = lib.versions.major qtbase.version;
 in
@@ -96,7 +95,7 @@ clangStdenv.mkDerivation (finalAttrs: {
     substituteInPlace src/engine/skia/third_party/freetype2/BUILD.gn \
       --replace-fail /usr ${freetype.dev}
     substituteInPlace src/engine/skia/third_party/harfbuzz/BUILD.gn \
-      --replace-fail /usr ${harfbuzz-icu.dev}
+      --replace-fail /usr ${harfbuzzFull.dev}
   '';
 
   buildInputs = [
@@ -104,7 +103,7 @@ clangStdenv.mkDerivation (finalAttrs: {
     ffmpeg_4-headless
     fontconfig
     freetype
-    harfbuzz-icu
+    harfbuzzFull
     icu
     libjpeg
     libpng
