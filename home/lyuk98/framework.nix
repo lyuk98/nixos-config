@@ -15,6 +15,7 @@
     ./common/optional/nix-output-monitor.nix
     ./common/optional/poppler-utils.nix
     ./common/optional/proton-vpn.nix
+    ./common/optional/talos.nix
     ./common/optional/vault.nix
     ./common/optional/wl-clipboard.nix
   ];
