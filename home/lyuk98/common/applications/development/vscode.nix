@@ -40,6 +40,7 @@
             rust-lang.rust-analyzer # rust-analyzer
             ban.spellright # Spell Right
             tonybaloney.vscode-pets # vscode-pets
+            redhat.vscode-yaml # YAML
           ];
 
           # Disable update notifications
