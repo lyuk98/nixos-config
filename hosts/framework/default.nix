@@ -17,6 +17,7 @@
     ../common/optional/libimobiledevice.nix
     ../common/optional/libvirt.nix
     ../common/optional/linux-latest.nix
+    ../common/optional/nh.nix
     ../common/optional/nix-topology/tailscale/admin.nix
     ../common/optional/nixos-cli.nix
     ../common/optional/pipewire.nix
