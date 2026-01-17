@@ -1,4 +1,9 @@
-{ config, inputs, ... }:
+{
+  lib,
+  config,
+  inputs,
+  ...
+}:
 {
   imports = [
     inputs.hardware.nixosModules.framework-12th-gen-intel
@@ -59,6 +64,9 @@
       '';
     };
   };
+
+  # Temporarily disable DNSSEC to avoid connection issues with Proton VPN
+  services.resolved.settings.Resolve.DNSSEC = lib.mkForce false;
 
   # First version of NixOS installed in this system
   system.stateVersion = "25.05";
