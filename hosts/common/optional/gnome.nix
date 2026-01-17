@@ -45,6 +45,9 @@
     # Enable HEIC image preview in Nautilus
     pkgs.libheif
     pkgs.libheif.out
+
+    # Enable video thumbnails in Nautilus
+    pkgs.totem
   ];
   environment.pathsToLink = [ "share/thumbnailers" ];
 }
