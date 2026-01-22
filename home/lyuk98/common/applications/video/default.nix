@@ -12,6 +12,7 @@
     ./mediainfo.nix
     ./obs-studio.nix
     ./subtitlecomposer.nix
+    ./subtitleedit.nix
     ./vlc.nix
   ];
 
@@ -28,6 +29,7 @@
     mediainfo.enable = lib.mkDefault true;
     obs-studio.enable = lib.mkDefault true;
     subtitlecomposer.enable = lib.mkDefault true;
+    subtitleedit.enable = lib.mkDefault true;
     vlc.enable = lib.mkDefault true;
   };
 }
