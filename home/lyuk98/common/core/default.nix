@@ -3,6 +3,7 @@
   imports = [
     ./bash.nix
     ./editorconfig.nix
+    ./file.nix
     ./git.nix
     ./gnome-backgrounds.nix
     ./gnome-shell.nix
