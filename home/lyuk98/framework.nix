@@ -18,6 +18,7 @@
     ./common/optional/talos.nix
     ./common/optional/vault.nix
     ./common/optional/wl-clipboard.nix
+    ./common/optional/yt-dlp.nix
   ];
 
   # Enable applications
