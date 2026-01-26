@@ -96,6 +96,9 @@
               };
             };
 
+            # Extensions / Nix Environment Selector
+            "nixEnvSelector.useFlakes" = true;
+
             # Extensions / rust-analyzer
             "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
 
