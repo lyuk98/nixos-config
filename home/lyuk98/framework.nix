@@ -38,6 +38,7 @@
   # Disable applications
   applications.network.firefox.enable = false;
   applications.network.proton-vpn.enable = false;
+  applications.video.kdenlive.enable = false;
 
   # First version of Home Manager installed in this system
   home.stateVersion = "25.05";
