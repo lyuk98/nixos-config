@@ -1,0 +1,25 @@
+{
+	"data": "ENC[AES256_GCM,data:PcbO+aOEeqQqng7GbDYSvba3E0V1IH/rMg+rRLTX3WatmCWjeohdL1WYOnJMZdgpUMWNcmzmZKRyzRtuBCh5Zg/uHx6AEaWQ+vaskqnCpfcBY0o/PeoZdD0w2B72q+rzZQl3heoBJUxDnXgrRMUqUdG1TcqvUb7CR/5gNKKyeK9LOK8DuLw1gW0nJa1DpKrZnbQJkETZzTIfFckMNOEmvl6b93wLQjGOU7ygOLeVoD/9r3WYA/QFqygDWWuo3131vaOUHwvX3ZnwNBpYOmAk1g==,iv:s5vutBmx9r271jAcmYmeuM5OvEf/oH02H32JEMF4Z4o=,tag:PAlyV+XRLhT1CECXM0WaRQ==,type:str]",
+	"sops": {
+		"age": [
+			{
+				"recipient": "age14edzmqc4r07gp9lkj8z4gchccs373s8lcdrw69d6964tallpuuzqausgmk",
+				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBOcjJDbjZqT0NCNWd0S29u\nTTh1dVE1WndnTjFYQ0JpdTdEemJHY3lUSnhnCktKdndSdlFDdTlGVjZNMmtSNmUy\nYjFzMzJYUUFWalBBYXFJYS9xNUJLVlUKLS0tIGpvQXphcUVxZldhbi9KWjBCT3VE\nMWRNM1dRcVRVQ3lqdElwMytoaEdDZVUK0ItWIaRZ0VaGR4DvC+5Ja/q/Gzk7NhNx\nxRsX643aWKOVAUVbMUj7WpTJ6ABGiCz0z4Dq28IwjAescKxvwKIkBw==\n-----END AGE ENCRYPTED FILE-----\n"
+			},
+			{
+				"recipient": "age1eqaqhyzdznd22j43j43e8qpra6z849hqljg9h3xruz0g0pmypassetfhdw",
+				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB3cHgzNGF6WmZkNzdjOTdz\nbkNUdVkzcWZCa2ZtVGNtbmg2REZlcFIxRW1nCjVFdGkzT1NMVGZ0dlpLUE9ucTJh\ndk05VkRjaSs4M3ozY1M0ZU1FRlVSejgKLS0tIElKSXdUZ2ViMVNudmFrcXlNaUpT\nQTc1MUFrNGtGNW1EczNCYzhHYlBNcFkKln6wWx1kIrl5NHY1nfaQwZskbktK3h9m\nB9LJ9MAoKnMALkoftZShFMB+gLWvjYpCsYRXBH7Vr/l7iIyoNVz3fg==\n-----END AGE ENCRYPTED FILE-----\n"
+			}
+		],
+		"lastmodified": "2026-02-04T18:27:28Z",
+		"mac": "ENC[AES256_GCM,data:Os994NfTNjlYQh5kkgsWYqyIh2aLCUBhv0o2nbKU7eGcPbmxZdKrP/wVNKf6pSkqaBz25MrV4zG4f21QEz+DHT4A9rfpQUGtZJrX3i2a4vYVyqsR3WR3BsjMkKzwblXntRArx/fJIpf9Az3tQQmFRxK/czJlOgu8nE/5YOjLODo=,iv:P9k8j1bGgexBkSJ5u4UgaUmkAsMEzrVp2sWORDpXNfc=,tag:GS4zRFv4j/VxmTGpPjJq0Q==,type:str]",
+		"pgp": [
+			{
+				"created_at": "2026-02-04T18:27:28Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nhF4D4TeHAuIWmuESAQdAXN2qJApJlWu0eGjv1zk/4q8SP8W3KEux9IAcSSVE9Qcw\nWd9VGcr+E/xAuaUZtZ+3YXtHdiiibFHGGuuOvqQnBOfAwxc8uyI+4lJXDSmix8Vg\n0l4B6jDGmY/PSBdCPs7MOPKoN94kyjCpYbgJ1v35zb2u3oX/Mg7dQeHP5QYFx5k1\ngZsiI3IfUAfWL/QJUteET//3+FqXIvqXMkGZMTKwY3iSRvlGaM9IozUWAFOwUyuw\n=xguI\n-----END PGP MESSAGE-----",
+				"fp": "270CB11B1189E79A17DCB7831BDAFDC5D60E735C"
+			}
+		],
+		"version": "3.11.0"
+	}
+}
