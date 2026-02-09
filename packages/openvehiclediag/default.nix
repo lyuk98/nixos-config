@@ -8,11 +8,15 @@
   stdenv,
 
   gtk3,
+  libX11,
+  libxcb,
+  libXcursor,
+  libXi,
   libxkbcommon,
+  libXrandr,
   pkg-config,
   vulkan-loader,
   wayland,
-  xorg,
 
   program ? "openvehiclediag",
 }:
@@ -101,11 +105,11 @@ rustPlatform.buildRustPackage (
         libxkbcommon
         vulkan-loader
         wayland
-        xorg.libX11
-        xorg.libxcb
-        xorg.libXcursor
-        xorg.libXi
-        xorg.libXrandr
+        libX11
+        libxcb
+        libXcursor
+        libXi
+        libXrandr
       ]);
       nativeBuildInputs = [
         copyDesktopItems
@@ -151,7 +155,7 @@ rustPlatform.buildRustPackage (
             libxkbcommon
             vulkan-loader
             wayland
-            xorg.libX11
+            libX11
           ];
         in
         lib.optionalString stdenv.hostPlatform.isLinux ''
