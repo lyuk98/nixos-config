@@ -54,6 +54,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Functions to generate Kubernetes YAML
+    nix-kube-generators.url = "github:farcaller/nix-kube-generators";
+
     # Weekly updated database for nix-index
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
