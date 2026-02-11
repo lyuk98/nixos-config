@@ -48,12 +48,6 @@
     # Declarative management of non-volatile system state
     preservation.url = "github:nix-community/preservation";
 
-    # Generation of NixOS images
-    nixos-generators = {
-      url = "github:nix-community/nixos-generators";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Functions to generate Kubernetes YAML
     nix-kube-generators.url = "github:farcaller/nix-kube-generators";
 
@@ -104,7 +98,6 @@
       nixpkgs-stable,
       home-manager,
       systems,
-      nixos-generators,
       nix-topology,
       ...
     }:
@@ -130,15 +123,6 @@
         }:
         # Custom packages
         (import ./packages { inherit pkgs; })
-        # Image generators
-        // (import ./generators {
-          inherit
-            inputs
-            pkgs
-            lib
-            system
-            ;
-        })
         # System topology
         // {
           topology = import nix-topology {
