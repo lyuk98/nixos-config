@@ -12,6 +12,7 @@
     ./common/optional/fzf.nix
     ./common/optional/gh.nix
     ./common/optional/gnome-extensions.nix
+    ./common/optional/kubectl.nix
     ./common/optional/nix-output-monitor.nix
     ./common/optional/poppler-utils.nix
     ./common/optional/proton-vpn.nix
