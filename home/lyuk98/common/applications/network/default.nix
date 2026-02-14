@@ -10,6 +10,7 @@
     ./ladybird.nix
     ./proton-vpn.nix
     ./signal-desktop.nix
+    ./stoat-desktop.nix
     ./telegram-desktop.nix
     ./zen-browser.nix
   ];
@@ -24,6 +25,7 @@
     ladybird.enable = lib.mkDefault true;
     proton-vpn.enable = lib.mkDefault true;
     signal-desktop.enable = lib.mkDefault true;
+    stoat-desktop.enable = lib.mkDefault true;
     telegram-desktop.enable = lib.mkDefault true;
     zen-browser.enable = lib.mkDefault true;
   };
