@@ -27,20 +27,22 @@
         # Define default profile
         default = {
           # Add extensions
-          extensions = with pkgs.vscode-marketplace; [
-            matthewpi.caddyfile-support # Caddyfile Support
-            ccls-project.ccls # ccls
-            jkillian.custom-local-formatters # Custom Local Formatters
-            github.vscode-github-actions # GitHub Actions
-            hashicorp.hcl # HashiCorp HCL
-            hashicorp.terraform # HashiCorp Terraform
-            james-yu.latex-workshop # LaTeX Workshop
-            arrterian.nix-env-selector # Nix Environment Selector
-            jnoortheen.nix-ide # Nix IDE
-            rust-lang.rust-analyzer # rust-analyzer
-            ban.spellright # Spell Right
-            tonybaloney.vscode-pets # vscode-pets
-            redhat.vscode-yaml # YAML
+          extensions = with pkgs; [
+            vscode-marketplace.arrterian.nix-env-selector # Nix Environment Selector
+            vscode-marketplace.ban.spellright # Spell Right
+            vscode-marketplace.ccls-project.ccls # ccls
+            vscode-marketplace.github.vscode-github-actions # GitHub Actions
+            vscode-marketplace.hashicorp.hcl # HashiCorp HCL
+            vscode-marketplace.hashicorp.terraform # HashiCorp Terraform
+            vscode-marketplace.james-yu.latex-workshop # LaTeX Workshop
+            vscode-marketplace.jkillian.custom-local-formatters # Custom Local Formatters
+            vscode-marketplace.jnoortheen.nix-ide # Nix IDE
+            vscode-marketplace.matthewpi.caddyfile-support # Caddyfile Support
+            vscode-marketplace.redhat.vscode-yaml # YAML
+            vscode-marketplace.rust-lang.rust-analyzer # rust-analyzer
+            vscode-marketplace.tonybaloney.vscode-pets # vscode-pets
+
+            open-vsx.opentofu.vscode-opentofu # VSCode - OpenTofu
           ];
 
           # Disable update notifications
@@ -102,6 +104,14 @@
             # Extensions / rust-analyzer
             "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
 
+            # Extensions / VSCode - OpenTofu
+            "opentofu.codelens.referenceCount" = true;
+            "opentofu.validation.enableEnhancedValidation" = true;
+            "opentofu.languageServer.enable" = true;
+            "opentofu.languageServer.path" = lib.getExe pkgs.tofu-ls;
+            "opentofu.languageServer.opentofu.path" = lib.getExe pkgs.opentofu;
+            "opentofu.experimentalFeatures.prefillRequiredFields" = true;
+
             # Settings for HashiCorp configuration language
             "[hcl]" = {
               # Text Editor
@@ -122,6 +132,14 @@
               # Text Editor
               "editor.insertSpaces" = true;
               "editor.tabSize" = 4;
+            };
+
+            # Settings for OpenTofu
+            "[opentofu][opentofu-vars]" = {
+              # Text Editor
+              "editor.defaultFormatter" = "opentofu.vscode-opentofu";
+              "editor.insertSpaces" = true;
+              "editor.tabSize" = 2;
             };
 
             # Settings for Terraform
