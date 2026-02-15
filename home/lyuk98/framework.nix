@@ -5,6 +5,7 @@
 
     ./common/optional/android-translation-layer.nix
     ./common/optional/audio-plugins.nix
+    ./common/optional/backblaze-b2.nix
     ./common/optional/custom-packages.nix
     ./common/optional/direnv.nix
     ./common/optional/ffmpeg-nonfree.nix
