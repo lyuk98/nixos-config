@@ -38,6 +38,9 @@
             vscode-marketplace.jkillian.custom-local-formatters # Custom Local Formatters
             vscode-marketplace.jnoortheen.nix-ide # Nix IDE
             vscode-marketplace.matthewpi.caddyfile-support # Caddyfile Support
+            vscode-marketplace.ms-python.black-formatter # Black Formatter
+            vscode-marketplace.ms-python.pylint # Pylint
+            vscode-marketplace.ms-python.python # Python
             vscode-marketplace.redhat.vscode-yaml # YAML
             vscode-marketplace.rust-lang.rust-analyzer # rust-analyzer
             vscode-marketplace.tonybaloney.vscode-pets # vscode-pets
@@ -101,6 +104,14 @@
             # Extensions / Nix Environment Selector
             "nixEnvSelector.useFlakes" = true;
 
+            # Extensions / Python
+            "python.condaPath" = lib.getExe' pkgs.python3.pkgs.conda "conda";
+            "python.defaultInterpreterPath" = lib.getExe pkgs.python3;
+            "python.pipenvPath" = lib.getExe pkgs.pipenv;
+            "python.pixiToolPath" = lib.getExe pkgs.pixi;
+            "python.poetryPath" = lib.getExe pkgs.poetry;
+            "python.testing.pytestPath" = lib.getExe' pkgs.python3.pkgs.pytest "pytest";
+
             # Extensions / rust-analyzer
             "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
 
@@ -125,6 +136,14 @@
               # Text Editor
               "editor.insertSpaces" = true;
               "editor.tabSize" = 2;
+            };
+
+            # Settings for Python
+            "[python]" = {
+              # Text Editor
+              "editor.defaultFormatter" = "ms-python.black-formatter";
+              "editor.insertSpaces" = true;
+              "editor.tabSize" = 4;
             };
 
             # Settings for Rust
