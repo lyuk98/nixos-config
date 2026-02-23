@@ -18,6 +18,9 @@
       # Enable Zen Browser
       enable = true;
 
+      # Suppress migration warning as it has been performed
+      suppressXdgMigrationWarning = true;
+
       # Enable native messaging
       nativeMessagingHosts = [
         pkgs.firefoxpwa
