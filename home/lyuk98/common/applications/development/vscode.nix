@@ -45,6 +45,7 @@
             vscode-marketplace.rust-lang.rust-analyzer # rust-analyzer
             vscode-marketplace.tonybaloney.vscode-pets # vscode-pets
 
+            open-vsx.mermaidchart.vscode-mermaid-chart # Mermaid
             open-vsx.opentofu.vscode-opentofu # VSCode - OpenTofu
           ];
 
