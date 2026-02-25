@@ -15,7 +15,6 @@ This configuration currently applies to the following list of devices:
 | [framework](./hosts/framework/default.nix) | 💻 Laptop | Framework Laptop 13 | Personal laptop |
 | [museum](./hosts/museum/default.nix) | ☁️ VPS | Amazon Lightsail | Museum instance |
 | [vault](./hosts/vault/default.nix) | ☁️ VPS | DigitalOcean Droplet | Vault instance |
-| [xps13](./hosts/xps13/default.nix) | 💻 Laptop | Dell XPS 13 9350 | Personal laptop/server |
 
 ## Features
 

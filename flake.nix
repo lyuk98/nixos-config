@@ -165,11 +165,6 @@
           modules = [ ./hosts/vault ];
           specialArgs = { inherit inputs outputs; };
         };
-        # Dell XPS 13 9350
-        xps13 = nixpkgs.lib.nixosSystem {
-          modules = [ ./hosts/xps13 ];
-          specialArgs = { inherit inputs outputs; };
-        };
       };
 
       # Home-manager configuration entrypoint
