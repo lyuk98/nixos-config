@@ -41,6 +41,10 @@
   applications.network.firefox.enable = false;
   applications.network.proton-vpn.enable = false;
 
+  # Temporarily disable guitarix to avoid build failures
+  # https://github.com/NixOS/nixpkgs/pull/470920
+  applications.audio.guitarix.enable = false;
+
   # First version of Home Manager installed in this system
   home.stateVersion = "25.05";
 }
