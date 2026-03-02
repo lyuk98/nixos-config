@@ -11,8 +11,5 @@
   config = lib.mkIf config.applications.audio.ardour.enable {
     # Add packages
     home.packages = [ pkgs.ardour ];
-
-    # Enable guitarix by default
-    applications.audio.guitarix.enable = lib.mkDefault true;
   };
 }
