@@ -106,12 +106,7 @@
             "nixEnvSelector.useFlakes" = true;
 
             # Extensions / Python
-            "python.condaPath" = lib.getExe' pkgs.python3.pkgs.conda "conda";
             "python.defaultInterpreterPath" = lib.getExe pkgs.python3;
-            "python.pipenvPath" = lib.getExe pkgs.pipenv;
-            "python.pixiToolPath" = lib.getExe pkgs.pixi;
-            "python.poetryPath" = lib.getExe pkgs.poetry;
-            "python.testing.pytestPath" = lib.getExe' pkgs.python3.pkgs.pytest "pytest";
 
             # Extensions / rust-analyzer
             "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
