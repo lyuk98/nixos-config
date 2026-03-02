@@ -10,6 +10,6 @@
 
   config = lib.mkIf config.applications.games.supertuxkart.enable {
     # Add packages
-    home.packages = [ pkgs.superTuxKart ];
+    home.packages = [ pkgs.supertuxkart ];
   };
 }
