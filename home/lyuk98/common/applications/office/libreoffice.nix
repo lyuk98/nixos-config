@@ -18,12 +18,9 @@
 
         # Add Hunspell for spell checking
         hunspell
-      ]
-      ++ (with pkgs.hunspellDicts; [
-        # Add dictionaries for Hunspell
-        en_GB-ise
-        en_US
-        ko_KR
-      ]);
+
+        # Custom package containing necessary dictionaries
+        hunspell-dicts
+      ];
   };
 }
