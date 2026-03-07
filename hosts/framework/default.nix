@@ -35,6 +35,7 @@
     ../common/optional/tpm2.nix
     ../common/optional/uutils.nix
     ../common/optional/variable-refresh-rate.nix
+    ../common/optional/virtualbox.nix
     ../common/optional/vnstat.nix
 
     ../common/users/lyuk98

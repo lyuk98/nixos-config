@@ -27,6 +27,7 @@ in
         "networkmanager"
         "pipewire"
         "tss"
+        "vboxusers"
         "wheel"
       ];
       hashedPasswordFile = config.sops.secrets.lyuk98-password.path;
