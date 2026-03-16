@@ -26,6 +26,7 @@ in
         "libvirtd"
         "networkmanager"
         "pipewire"
+        "podman"
         "tss"
         "vboxusers"
         "wheel"
