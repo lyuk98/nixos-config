@@ -24,7 +24,6 @@
     ../common/optional/linux-latest.nix
     ../common/optional/nh.nix
     ../common/optional/nix-topology/tailscale/admin.nix
-    ../common/optional/nixos-cli.nix
     ../common/optional/pipewire.nix
     ../common/optional/plymouth.nix
     ../common/optional/podman.nix

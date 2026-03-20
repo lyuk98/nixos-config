@@ -60,9 +60,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Command-line interface for NixOS
-    nixos-cli.url = "github:nix-community/nixos-cli";
-
     # Provide extensions from Visual Studio Code Marketplace
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
