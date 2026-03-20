@@ -26,6 +26,7 @@
     ../common/optional/nix-topology/tailscale/admin.nix
     ../common/optional/pipewire.nix
     ../common/optional/plymouth.nix
+    ../common/optional/podman.nix
     ../common/optional/printing.nix
     ../common/optional/random-mac-address.nix
     ../common/optional/speech-dispatcher.nix
