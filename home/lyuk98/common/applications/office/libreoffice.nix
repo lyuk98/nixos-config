@@ -20,7 +20,7 @@
         hunspell
 
         # Custom package containing necessary dictionaries
-        hunspell-dicts
+        config.programs.hunspell.dictionaries
       ];
   };
 }

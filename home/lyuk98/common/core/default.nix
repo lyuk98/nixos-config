@@ -9,6 +9,7 @@
     ./gnome-shell.nix
     ./gnupg.nix
     ./home-manager.nix
+    ./hunspell.nix
     ./msedit.nix
     ./nix-index.nix
     ./nixpkgs.nix

@@ -177,7 +177,7 @@
     # Link Hunspell dictionaries for extensions that use them
     systemd.user.tmpfiles.rules =
       let
-        path = "${pkgs.hunspell-dicts}/share/hunspell";
+        path = "${config.programs.hunspell.dictionaries}/share/hunspell";
       in
       lib.pipe path [
         # Read contents of the directory
