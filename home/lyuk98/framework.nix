@@ -18,6 +18,7 @@
     ./common/optional/poppler-utils.nix
     ./common/optional/proton-vpn.nix
     ./common/optional/talos.nix
+    ./common/optional/tmpfiles.nix
     ./common/optional/vault.nix
     ./common/optional/wl-clipboard.nix
     ./common/optional/yt-dlp.nix
