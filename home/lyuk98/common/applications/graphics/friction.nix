@@ -10,6 +10,6 @@
 
   config = lib.mkIf config.applications.graphics.friction.enable {
     # Add packages
-    home.packages = [ pkgs.friction ];
+    home.packages = [ pkgs.friction-graphics ];
   };
 }
