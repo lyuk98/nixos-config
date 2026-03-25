@@ -5,7 +5,6 @@
 
     ./common/optional/android-translation-layer.nix
     ./common/optional/audio-plugins.nix
-    ./common/optional/backblaze-b2.nix
     ./common/optional/custom-packages.nix
     ./common/optional/direnv.nix
     ./common/optional/ffmpeg-nonfree.nix
@@ -13,13 +12,10 @@
     ./common/optional/fzf.nix
     ./common/optional/gh.nix
     ./common/optional/gnome-extensions.nix
-    ./common/optional/kubectl.nix
     ./common/optional/nix-output-monitor.nix
     ./common/optional/poppler-utils.nix
     ./common/optional/proton-vpn.nix
-    ./common/optional/talos.nix
     ./common/optional/tmpfiles.nix
-    ./common/optional/vault.nix
     ./common/optional/wl-clipboard.nix
     ./common/optional/yt-dlp.nix
   ];
