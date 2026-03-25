@@ -42,6 +42,9 @@
   applications.network.firefox.enable = false;
   applications.network.proton-vpn.enable = false;
 
+  # Temporarily disable Stoat Desktop to avoid build failures
+  applications.network.stoat-desktop.enable = false;
+
   # First version of Home Manager installed in this system
   home.stateVersion = "25.05";
 }
