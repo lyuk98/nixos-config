@@ -61,6 +61,9 @@
             "editor.insertSpaces" = false;
             "files.autoSave" = "afterDelay";
 
+            # Window
+            "window.autoDetectColorScheme" = true;
+
             # Features
             "extensions.autoUpdate" = false;
             "chat.disableAIFeatures" = true;
