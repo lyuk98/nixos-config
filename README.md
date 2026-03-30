@@ -32,7 +32,7 @@ The following features are applied to every device managed by this configuration
 - [Edit](https://github.com/microsoft/edit) as the default text editor ([`msedit.nix`](./hosts/common/core/msedit.nix))
 - Persisting only what is necessary with [Preservation](https://github.com/nix-community/preservation) ([`preservation.nix`](./hosts/common/core/preservation.nix))
 - Declarative secret provisioning with [sops-nix](https://github.com/Mic92/sops-nix) ([`sops.nix`](./hosts/common/core/sops.nix))
-- [sudo-rs](https://github.com/trifectatechfoundation/sudo-rs) for assuming root privileges ([`sudo.nix`](./hosts/common/core/sudo.nix))
+- run0, or optionally [sudo-rs](https://github.com/trifectatechfoundation/sudo-rs), for assuming root privileges ([`run0.nix`](./hosts/common/core/run0.nix), [`sudo.nix`](./hosts/common/optional/sudo.nix))
 - Network name resolution with systemd-resolved ([`systemd-resolved.nix`](./hosts/common/core/systemd-resolved.nix))
 - WireGuard-based private networking via [Tailscale](https://tailscale.com/) ([`tailscale.nix`](./hosts/common/core/tailscale.nix))
 - Memory compression ([`zram.nix`](./hosts/common/core/zram.nix))

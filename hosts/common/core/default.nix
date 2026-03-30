@@ -12,8 +12,8 @@
     ./nix-topology.nix
     ./nix.nix
     ./preservation.nix
+    ./run0.nix
     ./sops.nix
-    ./sudo.nix
     ./systemd-initrd.nix
     ./systemd-resolved.nix
     ./tailscale.nix
