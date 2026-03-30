@@ -1,5 +1,6 @@
 {
   imports = [
+    ./apparmor.nix
     ./bluetooth.nix
     ./disable-root.nix
     ./firmware.nix

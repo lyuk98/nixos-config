@@ -28,6 +28,7 @@ NixOS modules are used to configure each device's system. Each feature is listed
 
 The following features are applied to every device managed by this configuration:
 
+- AppArmor Mandatory Access Control system ([`apparmor.nix`](./hosts/common/core/apparmor.nix))
 - Disabled access to root ([`disable-root.nix`](./hosts/common/core/disable-root.nix))
 - [Edit](https://github.com/microsoft/edit) as the default text editor ([`msedit.nix`](./hosts/common/core/msedit.nix))
 - Persisting only what is necessary with [Preservation](https://github.com/nix-community/preservation) ([`preservation.nix`](./hosts/common/core/preservation.nix))
