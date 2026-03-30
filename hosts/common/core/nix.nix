@@ -30,6 +30,11 @@
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
 
+      # Allow members of group "users" to connect to the Nix daemon
+      allowed-users = [
+        "@users"
+      ];
+
       # Add members of group "wheel" as trusted users
       trusted-users = [
         "root"
