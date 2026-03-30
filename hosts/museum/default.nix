@@ -14,6 +14,7 @@
     ../common/core
 
     ../common/optional/grub.nix
+    ../common/optional/hardened.nix
     ../common/optional/nix-topology/tailscale/webserver.nix
     ../common/optional/sshd.nix
     ../common/optional/systemd-networkd.nix
@@ -29,9 +30,6 @@
 
   # Set the hostname
   networking.hostName = "museum";
-
-  # Enable hardened profile
-  profiles.hardened = true;
 
   # The platform where the NixOS configuration runs
   nixpkgs.hostPlatform = "x86_64-linux";
