@@ -1,13 +1,9 @@
 {
-  pkgs,
   lib,
   config,
   ...
 }:
 {
-  # Use hardened Linux kernel
-  boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_hardened;
-
   # Prevent replacement of running kernel images
   security.protectKernelImage = true;
 
