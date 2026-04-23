@@ -69,6 +69,8 @@
   # Temporarily disable DNSSEC to avoid connection issues with Proton VPN
   services.resolved.settings.Resolve.DNSSEC = lib.mkForce false;
 
+  time.timeZone = "America/Toronto";
+
   # First version of NixOS installed in this system
   system.stateVersion = "25.05";
 }
