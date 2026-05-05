@@ -38,6 +38,7 @@
   # Disable applications
   applications.network.firefox.enable = false;
   applications.network.proton-vpn.enable = false;
+  applications.office.libreoffice.enable = false;
 
   # Temporarily disable Stoat Desktop to avoid build failures
   applications.network.stoat-desktop.enable = false;
