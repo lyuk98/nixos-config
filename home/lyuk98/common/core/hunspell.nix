@@ -13,8 +13,10 @@
 
           # Dictionaries for Hunspell
           paths = with hunspellDicts; [
+            en_CA
             en_GB-ise
             en_US
+            fr-any
             ko_KR
           ];
         });
