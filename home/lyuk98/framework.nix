@@ -14,6 +14,7 @@
     ./common/optional/gnome-extensions.nix
     ./common/optional/nix-output-monitor.nix
     ./common/optional/poppler-utils.nix
+    ./common/optional/proton-pass.nix
     ./common/optional/proton-vpn.nix
     ./common/optional/tmpfiles.nix
     ./common/optional/wl-clipboard.nix
