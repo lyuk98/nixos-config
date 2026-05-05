@@ -192,7 +192,7 @@
         # Create tmpfiles rule for each dictionary
         (builtins.map (
           dict:
-          "L+ %h/.config/${config.programs.vscode.nameShort}/Dictionaries/${dict} - - - - ${path}/${dict}"
+          "L+ %h/.config/Code/Dictionaries/${dict} - - - - ${path}/${dict}"
         ))
       ];
 
