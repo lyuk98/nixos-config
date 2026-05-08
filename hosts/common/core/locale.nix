@@ -15,5 +15,5 @@
   };
 
   # Set default time zone
-  time.timeZone = lib.mkDefault "Asia/Seoul";
+  time.timeZone = lib.mkDefault "Etc/UTC";
 }
