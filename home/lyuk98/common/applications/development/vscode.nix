@@ -40,6 +40,8 @@
             vscode-marketplace.ms-python.black-formatter # Black Formatter
             vscode-marketplace.ms-python.pylint # Pylint
             vscode-marketplace.ms-python.python # Python
+            vscode-marketplace.ms-vscode-remote.remote-ssh # Remote - SSH
+            vscode-marketplace.ms-vscode-remote.remote-ssh-edit # Remote - SSH: Editing Configuration Files
             vscode-marketplace.redhat.vscode-yaml # YAML
             vscode-marketplace.rust-lang.rust-analyzer # rust-analyzer
             vscode-marketplace.tonybaloney.vscode-pets # vscode-pets
