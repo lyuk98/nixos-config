@@ -12,8 +12,9 @@
       git
 
       age
-      gnupg
       openssh
+      sequoia-chameleon-gnupg
+      sequoia-sq
       sops
       ssh-to-age
 

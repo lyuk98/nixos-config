@@ -7,7 +7,6 @@
     ./git.nix
     ./gnome-backgrounds.nix
     ./gnome-shell.nix
-    ./gnupg.nix
     ./home-manager.nix
     ./hunspell.nix
     ./msedit.nix
@@ -15,6 +14,7 @@
     ./nixpkgs.nix
     ./nur.nix
     ./pay-respects.nix
+    ./sequoia.nix
     ./xdg-autostart.nix
     ./xdg-base-dirs.nix
     ./xdg-desktop-portal.nix

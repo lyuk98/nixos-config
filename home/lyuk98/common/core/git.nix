@@ -20,6 +20,9 @@ in
 
       # Sign commits and tags by default
       signByDefault = true;
+
+      # Use GnuPG-compatible Sequoia Chameleon for signing commits
+      signer = lib.getExe pkgs.sequoia-chameleon-gnupg;
     };
 
     # Add globally ignored paths
