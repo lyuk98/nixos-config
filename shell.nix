@@ -17,9 +17,6 @@
       sequoia-sq
       sops
       ssh-to-age
-
-      talosctl
-      talhelper
     ];
 
     NIX_CONFIG = "extra-experimental-features = ca-derivations flakes nix-command";
