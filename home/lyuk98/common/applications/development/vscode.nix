@@ -39,7 +39,7 @@
             vscode-marketplace.matthewpi.caddyfile-support # Caddyfile Support
             vscode-marketplace.ms-python.black-formatter # Black Formatter
             vscode-marketplace.ms-python.pylint # Pylint
-            vscode-marketplace.ms-python.python # Python
+            # vscode-marketplace.ms-python.python # Python
             vscode-marketplace.ms-vscode-remote.remote-ssh # Remote - SSH
             vscode-marketplace.ms-vscode-remote.remote-ssh-edit # Remote - SSH: Editing Configuration Files
             vscode-marketplace.redhat.vscode-yaml # YAML
