@@ -37,6 +37,7 @@
 
   # Disable applications
   applications.network.firefox.enable = false;
+  applications.network.ladybird.enable = false;
   applications.network.proton-vpn.enable = false;
   applications.office.libreoffice.enable = false;
 
