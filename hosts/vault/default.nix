@@ -37,6 +37,9 @@
     };
   };
 
+  # Invoke grub-install with --removable 
+  boot.loader.grub.efiInstallAsRemovable = true;
+
   # The platform where the NixOS configuration runs
   nixpkgs.hostPlatform = "x86_64-linux";
 
