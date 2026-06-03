@@ -20,7 +20,7 @@
 
       # Enable native messaging
       nativeMessagingHosts = [
-        pkgs.firefoxpwa
+        # pkgs.firefoxpwa
       ];
 
       # Apply policies
