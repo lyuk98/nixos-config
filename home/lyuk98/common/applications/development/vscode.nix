@@ -124,6 +124,16 @@
             "opentofu.languageServer.opentofu.path" = lib.getExe pkgs.opentofu;
             "opentofu.experimentalFeatures.prefillRequiredFields" = true;
 
+            # Extensions / YAML
+            "yaml.disableSchemaDetection" = [
+              "**/.github/workflows/*.yml"
+              "**/.github/workflows/*.yaml"
+              "**/.gitea/workflows/*.yml"
+              "**/.gitea/workflows/*.yaml"
+              "**/.forgejo/workflows/*.yml"
+              "**/.forgejo/workflows/*.yaml"
+            ];
+
             # Settings for HashiCorp configuration language
             "[hcl]" = {
               # Text Editor
