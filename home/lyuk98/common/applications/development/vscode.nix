@@ -110,10 +110,10 @@
 
             # Extensions / NixIDE
             "nix.enableLanguageServer" = true;
-            "nix.serverPath" = lib.getExe pkgs.nil;
+            "nix.serverPath" = lib.getExe pkgs.nixd;
             "nix.serverSettings" = {
-              "nil" = {
-                "formatting"."command" = [ "nixfmt" ];
+              "nixd" = {
+                formatting.command = [ (lib.getExe pkgs.nixfmt) ];
               };
             };
 
@@ -201,7 +201,6 @@
 
     # Some extensions can only invoke what is available in the environment
     home.packages = with pkgs; [
-      nixfmt
       terraform
       texliveFull
     ];
