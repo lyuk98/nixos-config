@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ./cursor.nix
     ./vscode.nix
   ];
 
@@ -13,6 +14,7 @@
 
   # Enable all Development applications if enabled
   config.applications.development = lib.mkIf config.applications.development.enable {
+    cursor.enable = lib.mkDefault true;
     vscode.enable = lib.mkDefault true;
   };
 }
