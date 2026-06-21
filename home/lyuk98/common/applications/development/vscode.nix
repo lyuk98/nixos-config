@@ -26,7 +26,6 @@
         default = {
           # Add extensions
           extensions = with pkgs; [
-            vscode-marketplace.anthropic.claude-code # Claude Code for VS Code
             vscode-marketplace.arrterian.nix-env-selector # Nix Environment Selector
             vscode-marketplace.ccls-project.ccls # ccls
             vscode-marketplace.github.vscode-github-actions # GitHub Actions
