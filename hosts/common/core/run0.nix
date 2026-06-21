@@ -2,6 +2,9 @@
 {
   security = if (lib.versionAtLeast lib.trivial.release "26.05") then {
     run0 = {
+      # Enable run0
+      enable = lib.mkDefault true;
+
       # Require authentication from users of the group wheel
       wheelNeedsPassword = true;
 
