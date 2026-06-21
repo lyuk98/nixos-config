@@ -45,9 +45,11 @@
             vscode-marketplace.rust-lang.rust-analyzer # rust-analyzer
             vscode-marketplace.tonybaloney.vscode-pets # vscode-pets
 
-            open-vsx.ban.spellright # Spell Right
             open-vsx.mermaidchart.vscode-mermaid-chart # Mermaid
             open-vsx.opentofu.vscode-opentofu # VSCode - OpenTofu
+            open-vsx.streetsidesoftware.code-spell-checker # Code Spell Checker
+            open-vsx.streetsidesoftware.code-spell-checker-british-english-ise # British English -ise - Code Spell Checker
+            open-vsx.streetsidesoftware.code-spell-checker-french # French - Code Spell Checker
           ];
 
           # Disable update notifications
@@ -78,6 +80,15 @@
 
             # Extensions / ccls
             "ccls.launch.command" = lib.getExe pkgs.ccls;
+
+            # Extensions / Code Spell Checker
+            "cSpell.enabled" = true;
+            "cSpell.caseSensitive" = true;
+            "cSpell.language" = builtins.concatStringsSep "," [
+              "en-GB"
+              "en"
+              "fr"
+            ];
 
             # Extensions / Custom Local Formatters
             "customLocalFormatters.formatters" = [
@@ -187,22 +198,6 @@
         };
       };
     };
-
-    # Link Hunspell dictionaries for extensions that use them
-    systemd.user.tmpfiles.rules =
-      let
-        path = "${config.programs.hunspell.dictionaries}/share/hunspell";
-      in
-      lib.pipe path [
-        # Read contents of the directory
-        builtins.readDir
-
-        # Get file names
-        builtins.attrNames
-
-        # Create tmpfiles rule for each dictionary
-        (builtins.map (dict: "L+ %h/.config/Code/Dictionaries/${dict} - - - - ${path}/${dict}"))
-      ];
 
     # Some extensions can only invoke what is available in the environment
     home.packages = with pkgs; [
