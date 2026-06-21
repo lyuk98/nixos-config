@@ -103,9 +103,6 @@
             "git.enableCommitSigning" = lib.mkDefault true;
             "git.inputValidation" = true;
 
-            # Extensions / LaTeX
-            "latex-workshop.formatting.latex" = "latexindent";
-
             # Extensions / NixIDE
             "nix.enableLanguageServer" = true;
             "nix.serverPath" = lib.getExe pkgs.nixd;
