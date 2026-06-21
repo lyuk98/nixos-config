@@ -4,15 +4,16 @@
     if (lib.versionAtLeast lib.trivial.release "26.05") then
       {
         run0 = {
-          # Enable run0
-          enable = lib.mkDefault true;
-
           # Require authentication from users of the group wheel
           wheelNeedsPassword = true;
 
           # Make sudo an alias only if Sudo (and its Rust variant) is not enabled
           enableSudoAlias = lib.mkDefault (!config.security.sudo.enable && !config.security.sudo.enable);
-        };
+        }
+        // (lib.optionalAttrs (lib.versionAtLeast lib.trivial.release "26.11") {
+          # Enable run0
+          enable = lib.mkDefault true;
+        });
 
         # Disable Sudo by default
         sudo.enable = lib.mkDefault false;
