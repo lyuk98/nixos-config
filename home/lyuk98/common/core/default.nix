@@ -26,14 +26,4 @@
     username = lib.mkDefault "lyuk98";
     homeDirectory = lib.mkDefault "/home/lyuk98";
   };
-
-  # Add workaround for failing tests with openldap
-  # https://github.com/NixOS/nixpkgs/issues/514113
-  nixpkgs.overlays = [
-    (_: prev: {
-      openldap = prev.openldap.overrideAttrs {
-        doCheck = !prev.stdenv.hostPlatform.isi686;
-      };
-    })
-  ];
 }
