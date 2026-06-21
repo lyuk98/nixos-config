@@ -9,15 +9,13 @@
   # Create option to enable Visual Studio Code
   options.applications.development.vscode.enable = lib.mkEnableOption "Visual Studio Code";
 
-  config = lib.mkIf config.applications.development.vscode.enable {
+  config = {
     # Add overlay to Nixpkgs
-    nixpkgs.overlays = [
-      inputs.nix-vscode-extensions.overlays.default
-    ];
+    nixpkgs.overlays = lib.optional config.applications.development.vscode.enable inputs.nix-vscode-extensions.overlays.default;
 
     programs.vscode = {
       # Enable Visual Studio Code
-      enable = true;
+      enable = config.applications.development.vscode.enable;
 
       # Prevent manual installation of extensions
       mutableExtensionsDir = false;
@@ -203,10 +201,7 @@
         builtins.attrNames
 
         # Create tmpfiles rule for each dictionary
-        (builtins.map (
-          dict:
-          "L+ %h/.config/Code/Dictionaries/${dict} - - - - ${path}/${dict}"
-        ))
+        (builtins.map (dict: "L+ %h/.config/Code/Dictionaries/${dict} - - - - ${path}/${dict}"))
       ];
 
     # Some extensions can only invoke what is available in the environment
