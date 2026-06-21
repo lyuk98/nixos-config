@@ -56,6 +56,7 @@
           # Set user settings
           userSettings = {
             # Text Editor
+            "diffEditor.ignoreTrimWhitespace" = false;
             "editor.fontFamily" =
               lib.mkIf (builtins.elem pkgs.cascadia-code config.home.packages) "'Cascadia Code', 'monospace', monospace";
             "editor.insertSpaces" = false;
