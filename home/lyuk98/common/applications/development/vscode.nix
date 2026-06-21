@@ -31,7 +31,6 @@
             vscode-marketplace.ccls-project.ccls # ccls
             vscode-marketplace.github.vscode-github-actions # GitHub Actions
             vscode-marketplace.hashicorp.hcl # HashiCorp HCL
-            vscode-marketplace.hashicorp.terraform # HashiCorp Terraform
             vscode-marketplace.james-yu.latex-workshop # LaTeX Workshop
             vscode-marketplace.jkillian.custom-local-formatters # Custom Local Formatters
             vscode-marketplace.jnoortheen.nix-ide # Nix IDE
@@ -181,19 +180,6 @@
               "editor.insertSpaces" = true;
               "editor.tabSize" = 2;
             };
-
-            # Settings for Terraform
-            "[terraform]" = {
-              # Text Editor
-              "editor.defaultFormatter" = "hashicorp.terraform";
-              "editor.insertSpaces" = true;
-              "editor.tabSize" = 2;
-            };
-            "[terraform-vars]" = {
-              # Text Editor
-              "editor.insertSpaces" = true;
-              "editor.tabSize" = 2;
-            };
           };
         };
       };
@@ -201,7 +187,6 @@
 
     # Some extensions can only invoke what is available in the environment
     home.packages = with pkgs; [
-      terraform
       texliveFull
     ];
   };
