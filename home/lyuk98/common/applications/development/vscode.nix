@@ -31,7 +31,6 @@
             vscode-marketplace.ccls-project.ccls # ccls
             vscode-marketplace.github.vscode-github-actions # GitHub Actions
             vscode-marketplace.hashicorp.hcl # HashiCorp HCL
-            vscode-marketplace.james-yu.latex-workshop # LaTeX Workshop
             vscode-marketplace.jkillian.custom-local-formatters # Custom Local Formatters
             vscode-marketplace.jnoortheen.nix-ide # Nix IDE
             vscode-marketplace.matthewpi.caddyfile-support # Caddyfile Support
@@ -184,10 +183,5 @@
         };
       };
     };
-
-    # Some extensions can only invoke what is available in the environment
-    home.packages = with pkgs; [
-      texliveFull
-    ];
   };
 }
