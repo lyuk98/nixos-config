@@ -33,6 +33,7 @@
             vscode-marketplace.jkillian.custom-local-formatters # Custom Local Formatters
             vscode-marketplace.jnoortheen.nix-ide # Nix IDE
             vscode-marketplace.matthewpi.caddyfile-support # Caddyfile Support
+            vscode-marketplace.ms-kubernetes-tools.vscode-kubernetes-tools # Kubernetes
             vscode-marketplace.ms-python.black-formatter # Black Formatter
             vscode-marketplace.ms-python.pylint # Pylint
             vscode-marketplace.ms-python.python # Python
@@ -102,6 +103,13 @@
             "git.autofetch" = true;
             "git.enableCommitSigning" = lib.mkDefault true;
             "git.inputValidation" = true;
+
+            # Extensions / Kubernetes
+            "vs-kubernetes" = {
+              "vs-kubernetes.crd-code-completion" = "enabled";
+            };
+            "vscode-kubernetes.helm-path" = lib.getExe pkgs.kubernetes-helm;
+            "vscode-kubernetes.kubectl-path" = lib.getExe pkgs.kubectl;
 
             # Extensions / NixIDE
             "nix.enableLanguageServer" = true;
