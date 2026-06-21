@@ -1,6 +1,8 @@
-{ config, ... }: let
+{ config, ... }:
+let
   inherit (config.lib.topology) mkInternet;
-in {
+in
+{
   # Create entity representing the internet
-  topology.nodes.internet = mkInternet {};
+  topology.nodes.internet = mkInternet { };
 }

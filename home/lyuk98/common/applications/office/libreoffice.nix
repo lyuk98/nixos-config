@@ -10,17 +10,15 @@
 
   config = lib.mkIf config.applications.office.libreoffice.enable {
     # Add packages
-    home.packages =
-      with pkgs;
-      [
-        # Add a latest stable version of LibreOffice
-        libreoffice-fresh
+    home.packages = with pkgs; [
+      # Add a latest stable version of LibreOffice
+      libreoffice-fresh
 
-        # Add Hunspell for spell checking
-        hunspell
+      # Add Hunspell for spell checking
+      hunspell
 
-        # Custom package containing necessary dictionaries
-        config.programs.hunspell.dictionaries
-      ];
+      # Custom package containing necessary dictionaries
+      config.programs.hunspell.dictionaries
+    ];
   };
 }

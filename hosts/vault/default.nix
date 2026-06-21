@@ -37,7 +37,7 @@
     };
   };
 
-  # Invoke grub-install with --removable 
+  # Invoke grub-install with --removable
   boot.loader.grub.efiInstallAsRemovable = true;
 
   # The platform where the NixOS configuration runs
