@@ -65,10 +65,10 @@ The following features can be used by some devices:
 - Bash with VTE integration ([`bash.nix`](./home/lyuk98/common/core/bash.nix))
 - [EditorConfig](https://editorconfig.org/) with a few global configurations ([`editorconfig.nix`](./home/lyuk98/common/core/editorconfig.nix))
 - Git with [libsecret](https://gitlab.gnome.org/GNOME/libsecret) support and declarative global settings ([`git.nix`](./home/lyuk98/common/core/git.nix))
-- [GNU Privacy Guard](https://gnupg.org/) and gpg-agent ([`gnupg.nix`](./home/lyuk98/common/core/gnupg.nix))
 - [nix-index](https://github.com/nix-community/nix-index) for locating files in Nixpkgs and providing `command-not-found` functionality ([`nix-index.nix`](./home/lyuk98/common/core/nix-index.nix))
 - [Nix User Repository](https://github.com/nix-community/NUR) ([`nur.nix`](./home/lyuk98/common/core/nur.nix))
 - [Pay Respects](https://github.com/iffse/pay-respects) for ~~pressing F~~ correcting previous commands ([`pay-respects.nix`](./home/lyuk98/common/core/pay-respects.nix))
+- [Sequoia PGP](https://sequoia-pgp.org/) ([`sequoia.nix`](./home/lyuk98/common/core/sequoia.nix))
 
 #### Optional
 
