@@ -55,136 +55,149 @@
           enableExtensionUpdateCheck = false;
 
           # Set user settings
-          userSettings = {
-            # Text Editor
-            "diffEditor.ignoreTrimWhitespace" = false;
-            "editor.fontFamily" =
-              lib.mkIf (builtins.elem pkgs.cascadia-code config.home.packages) "'Cascadia Code', 'monospace', monospace";
-            "editor.insertSpaces" = false;
-            "files.autoSave" = "afterDelay";
+          userSettings =
+            let
+              # Convert an array of font names to a comma-separated string
+              mkFontList =
+                fonts:
+                (lib.pipe fonts [
+                  (builtins.map (font: "'${font}'"))
+                  (builtins.concatStringsSep ", ")
+                ]);
+            in
+            {
+              # Text Editor
+              "diffEditor.ignoreTrimWhitespace" = false;
+              "editor.fontFamily" = mkFontList (
+                (lib.optional (builtins.elem pkgs.cascadia-code config.home.packages) "Cascadia Code")
+                ++ config.fonts.fontconfig.defaultFonts.monospace
+              );
+              "editor.insertSpaces" = false;
+              "files.autoSave" = "afterDelay";
 
-            # Window
-            "window.autoDetectColorScheme" = true;
+              # Window
+              "window.autoDetectColorScheme" = true;
 
-            # Features
-            "extensions.autoUpdate" = false;
-            "chat.disableAIFeatures" = true;
+              # Features
+              "extensions.autoUpdate" = false;
+              "chat.disableAIFeatures" = true;
+              "terminal.integrated.fontFamily" = mkFontList config.fonts.fontconfig.defaultFonts.monospace;
 
-            # Application
-            "telemetry.feedback.enabled" = false;
-            "telemetry.telemetryLevel" = "off";
+              # Application
+              "telemetry.feedback.enabled" = false;
+              "telemetry.telemetryLevel" = "off";
 
-            # Extensions / Caddyfile
-            "caddyfile.executable" = lib.getExe pkgs.caddy;
+              # Extensions / Caddyfile
+              "caddyfile.executable" = lib.getExe pkgs.caddy;
 
-            # Extensions / ccls
-            "ccls.launch.command" = lib.getExe pkgs.ccls;
+              # Extensions / ccls
+              "ccls.launch.command" = lib.getExe pkgs.ccls;
 
-            # Extensions / Code Spell Checker
-            "cSpell.enabled" = true;
-            "cSpell.caseSensitive" = true;
-            "cSpell.language" = builtins.concatStringsSep "," [
-              "en-GB"
-              "en"
-              "fr"
-            ];
+              # Extensions / Code Spell Checker
+              "cSpell.enabled" = true;
+              "cSpell.caseSensitive" = true;
+              "cSpell.language" = builtins.concatStringsSep "," [
+                "en-GB"
+                "en"
+                "fr"
+              ];
 
-            # Extensions / Custom Local Formatters
-            "customLocalFormatters.formatters" = [
-              {
-                "command" = lib.getExe pkgs.hclfmt;
-                "languages" = [
-                  "hcl"
-                ];
-              }
-            ];
+              # Extensions / Custom Local Formatters
+              "customLocalFormatters.formatters" = [
+                {
+                  "command" = lib.getExe pkgs.hclfmt;
+                  "languages" = [
+                    "hcl"
+                  ];
+                }
+              ];
 
-            # Extensions / Git
-            "git.autofetch" = true;
-            "git.enableCommitSigning" = lib.mkDefault true;
-            "git.inputValidation" = true;
+              # Extensions / Git
+              "git.autofetch" = true;
+              "git.enableCommitSigning" = lib.mkDefault true;
+              "git.inputValidation" = true;
 
-            # Extensions / Kubernetes
-            "vs-kubernetes" = {
-              "vs-kubernetes.crd-code-completion" = "enabled";
-            };
-            "vscode-kubernetes.helm-path" = lib.getExe pkgs.kubernetes-helm;
-            "vscode-kubernetes.kubectl-path" = lib.getExe pkgs.kubectl;
+              # Extensions / Kubernetes
+              "vs-kubernetes" = {
+                "vs-kubernetes.crd-code-completion" = "enabled";
+              };
+              "vscode-kubernetes.helm-path" = lib.getExe pkgs.kubernetes-helm;
+              "vscode-kubernetes.kubectl-path" = lib.getExe pkgs.kubectl;
 
-            # Extensions / NixIDE
-            "nix.enableLanguageServer" = true;
-            "nix.serverPath" = lib.getExe pkgs.nixd;
-            "nix.serverSettings" = {
-              "nixd" = {
-                formatting.command = [ (lib.getExe pkgs.nixfmt) ];
+              # Extensions / NixIDE
+              "nix.enableLanguageServer" = true;
+              "nix.serverPath" = lib.getExe pkgs.nixd;
+              "nix.serverSettings" = {
+                "nixd" = {
+                  formatting.command = [ (lib.getExe pkgs.nixfmt) ];
+                };
+              };
+
+              # Extensions / Nix Environment Selector
+              "nixEnvSelector.useFlakes" = true;
+
+              # Extensions / Python
+              "python.defaultInterpreterPath" = lib.getExe pkgs.python3;
+
+              # Extensions / rust-analyzer
+              "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
+
+              # Extensions / VSCode - OpenTofu
+              "opentofu.codelens.referenceCount" = true;
+              "opentofu.validation.enableEnhancedValidation" = true;
+              "opentofu.languageServer.enable" = true;
+              "opentofu.languageServer.path" = lib.getExe pkgs.tofu-ls;
+              "opentofu.languageServer.opentofu.path" = lib.getExe pkgs.opentofu;
+              "opentofu.experimentalFeatures.prefillRequiredFields" = true;
+
+              # Extensions / YAML
+              "yaml.disableSchemaDetection" = [
+                "**/.github/workflows/*.yml"
+                "**/.github/workflows/*.yaml"
+                "**/.gitea/workflows/*.yml"
+                "**/.gitea/workflows/*.yaml"
+                "**/.forgejo/workflows/*.yml"
+                "**/.forgejo/workflows/*.yaml"
+              ];
+
+              # Settings for HashiCorp configuration language
+              "[hcl]" = {
+                # Text Editor
+                "editor.defaultFormatter" = "jkillian.custom-local-formatters";
+                "editor.insertSpaces" = true;
+                "editor.tabSize" = 2;
+              };
+
+              # Settings for Nix
+              "[nix]" = {
+                # Text Editor
+                "editor.insertSpaces" = true;
+                "editor.tabSize" = 2;
+              };
+
+              # Settings for Python
+              "[python]" = {
+                # Text Editor
+                "editor.defaultFormatter" = "ms-python.black-formatter";
+                "editor.insertSpaces" = true;
+                "editor.tabSize" = 4;
+              };
+
+              # Settings for Rust
+              "[rust]" = {
+                # Text Editor
+                "editor.insertSpaces" = true;
+                "editor.tabSize" = 4;
+              };
+
+              # Settings for OpenTofu
+              "[opentofu][opentofu-vars]" = {
+                # Text Editor
+                "editor.defaultFormatter" = "opentofu.vscode-opentofu";
+                "editor.insertSpaces" = true;
+                "editor.tabSize" = 2;
               };
             };
-
-            # Extensions / Nix Environment Selector
-            "nixEnvSelector.useFlakes" = true;
-
-            # Extensions / Python
-            "python.defaultInterpreterPath" = lib.getExe pkgs.python3;
-
-            # Extensions / rust-analyzer
-            "rust-analyzer.server.path" = lib.getExe pkgs.rust-analyzer;
-
-            # Extensions / VSCode - OpenTofu
-            "opentofu.codelens.referenceCount" = true;
-            "opentofu.validation.enableEnhancedValidation" = true;
-            "opentofu.languageServer.enable" = true;
-            "opentofu.languageServer.path" = lib.getExe pkgs.tofu-ls;
-            "opentofu.languageServer.opentofu.path" = lib.getExe pkgs.opentofu;
-            "opentofu.experimentalFeatures.prefillRequiredFields" = true;
-
-            # Extensions / YAML
-            "yaml.disableSchemaDetection" = [
-              "**/.github/workflows/*.yml"
-              "**/.github/workflows/*.yaml"
-              "**/.gitea/workflows/*.yml"
-              "**/.gitea/workflows/*.yaml"
-              "**/.forgejo/workflows/*.yml"
-              "**/.forgejo/workflows/*.yaml"
-            ];
-
-            # Settings for HashiCorp configuration language
-            "[hcl]" = {
-              # Text Editor
-              "editor.defaultFormatter" = "jkillian.custom-local-formatters";
-              "editor.insertSpaces" = true;
-              "editor.tabSize" = 2;
-            };
-
-            # Settings for Nix
-            "[nix]" = {
-              # Text Editor
-              "editor.insertSpaces" = true;
-              "editor.tabSize" = 2;
-            };
-
-            # Settings for Python
-            "[python]" = {
-              # Text Editor
-              "editor.defaultFormatter" = "ms-python.black-formatter";
-              "editor.insertSpaces" = true;
-              "editor.tabSize" = 4;
-            };
-
-            # Settings for Rust
-            "[rust]" = {
-              # Text Editor
-              "editor.insertSpaces" = true;
-              "editor.tabSize" = 4;
-            };
-
-            # Settings for OpenTofu
-            "[opentofu][opentofu-vars]" = {
-              # Text Editor
-              "editor.defaultFormatter" = "opentofu.vscode-opentofu";
-              "editor.insertSpaces" = true;
-              "editor.tabSize" = 2;
-            };
-          };
         };
       };
     };
