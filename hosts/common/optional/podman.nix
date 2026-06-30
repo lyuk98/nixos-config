@@ -5,8 +5,9 @@
       # Enable Podman
       enable = true;
 
-      # Provide docker alias
+      # Provide Docker compatibility
       dockerCompat = !config.virtualisation.docker.enable;
+      dockerSocket.enable = true;
 
       # Enable DNS resolution in Podman
       defaultNetwork.settings.dns_enabled = true;
