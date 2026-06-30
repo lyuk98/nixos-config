@@ -1,4 +1,9 @@
-{ config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   virtualisation = {
     podman = {
@@ -18,4 +23,7 @@
       };
     };
   };
+
+  # Add docker-compose if Podman is enabled
+  environment.systemPackages = lib.optional config.virtualisation.podman.enable pkgs.docker-compose;
 }
