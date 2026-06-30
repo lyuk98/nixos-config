@@ -79,7 +79,7 @@
               "window.autoDetectColorScheme" = true;
 
               # Features
-              "extensions.autoUpdate" = false;
+              "extensions.autoUpdate" = "off";
               "chat.disableAIFeatures" = true;
               "terminal.integrated.fontFamily" = mkFontList config.fonts.fontconfig.defaultFonts.monospace;
 
