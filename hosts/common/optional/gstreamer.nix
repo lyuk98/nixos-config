@@ -9,7 +9,6 @@
       gst-plugins-bad
       gst-plugins-ugly
       gst-libav
-      gst-vaapi
     ];
 
     # Set environment variable
