@@ -159,6 +159,10 @@
                 "**/.forgejo/workflows/*.yml"
                 "**/.forgejo/workflows/*.yaml"
               ];
+              "yaml.schemas" = {
+                "https://json.schemastore.org/kustomization.json" = "/*";
+              };
+              "yaml.kubernetesVersion" = lib.getVersion pkgs.kubernetes;
 
               # Settings for HashiCorp configuration language
               "[hcl]" = {
