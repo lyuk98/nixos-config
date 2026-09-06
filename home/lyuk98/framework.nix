@@ -3,7 +3,6 @@
     ./common/core
     ./common/applications
 
-    ./common/optional/android-translation-layer.nix
     ./common/optional/audio-plugins.nix
     ./common/optional/claude-code.nix
     ./common/optional/custom-packages.nix
