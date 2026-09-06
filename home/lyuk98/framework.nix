@@ -41,9 +41,6 @@
   applications.network.ladybird.enable = false;
   applications.network.proton-vpn.enable = false;
 
-  # Temporarily disable MakeMKV to avoid build errors
-  applications.video.makemkv.enable = false;
-
   # First version of Home Manager installed in this system
   home.stateVersion = "25.05";
 }
