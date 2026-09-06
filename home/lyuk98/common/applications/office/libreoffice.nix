@@ -12,7 +12,7 @@
     # Add packages
     home.packages = with pkgs; [
       # Add a latest stable version of LibreOffice
-      libreoffice-fresh
+      libreoffice-stable
 
       # Add Hunspell for spell checking
       hunspell
