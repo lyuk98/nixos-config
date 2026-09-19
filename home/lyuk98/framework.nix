@@ -5,7 +5,6 @@
 
     ./common/optional/audio-plugins.nix
     ./common/optional/claude-code.nix
-    ./common/optional/custom-packages.nix
     ./common/optional/direnv.nix
     ./common/optional/ffmpeg-nonfree.nix
     ./common/optional/fontconfig.nix
