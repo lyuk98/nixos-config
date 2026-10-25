@@ -15,7 +15,6 @@
     ./preservation.nix
     ./run0.nix
     ./sops.nix
-    ./systemd-initrd.nix
     ./systemd-resolved.nix
     ./tailscale.nix
     ./zram.nix
