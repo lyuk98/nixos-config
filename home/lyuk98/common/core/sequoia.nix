@@ -6,7 +6,7 @@
     sequoia-git # Authenticate changes to VCS repositories
     sequoia-sop # Stateless OpenPGP implementation using Sequoia
     sequoia-sqv # OpenPGP signature verification tool
-    sequoia-wot # Sequoia web of trust
+    # sequoia-wot # Sequoia web of trust
     sequoia-chameleon-gnupg # GnuPG reimplementation using Sequoia
   ];
 
