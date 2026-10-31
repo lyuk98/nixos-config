@@ -26,6 +26,9 @@
       pkgs.proton-ge-bin
     ];
 
+    # Enable gamescope
+    gamescopeSession.enable = true;
+
     # Enable Protontricks
     protontricks.enable = true;
   };
