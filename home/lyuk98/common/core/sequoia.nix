@@ -3,7 +3,7 @@
   # Add packages for Sequoia
   home.packages = with pkgs; [
     sequoia-sq # Command-line interface for Sequoia
-    sequoia-git # Authenticate changes to VCS repositories
+    # sequoia-git # Authenticate changes to VCS repositories
     sequoia-sop # Stateless OpenPGP implementation using Sequoia
     sequoia-sqv # OpenPGP signature verification tool
     # sequoia-wot # Sequoia web of trust
