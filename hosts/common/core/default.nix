@@ -10,6 +10,7 @@
     ./immutable-users.nix
     ./locale.nix
     ./msedit.nix
+    ./nix-ld.nix
     ./nix-topology.nix
     ./nix.nix
     ./preservation.nix
